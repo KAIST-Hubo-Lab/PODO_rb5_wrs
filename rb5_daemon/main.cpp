@@ -537,7 +537,12 @@ void *RBCore_NRTThreadCon(void *)
         {
             sharedSEN->WHEEL_STATE = OMNI_MOVE_DONE;
             OMNI.SetOMNIstate(BREAK);
-        }
+            printf("Daemon : omni done\n");
+        }/*else
+        {
+            if(FLAG_JOYStart == false)
+                sharedSEN->WHEEL_STATE = OMNI_BREAK;
+        }*/
         save();
 
     }
@@ -1272,6 +1277,9 @@ void THREAD_JOYSTICK()
 
     if(FLAG_VELStart == true)
     {
+
+        float Kspeed = 0.1;
+
         Move_X = (float)sharedCMD->vel_x;
         Move_Y = (float)sharedCMD->vel_y;
         Move_R = (float)sharedCMD->vel_r;
@@ -1374,14 +1382,12 @@ void save()
         Save_Data[22][Save_Index] = OMNI.BRWinfo.Reference;
         Save_Data[23][Save_Index] = OMNI.BLWinfo.Reference;
 
+
         Save_Data[24][Save_Index] = sharedSEN->ENCODER[MC_GetID(FLW)][MC_GetCH(FLW)].CurrentPosition;
         Save_Data[25][Save_Index] = sharedSEN->ENCODER[MC_GetID(FRW)][MC_GetCH(FRW)].CurrentPosition;
         Save_Data[26][Save_Index] = sharedSEN->ENCODER[MC_GetID(BRW)][MC_GetCH(BRW)].CurrentPosition;
         Save_Data[27][Save_Index] = sharedSEN->ENCODER[MC_GetID(BLW)][MC_GetCH(BLW)].CurrentPosition;
-        Save_Data[28][Save_Index] = sharedSEN->ENCODER[MC_GetID(FLW)][MC_GetCH(FLW)].CurrentReference;
-        Save_Data[29][Save_Index] = sharedSEN->ENCODER[MC_GetID(FRW)][MC_GetCH(FRW)].CurrentReference;
-        Save_Data[30][Save_Index] = sharedSEN->ENCODER[MC_GetID(BRW)][MC_GetCH(BRW)].CurrentReference;
-        Save_Data[31][Save_Index] = sharedSEN->ENCODER[MC_GetID(BLW)][MC_GetCH(BLW)].CurrentReference;
+
 
         Save_Index++;
         if(Save_Index >= ROW) Save_Index = 0;

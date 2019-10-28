@@ -106,10 +106,10 @@ void OMNIMOVE::Omni_CalRef_Motor()
 
 doubles OMNIMOVE::Omni_CalVel_Wheel(double _vx, double _vy, double _vr)
 {
-    double temp1 = sin(Pw.alpha1)*_vx - cos(Pw.alpha1)*_vy - Pw.RobotRm*_vr;
-    double temp2 = sin(Pw.alpha2)*_vx - cos(Pw.alpha2)*_vy - Pw.RobotRm*_vr;
-    double temp3 = sin(Pw.alpha3)*_vx - cos(Pw.alpha3)*_vy - Pw.RobotRm*_vr;
-    double temp4 = sin(Pw.alpha4)*_vx - cos(Pw.alpha4)*_vy - Pw.RobotRm*_vr;
+    double temp1 = sin(Pw.alpha1)*_vx - cos(Pw.alpha1)*_vy + Pw.RobotRm*_vr;
+    double temp2 = sin(Pw.alpha2)*_vx - cos(Pw.alpha2)*_vy + Pw.RobotRm*_vr;
+    double temp3 = sin(Pw.alpha3)*_vx - cos(Pw.alpha3)*_vy + Pw.RobotRm*_vr;
+    double temp4 = sin(Pw.alpha4)*_vx - cos(Pw.alpha4)*_vy + Pw.RobotRm*_vr;
 
     doubles vwheel(4);
 

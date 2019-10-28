@@ -33,7 +33,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = wrapper1.0.0
-DISTDIR = /home/rainbow/Desktop/GitHub_RB5/rb5_wrs/build/GUIBuild/.tmp/wrapper1.0.0
+DISTDIR = /home/yujin/Desktop/GitHub/rb5_wrs/build/GUIBuild/.tmp/wrapper1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/opt/Qt5.7.0/5.7/gcc_64/lib
 LIBS          = $(SUBLIBS) -lrt -L/opt/Qt5.7.0/5.7/gcc_64/lib -lQt5OpenGL -L/usr/lib64 -lQt5Widgets -lQt5Gui -lQt5Network -lQt5Sql -lQt5Core -lGL -lpthread 
@@ -943,7 +943,7 @@ moc_mainwindow.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QMainWindow \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
 		../../rb5_gui/mainwindow.h \
 		/opt/Qt5.7.0/5.7/gcc_64/bin/moc
-	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/rainbow/Desktop/GitHub_RB5/rb5_wrs/rb5_gui -I/home/rainbow/Desktop/GitHub_RB5/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/mainwindow.h -o moc_mainwindow.cpp
+	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/yujin/Desktop/GitHub/rb5_wrs/rb5_gui -I/home/yujin/Desktop/GitHub/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/mainwindow.h -o moc_mainwindow.cpp
 
 moc_RBTCPClient.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork/QTcpSocket \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork/qtcpsocket.h \
@@ -1020,7 +1020,7 @@ moc_RBTCPClient.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork/QTcpSocket \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtCore/QTextStream \
 		../../rb5_gui/LAN/BaseLAN/RBTCPClient.h \
 		/opt/Qt5.7.0/5.7/gcc_64/bin/moc
-	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/rainbow/Desktop/GitHub_RB5/rb5_wrs/rb5_gui -I/home/rainbow/Desktop/GitHub_RB5/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/LAN/BaseLAN/RBTCPClient.h -o moc_RBTCPClient.cpp
+	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/yujin/Desktop/GitHub/rb5_wrs/rb5_gui -I/home/yujin/Desktop/GitHub/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/LAN/BaseLAN/RBTCPClient.h -o moc_RBTCPClient.cpp
 
 moc_RBTCPServer.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork/QTcpServer \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork/qtcpserver.h \
@@ -1100,7 +1100,7 @@ moc_RBTCPServer.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork/QTcpServer \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtCore/QTextStream \
 		../../rb5_gui/LAN/BaseLAN/RBTCPServer.h \
 		/opt/Qt5.7.0/5.7/gcc_64/bin/moc
-	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/rainbow/Desktop/GitHub_RB5/rb5_wrs/rb5_gui -I/home/rainbow/Desktop/GitHub_RB5/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/LAN/BaseLAN/RBTCPServer.h -o moc_RBTCPServer.cpp
+	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/yujin/Desktop/GitHub/rb5_wrs/rb5_gui -I/home/yujin/Desktop/GitHub/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/LAN/BaseLAN/RBTCPServer.h -o moc_RBTCPServer.cpp
 
 moc_RB5connect.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtCore/QSettings \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtCore/qsettings.h \
@@ -1185,7 +1185,7 @@ moc_RB5connect.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtCore/QSettings \
 		../../rb5_gui/DataStructure/rb5data.h \
 		../../rb5_gui/LAN/RB5connect.h \
 		/opt/Qt5.7.0/5.7/gcc_64/bin/moc
-	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/rainbow/Desktop/GitHub_RB5/rb5_wrs/rb5_gui -I/home/rainbow/Desktop/GitHub_RB5/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/LAN/RB5connect.h -o moc_RB5connect.cpp
+	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/yujin/Desktop/GitHub/rb5_wrs/rb5_gui -I/home/yujin/Desktop/GitHub/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/LAN/RB5connect.h -o moc_RB5connect.cpp
 
 moc_ROSconnect.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtCore/QByteArray \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtCore/qbytearray.h \
@@ -1269,7 +1269,7 @@ moc_ROSconnect.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtCore/QByteArray \
 		../../rb5_gui/DataStructure/rosdata.h \
 		../../rb5_gui/LAN/ROSconnect.h \
 		/opt/Qt5.7.0/5.7/gcc_64/bin/moc
-	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/rainbow/Desktop/GitHub_RB5/rb5_wrs/rb5_gui -I/home/rainbow/Desktop/GitHub_RB5/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/LAN/ROSconnect.h -o moc_ROSconnect.cpp
+	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/yujin/Desktop/GitHub/rb5_wrs/rb5_gui -I/home/yujin/Desktop/GitHub/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/LAN/ROSconnect.h -o moc_ROSconnect.cpp
 
 moc_StatusDialog.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QDialog \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qdialog.h \
@@ -1382,7 +1382,7 @@ moc_StatusDialog.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../rb5_gui/DataStructure/rb5data.h \
 		../../rb5_gui/StatusDialog.h \
 		/opt/Qt5.7.0/5.7/gcc_64/bin/moc
-	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/rainbow/Desktop/GitHub_RB5/rb5_wrs/rb5_gui -I/home/rainbow/Desktop/GitHub_RB5/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/StatusDialog.h -o moc_StatusDialog.cpp
+	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/yujin/Desktop/GitHub/rb5_wrs/rb5_gui -I/home/yujin/Desktop/GitHub/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/StatusDialog.h -o moc_StatusDialog.cpp
 
 moc_CANDialog.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QDialog \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qdialog.h \
@@ -1514,7 +1514,7 @@ moc_CANDialog.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QDialog \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtCore/QVector \
 		../../rb5_gui/CANDialog.h \
 		/opt/Qt5.7.0/5.7/gcc_64/bin/moc
-	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/rainbow/Desktop/GitHub_RB5/rb5_wrs/rb5_gui -I/home/rainbow/Desktop/GitHub_RB5/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/CANDialog.h -o moc_CANDialog.cpp
+	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/yujin/Desktop/GitHub/rb5_wrs/rb5_gui -I/home/yujin/Desktop/GitHub/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/CANDialog.h -o moc_CANDialog.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -2186,13 +2186,14 @@ mainwindow.o: ../../rb5_gui/mainwindow.cpp ../../rb5_gui/mainwindow.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QButtonGroup \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QFrame \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGridLayout \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGroupBox \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgroupbox.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QHeaderView \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qheaderview.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QLabel \

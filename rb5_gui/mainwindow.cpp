@@ -274,14 +274,14 @@ void MainWindow::onSystemCheck()
                 }
             }
 
-            if(CAN->sharedSEN->WHEEL_STATE != OMNI_BREAK)
-            {
-                if(CAN->sharedSEN->CAN_Enabled == false || CAN->sharedSEN->REF_Enabled == false)
-                {
-                    FILE_LOG(logERROR) << "CAN disconnected";
-                    ROS->sendWHEELRESULT(ERROR_STOP);
-                }
-            }
+//            if(CAN->sharedSEN->WHEEL_STATE != OMNI_BREAK)
+//            {
+//                if(CAN->sharedSEN->CAN_Enabled == false || CAN->sharedSEN->REF_Enabled == false)
+//                {
+//                    FILE_LOG(logERROR) << "CAN disconnected";
+//                    ROS->sendWHEELRESULT(ERROR_STOP);
+//                }
+//            }
             break;
         }
         }
@@ -562,7 +562,7 @@ void MainWindow::setCommand(command _cmd)//fromROS
     }
     case 'W':
     {//wheel
-        if(CAN->sharedSEN->CAN_Enabled && CAN->sharedSEN->REF_Enabled)
+        //if(CAN->sharedSEN->CAN_Enabled && CAN->sharedSEN->REF_Enabled)
         {
             if(ROScommand.d0 == 0 && ROScommand.d1 == 1)
             {
@@ -598,11 +598,11 @@ void MainWindow::setCommand(command _cmd)//fromROS
             {
                 ROS->sendWHEELRESULT(INPUT_ERROR);
             }
-        }else
+        }/*else
         {
             FILE_LOG(logERROR) << "CAN device not set. disregard command";
             ROS->sendWHEELRESULT(STATE_ERROR);
-        }
+        }*/
         break;
     }
     case 'N':

@@ -29,11 +29,9 @@ CANDialog::CANDialog(QWidget *parent) :
     FLAG_Firstinit = false;
 
     ui->LE_CAN_STATE->setStyleSheet("QLineEdit{background-color:red}");
-    ui->BTN_REF_ON->setStyleSheet("background-color: red");
-    ui->BTN_ENC_ON->setStyleSheet("background-color: red");
+    ui->BTN_REF_ON->setStyleSheet("background-color: green");
+    ui->BTN_ENC_ON->setStyleSheet("background-color: green");
     ui->BTN_JOY_ON->setStyleSheet("background-color: red");
-    ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel : not set"));
-    ui->LE_WHEEL_STATE->setStyleSheet("background-color: red");
 
     ui->BTN_REF_ON->setEnabled(false);
 
@@ -310,34 +308,6 @@ void CANDialog::UpdateSettings()
             ui->BTN_REF_ON->setEnabled(true);
         else
             ui->BTN_REF_ON->setEnabled(false);
-
-        switch(CAN->sharedSEN->WHEEL_STATE)
-        {
-        case OMNI_NOT_SET:
-            ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel : not set"));
-            ui->LE_WHEEL_STATE->setStyleSheet("background-color: red");
-            break;
-        case OMNI_BREAK:
-            ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel : idle"));
-            ui->LE_WHEEL_STATE->setStyleSheet("background-color: yellow");
-            break;
-        case OMNI_JOY_ON:
-            ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel : Joystick mode"));
-            ui->LE_WHEEL_STATE->setStyleSheet("background-color: green");
-            break;
-        case OMNI_VEL_ON:
-            ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel : ROS velocity mode"));
-            ui->LE_WHEEL_STATE->setStyleSheet("background-color: green");
-            break;
-        case OMNI_MOVING:
-            ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel : Goal mode"));
-            ui->LE_WHEEL_STATE->setStyleSheet("background-color: green");
-            break;
-        case OMNI_MOVE_DONE:
-            ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel : Move done"));
-            ui->LE_WHEEL_STATE->setStyleSheet("background-color: blue");
-            break;
-        }
     }else
     {
         ui->LE_CAN_STATE->setStyleSheet("QLineEdit{background-color:red}");
@@ -350,8 +320,6 @@ void CANDialog::UpdateSettings()
         ui->BTN_JOY_ON->setStyleSheet("background-color: red");
         ui->BTN_JOY_START->setText(QString().sprintf("JoyThread\nStart"));
         ui->BTN_JOY_MOVE->setText(QString().sprintf("Wheelmove\nStart"));
-        ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel : not set"));
-        ui->LE_WHEEL_STATE->setStyleSheet("background-color: red");
     }
 }
 
@@ -410,6 +378,8 @@ void CANDialog::on_BTN_MOVE_JOINT_clicked()
     int ch = MC_GetCH(lastSelected);
     float time = ui->LE_JOINT_TIME->text().toFloat();
     float angle = ui->LE_JOINT_ANGLE->text().toFloat();
+//    if(lastSelected == FLW || lastSelected == FRW || lastSelected == BLW || lastSelected == BRW)
+//        angle /= 200.0;
 
     USER_COMMAND cmd;
     CAN->sharedCMD->COMMAND.USER_PARA_CHAR[0] = id;

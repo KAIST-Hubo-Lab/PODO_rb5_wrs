@@ -103,13 +103,13 @@ void StatusDialog::onUpdate(){
         ui->LE_PG_MODE_SIMULATION->setStyleSheet("QLineEdit{background-color:white}");
     }
 
-    if(stat->sdata.robot_state == 1){
+    if(stat->sdata.robot_state == IDLE){
         ui->LE_ROBOT_STATE_IDLE->setStyleSheet("QLineEdit{background-color:green}");
         ui->LE_ROBOT_STATE_MOVING->setStyleSheet("QLineEdit{background-color:white}");
-    }else if(stat->sdata.robot_state == 2){
+    }else if(stat->sdata.robot_state == PAUSED){
         ui->LE_ROBOT_STATE_IDLE->setStyleSheet("QLineEdit{background-color:white}");
         ui->LE_ROBOT_STATE_MOVING->setStyleSheet("QLineEdit{background-color:white}");
-    }else if(stat->sdata.robot_state == 3){
+    }else if(stat->sdata.robot_state == MOVING){
         ui->LE_ROBOT_STATE_IDLE->setStyleSheet("QLineEdit{background-color:white}");
         ui->LE_ROBOT_STATE_MOVING->setStyleSheet("QLineEdit{background-color:green}");
     }else{

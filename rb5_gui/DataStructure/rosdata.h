@@ -10,11 +10,7 @@ enum {
     ERROR_STOP
 };
 
-enum {
-    IDLE = 0,
-    PAUSED,
-    MOVING
-};
+
 struct Update{
     int     robot_state;            //state of robot motion [1:idle   2:paused/stopped by accident   3:moving]
     int     power_state;            //power state

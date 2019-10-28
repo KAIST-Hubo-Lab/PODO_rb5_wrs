@@ -27,6 +27,11 @@ enum RCR_INIT_INFO{
     INIT_STAT_INFO_INIT_DONE
 };
 
+enum {
+    IDLE = 1,
+    PAUSED,
+    MOVING
+};
 typedef union{
     struct{
         unsigned    FET:1;	 	// FET ON   //

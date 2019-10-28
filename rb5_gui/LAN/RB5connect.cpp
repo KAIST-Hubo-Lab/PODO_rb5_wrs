@@ -58,7 +58,7 @@ void RB5connect::onReadyCmdRead()
         if(moveSendFlag == true){
             moveSendFlag = false;
             ignore_data_cnt = 5;
-            systemStat.sdata.robot_state = 3; //run
+            systemStat.sdata.robot_state = MOVING; //run
         }
         cmdConfirmFlag = true;
     }
@@ -101,7 +101,7 @@ void RB5connect::CMDread()
         if(moveSendFlag == true){
             moveSendFlag = false;
             ignore_data_cnt = 5;
-            systemStat.sdata.robot_state = 3; //run
+            systemStat.sdata.robot_state = MOVING; //run
         }
         cmdConfirmFlag = true;
     }
@@ -192,7 +192,7 @@ void RB5connect::MoveJoint(float joint1, float joint2, float joint3, float joint
 
     moveSendFlag = true;
     cmdConfirmFlag = false;
-    systemStat.sdata.robot_state = 3; //run
+    systemStat.sdata.robot_state = MOVING; //run
 }
 
 void RB5connect::MoveJoint(float coordinate[6],float spd, float acc)
@@ -206,7 +206,7 @@ void RB5connect::MoveJoint(float coordinate[6],float spd, float acc)
 
     cmdConfirmFlag = false;
     moveSendFlag = true;
-    systemStat.sdata.robot_state = 3; //run
+    systemStat.sdata.robot_state = MOVING; //run
 }
 
 void RB5connect::MoveTCP(float coordinate[6], float spd, float acc)
@@ -219,7 +219,7 @@ void RB5connect::MoveTCP(float coordinate[6], float spd, float acc)
 
     cmdConfirmFlag = false;
     moveSendFlag = true;
-    systemStat.sdata.robot_state = 3; //run
+    systemStat.sdata.robot_state = MOVING; //run
 }
 
 void RB5connect::MoveCircle_ThreePoint(int type, float x1, float y1, float z1, float rx1, float ry1, float rz1, float x2, float y2, float z2, float rx2, float ry2, float rz2, float spd, float acc)
@@ -241,7 +241,7 @@ void RB5connect::MoveCircle_ThreePoint(int type, float x1, float y1, float z1, f
 
     cmdConfirmFlag =false;
     moveSendFlag = true;
-    systemStat.sdata.robot_state = 3;
+    systemStat.sdata.robot_state = MOVING;
 }
 
 void RB5connect::MoveCircle_Axis(int type, float cx, float cy, float cz, float ax, float ay, float az, float rot_angle, float spd, float acc)
@@ -263,7 +263,7 @@ void RB5connect::MoveCircle_Axis(int type, float cx, float cy, float cz, float a
 
     cmdConfirmFlag =false;
     moveSendFlag = true;
-    systemStat.sdata.robot_state = 3;
+    systemStat.sdata.robot_state = MOVING;
 }
 
 void RB5connect::MoveJointBlend_Clear()
@@ -283,7 +283,7 @@ void RB5connect::MoveJointBlend_AddPoint(float joint1, float joint2, float joint
     clientCMD->RBSendData(msg);
 
     cmdConfirmFlag = false;
-    systemStat.sdata.robot_state = 3; //run
+    systemStat.sdata.robot_state = MOVING; //run
 }
 
 void RB5connect::MoveJointBlend_MovePoint()
@@ -293,7 +293,7 @@ void RB5connect::MoveJointBlend_MovePoint()
 
     moveSendFlag = true;
     cmdConfirmFlag = false;
-    systemStat.sdata.robot_state = 3;
+    systemStat.sdata.robot_state = MOVING;
 }
 
 void RB5connect::MoveTCPBlend_Clear()
@@ -313,7 +313,7 @@ void RB5connect::MoveTCPBlend_AddPoint(float radius, float x, float y, float z, 
     clientCMD->RBSendData(msg);
 
     cmdConfirmFlag = false;
-    systemStat.sdata.robot_state = 3; //run
+    systemStat.sdata.robot_state = MOVING; //run
 }
 
 void RB5connect::MoveTCPBlend_AddPoint(float radius, float coordinate[6], float spd, float acc)
@@ -325,7 +325,7 @@ void RB5connect::MoveTCPBlend_AddPoint(float radius, float coordinate[6], float 
     clientCMD->RBSendData(msg);
 
     cmdConfirmFlag = false;
-    systemStat.sdata.robot_state = 3; //run
+    systemStat.sdata.robot_state = MOVING; //run
 }
 
 void RB5connect::MoveTCPBlend_MovePoint(int mode)
@@ -346,7 +346,7 @@ void RB5connect::MoveTCPBlend_MovePoint(int mode)
 
     moveSendFlag = true;
     cmdConfirmFlag = false;
-    systemStat.sdata.robot_state = 3;
+    systemStat.sdata.robot_state = MOVING;
 }
 
 void RB5connect::ControlBoxDigitalOut(int d0, int d1, int d2, int d3, int d4, int d5, int d6, int d7, int d8, int d9, int d10, int d11, int d12, int d13, int d14, int d15)
@@ -435,7 +435,7 @@ void RB5connect::CollisionResume()
 
 int RB5connect::IsMotionIdle()
 {
-   return ((cmdConfirmFlag == true) && (systemStat.sdata.robot_state == 1));
+   return ((cmdConfirmFlag == true) && (systemStat.sdata.robot_state == IDLE));
 }
 
 //---------------------------------------------------------------------------------//
