@@ -10,6 +10,7 @@
 #include "LAN/ROSconnect.h"
 
 #include <QVector>
+#include <signal.h>
 #include <QtAlgorithms>
 #include <QDebug>
 #include <QSystemTrayIcon>
@@ -19,6 +20,8 @@
 namespace Ui {
 class MainWindow;
 }
+
+extern qint64  Daemon_processID;
 
 class MainWindow : public QMainWindow
 {
@@ -67,17 +70,25 @@ private slots:
 
     void on_showNormal();
 
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
 
-    qint64  Daemon_processID;
     QString settingFile;
-    QAction         *restoreAction, *quitAction;
+    QAction *restoreAction, *quitAction;
     QAction *startDaemonAction, *stopDaemonAction;
 
     void createActions();
     int checkJointInput();
     int checkTCPInput();
+
+
+
 
     int initFlag;
     int resultFlag;

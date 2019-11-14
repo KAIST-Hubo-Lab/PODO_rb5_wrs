@@ -37,29 +37,32 @@ ENC_fr = file(:,26);
 ENC_br = file(:,27);
 ENC_bl = file(:,28);
 
-% figure
-% hold on;
-% plot(CurSec,Pr,'.');
-% plot(CurSec,Prin,'.');
-% plot(CurSec,Vr,'.');
-% legend('Pr','Prin','Vr');
-% 
-% figure
-% hold on;
-% plot(CurSec,Vfl,'.');
-% plot(CurSec,Pfl,'.');
-% legend('Vfl','Pfl');
+figure
+hold on;
+plot(Pr,'.');
+plot(Prin,'.');
+plot(Vr,'.');
+legend('Pr','Prin','Vr');
 
 figure
 hold on;
-plot(ENC_fl-ENC_fr);
-% plot(ENC_fr);
+plot(Vfl,'.');
+plot(Pfl,'.');
+legend('Vfl','Pfl');
+
+% figure
+% hold on;
+% plot(ENC_fl-ENC_fr);
+% % plot(ENC_fr);
+% figure
+% plot(ENC_br-ENC_bl);
+% % plot(ENC_bl);
+% legend('fl','fr','br','bl');
+
 figure
-plot(ENC_br-ENC_bl);
-% plot(ENC_bl);
-legend('fl','fr','br','bl');
-
-
+hold on;
+plot(ENC_fl,'.');
+plot(Pfl,'.');
 
 
 % figure

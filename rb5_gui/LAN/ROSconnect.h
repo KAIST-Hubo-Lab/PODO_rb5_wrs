@@ -29,6 +29,7 @@ public:
 
     void sendRB5RESULT(int rb5result);
     void sendWHEELRESULT(int wheelresult);
+    void RESULTreset();
 
 signals:
     void ROS_Connected();

@@ -1226,7 +1226,7 @@ void THREAD_JOYSTICK()
 
             Move_X = (-(float)sharedSEN->JOY_LJOG_UD/-32767.f)*Kspeed;
             Move_Y = (-(float)sharedSEN->JOY_LJOG_RL/32767.f)*Kspeed;
-            Move_R = ((float)sharedSEN->JOY_RJOG_RL/32767.f)*Kspeed*0.8;
+            Move_R = ((float)sharedSEN->JOY_RJOG_RL/32767.f)*Kspeed;
 
             doubles vwheel(4);
             vwheel = OMNI.Omni_CalVel_Wheel(Move_X, Move_Y, Move_R);
@@ -1381,7 +1381,6 @@ void save()
         Save_Data[21][Save_Index] = OMNI.FRWinfo.Reference;
         Save_Data[22][Save_Index] = OMNI.BRWinfo.Reference;
         Save_Data[23][Save_Index] = OMNI.BLWinfo.Reference;
-
 
         Save_Data[24][Save_Index] = sharedSEN->ENCODER[MC_GetID(FLW)][MC_GetCH(FLW)].CurrentPosition;
         Save_Data[25][Save_Index] = sharedSEN->ENCODER[MC_GetID(FRW)][MC_GetCH(FRW)].CurrentPosition;

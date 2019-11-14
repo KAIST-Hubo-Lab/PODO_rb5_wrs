@@ -62,7 +62,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_4;
     QLineEdit *LE_IP_2;
-    QWidget *widget;
+    QWidget *layoutWidget5;
     QVBoxLayout *verticalLayout_3;
     QGridLayout *gridLayout;
     QLabel *label_6;
@@ -77,10 +77,13 @@ public:
     QLabel *label_5;
     QPushButton *BTN_CHANGE_DAEMON;
     QLineEdit *LE_DAEMON_PID;
-    QWidget *layoutWidget5;
+    QWidget *layoutWidget6;
     QHBoxLayout *horizontalLayout_4;
     QPushButton *BTN_START_DAEMON;
     QPushButton *BTN_STOP_DAEMON;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -120,7 +123,7 @@ public:
 
         layoutWidget1 = new QWidget(GB_NETWORK);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 60, 71, 91));
+        layoutWidget1->setGeometry(QRect(10, 60, 82, 91));
         verticalLayout = new QVBoxLayout(layoutWidget1);
         verticalLayout->setSpacing(0);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -157,7 +160,7 @@ public:
 
         layoutWidget2 = new QWidget(GB_NETWORK);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(90, 60, 71, 91));
+        layoutWidget2->setGeometry(QRect(90, 60, 82, 91));
         verticalLayout_2 = new QVBoxLayout(layoutWidget2);
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -279,10 +282,10 @@ public:
 
         horizontalLayout_2->addWidget(LE_IP_2);
 
-        widget = new QWidget(GB_NETWORK_2);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(11, 61, 151, 93));
-        verticalLayout_3 = new QVBoxLayout(widget);
+        layoutWidget5 = new QWidget(GB_NETWORK_2);
+        layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
+        layoutWidget5->setGeometry(QRect(11, 61, 151, 93));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget5);
         verticalLayout_3->setSpacing(0);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
@@ -292,14 +295,14 @@ public:
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setHorizontalSpacing(6);
         gridLayout->setVerticalSpacing(0);
-        label_6 = new QLabel(widget);
+        label_6 = new QLabel(layoutWidget5);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setFont(font1);
         label_6->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_6, 0, 0, 1, 1);
 
-        textROSPort = new QLineEdit(widget);
+        textROSPort = new QLineEdit(layoutWidget5);
         textROSPort->setObjectName(QStringLiteral("textROSPort"));
         textROSPort->setEnabled(true);
         textROSPort->setMaximumSize(QSize(100, 16777215));
@@ -307,7 +310,7 @@ public:
 
         gridLayout->addWidget(textROSPort, 1, 0, 1, 1);
 
-        textRSTPort = new QLineEdit(widget);
+        textRSTPort = new QLineEdit(layoutWidget5);
         textRSTPort->setObjectName(QStringLiteral("textRSTPort"));
         textRSTPort->setEnabled(true);
         textRSTPort->setMaximumSize(QSize(100, 16777215));
@@ -315,7 +318,7 @@ public:
 
         gridLayout->addWidget(textRSTPort, 1, 1, 1, 1);
 
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget5);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setFont(font1);
         label_7->setAlignment(Qt::AlignCenter);
@@ -325,7 +328,7 @@ public:
 
         verticalLayout_3->addLayout(gridLayout);
 
-        BTN_CONNECT_ROS = new QPushButton(widget);
+        BTN_CONNECT_ROS = new QPushButton(layoutWidget5);
         BTN_CONNECT_ROS->setObjectName(QStringLiteral("BTN_CONNECT_ROS"));
         sizePolicy1.setHeightForWidth(BTN_CONNECT_ROS->sizePolicy().hasHeightForWidth());
         BTN_CONNECT_ROS->setSizePolicy(sizePolicy1);
@@ -335,7 +338,7 @@ public:
 
         FRAME_STATUS = new QFrame(centralWidget);
         FRAME_STATUS->setObjectName(QStringLiteral("FRAME_STATUS"));
-        FRAME_STATUS->setGeometry(QRect(770, 30, 550, 600));
+        FRAME_STATUS->setGeometry(QRect(840, 30, 550, 600));
         FRAME_STATUS->setFrameShape(QFrame::StyledPanel);
         FRAME_STATUS->setFrameShadow(QFrame::Raised);
         FRAME_STATUS_2 = new QFrame(centralWidget);
@@ -364,15 +367,15 @@ public:
         LE_DAEMON_PID->setEnabled(false);
         LE_DAEMON_PID->setGeometry(QRect(150, 70, 51, 21));
         LE_DAEMON_PID->setReadOnly(true);
-        layoutWidget5 = new QWidget(GB_NETWORK_3);
-        layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
-        layoutWidget5->setGeometry(QRect(10, 100, 191, 51));
-        horizontalLayout_4 = new QHBoxLayout(layoutWidget5);
+        layoutWidget6 = new QWidget(GB_NETWORK_3);
+        layoutWidget6->setObjectName(QStringLiteral("layoutWidget6"));
+        layoutWidget6->setGeometry(QRect(10, 100, 191, 51));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget6);
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        BTN_START_DAEMON = new QPushButton(layoutWidget5);
+        BTN_START_DAEMON = new QPushButton(layoutWidget6);
         BTN_START_DAEMON->setObjectName(QStringLiteral("BTN_START_DAEMON"));
         sizePolicy.setHeightForWidth(BTN_START_DAEMON->sizePolicy().hasHeightForWidth());
         BTN_START_DAEMON->setSizePolicy(sizePolicy);
@@ -380,7 +383,7 @@ public:
 
         horizontalLayout_4->addWidget(BTN_START_DAEMON);
 
-        BTN_STOP_DAEMON = new QPushButton(layoutWidget5);
+        BTN_STOP_DAEMON = new QPushButton(layoutWidget6);
         BTN_STOP_DAEMON->setObjectName(QStringLiteral("BTN_STOP_DAEMON"));
         sizePolicy.setHeightForWidth(BTN_STOP_DAEMON->sizePolicy().hasHeightForWidth());
         BTN_STOP_DAEMON->setSizePolicy(sizePolicy);
@@ -388,6 +391,15 @@ public:
 
         horizontalLayout_4->addWidget(BTN_STOP_DAEMON);
 
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(770, 70, 51, 51));
+        pushButton_2 = new QPushButton(centralWidget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(770, 140, 51, 51));
+        pushButton_3 = new QPushButton(centralWidget);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(770, 200, 51, 51));
         MainWindow->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -431,6 +443,9 @@ public:
 "Daemon", 0));
         BTN_STOP_DAEMON->setText(QApplication::translate("MainWindow", "Stop\n"
 "Daemon", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "reset", 0));
+        pushButton_2->setText(QApplication::translate("MainWindow", "suction", 0));
+        pushButton_3->setText(QApplication::translate("MainWindow", "release", 0));
     } // retranslateUi
 
 };

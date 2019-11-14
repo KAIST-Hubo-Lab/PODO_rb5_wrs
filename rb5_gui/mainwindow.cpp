@@ -21,6 +21,7 @@ const int MIN_DISTANCE = 200;
 // joint data for ROS topics
 
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -81,6 +82,8 @@ MainWindow::~MainWindow()
     delete ROS;
     systemTimer.stop();
 }
+
+
 
 void MainWindow::RB5toROS()
 {
@@ -165,6 +168,36 @@ void MainWindow::onSystemCheck()
         }
     }
 
+
+
+//    if(resultFlag == true &&(ROS->result.rb5_result == ACCEPT||ROS->result.wheel_result == ACCEPT))
+//    {
+//        switch(ROScommand.type)
+//        {
+//        case 'W':
+//            if(ROScommand.d0 == 0 && ROScommand.d1 == 1)//goalmode
+//            {
+//                if(CAN->sharedSEN->WHEEL_STATE == OMNI_MOVE_DONE)
+//                {
+//                    printf("state = %d\n",CAN->sharedSEN->WHEEL_STATE);
+//                    FILE_LOG(logSUCCESS) << "Goal mode move done";
+//                    ROS->sendWHEELRESULT(DONE);
+//                    CAN->sharedSEN->WHEEL_STATE = OMNI_BREAK;
+//                }
+//                if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK && Count > 300)
+//                {
+//                    Count = 0;
+//                    printf("RB5 = %d, WHEEL = %d\n",ROS->result.rb5_result,ROS->result.wheel_result);
+//                    FILE_LOG(logERROR) << "Time out : Wheel move";
+//                    ROS->sendWHEELRESULT(ERROR_STOP);
+//                }
+//            }
+//            break;
+//        default:
+//            ROS->sendRB5RESULT(DONE);
+//        }
+//    }
+
     // sendResult to ROS
     if(resultFlag == true &&(ROS->result.rb5_result == ACCEPT||ROS->result.wheel_result == ACCEPT))
     {
@@ -221,7 +254,8 @@ void MainWindow::onSystemCheck()
                 if(Count > 3)
                 {
                     Count = 0;
-                    FILE_LOG(logSUCCESS) << "Move Done";
+                    //FILE_LOG(logSUCCESS) << "Move Done";
+                    //printf("RB5 = %d, WHEEL = %d\n",ROS->result.rb5_result,ROS->result.wheel_result);
                     ROS->sendRB5RESULT(DONE);
                 }
             }else if(RB5->systemStat.sdata.robot_state == PAUSED)
@@ -269,6 +303,8 @@ void MainWindow::onSystemCheck()
                 }
                 if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK && Count > 300)
                 {
+                    Count = 0;
+                    printf("RB5 = %d, WHEEL = %d\n",ROS->result.rb5_result,ROS->result.wheel_result);
                     FILE_LOG(logERROR) << "Time out : Wheel move";
                     ROS->sendWHEELRESULT(ERROR_STOP);
                 }
@@ -391,6 +427,7 @@ void MainWindow::setCommand(command _cmd)//fromROS
     ROScommand = _cmd;
     Count = 0;
 
+    ROS->RESULTreset();
     switch(ROScommand.type)
     {
     case 'I':
@@ -568,7 +605,7 @@ void MainWindow::setCommand(command _cmd)//fromROS
             {
                 if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK)
                 {
-                    ROS->sendWHEELRESULT(1);
+                    ROS->sendWHEELRESULT(ACCEPT);
                     CAN->WheelMovewithGoalPos(ROScommand.wheel[0],ROScommand.wheel[1],ROScommand.wheel[2]);
                     FILE_LOG(logSUCCESS) << "Wheel move Goal mode";
                 }else
@@ -580,7 +617,7 @@ void MainWindow::setCommand(command _cmd)//fromROS
             {
                 if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK)
                 {
-                    ROS->sendWHEELRESULT(1);
+                    ROS->sendWHEELRESULT(ACCEPT);
                     FILE_LOG(logSUCCESS) << "Wheel move Velocity mode Start";
                     CAN->WheelMoveStart();
                 }else
@@ -590,10 +627,10 @@ void MainWindow::setCommand(command _cmd)//fromROS
                 }
             }else if(ROScommand.d0 == 1 && ROScommand.d1 == 1)
             {
-                ROS->sendWHEELRESULT(1);
+                ROS->sendWHEELRESULT(ACCEPT);
                 FILE_LOG(logSUCCESS) << "Wheel move Velocity mode Stop";
                 CAN->WheelMoveStop();
-                ROS->sendWHEELRESULT(2);
+                ROS->sendWHEELRESULT(DONE);
             }else
             {
                 ROS->sendWHEELRESULT(INPUT_ERROR);
@@ -620,6 +657,8 @@ void MainWindow::setCommand(command _cmd)//fromROS
     default:
         break;
     }
+    printf("RB5 = %d, WHEEL = %d\n",ROS->result.rb5_result,ROS->result.wheel_result);
+
 }
 
 // ------------------------------------------------
@@ -766,5 +805,21 @@ int  MainWindow::checkTCPInput()
         return -1;
 
     return 1;
+
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    RB5->Suction(0);
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    RB5->Suction(1);
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    RB5->Suction(2);
 
 }

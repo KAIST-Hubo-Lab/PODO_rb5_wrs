@@ -35,8 +35,8 @@ struct Update{
 
 struct Result
 {
-    int     rb5_result;
-    int     wheel_result;
+    int     rb5_result = BREAK;
+    int     wheel_result = BREAK;
 };
 
 struct command

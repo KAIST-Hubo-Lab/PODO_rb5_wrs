@@ -83,6 +83,7 @@ void ROSconnect::sendSTATUS()
 void ROSconnect::sendRB5RESULT(int rb5result)
 {
     result.rb5_result = rb5result;
+    printf("RB5RESULT set : %d,%d\n",result.rb5_result,result.wheel_result);
     char *buf = new char[sizeof(Result)];
     memcpy(buf, &result, sizeof(Result));
     serverRST->RBSendData(buf, sizeof(Result));
@@ -92,10 +93,18 @@ void ROSconnect::sendRB5RESULT(int rb5result)
 void ROSconnect::sendWHEELRESULT(int wheelresult)
 {
     result.wheel_result = wheelresult;
+    printf("WHEELRESULT set : %d,%d\n",result.rb5_result,result.wheel_result);
     char *buf = new char[sizeof(Result)];
     memcpy(buf, &result, sizeof(Result));
     serverRST->RBSendData(buf, sizeof(Result));
     delete [] buf;
+}
+
+void ROSconnect::RESULTreset()
+{
+    result.rb5_result = BREAK;
+    result.wheel_result = BREAK;
+    printf("result reset");
 }
 
 ROSServer::ROSServer()

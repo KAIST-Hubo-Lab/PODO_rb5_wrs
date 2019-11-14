@@ -70,6 +70,7 @@ public:
     void MotionResume();
     void CollisionResume();
     int IsMotionIdle();
+    void Suction(int mode);
 
 
 signals:

@@ -32,6 +32,8 @@ CANDialog::CANDialog(QWidget *parent) :
     ui->BTN_REF_ON->setStyleSheet("background-color: green");
     ui->BTN_ENC_ON->setStyleSheet("background-color: green");
     ui->BTN_JOY_ON->setStyleSheet("background-color: red");
+    ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel not set"));
+    ui->LE_WHEEL_STATE->setStyleSheet("background-color: red");
 
     ui->BTN_REF_ON->setEnabled(false);
 
@@ -308,6 +310,34 @@ void CANDialog::UpdateSettings()
             ui->BTN_REF_ON->setEnabled(true);
         else
             ui->BTN_REF_ON->setEnabled(false);
+
+        switch(CAN->sharedSEN->WHEEL_STATE)
+                {
+                case OMNI_NOT_SET:
+                    ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel not set"));
+                    ui->LE_WHEEL_STATE->setStyleSheet("background-color: red");
+                    break;
+                case OMNI_BREAK:
+                    ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel state : idle"));
+                    ui->LE_WHEEL_STATE->setStyleSheet("background-color: red");
+                    break;
+                case OMNI_JOY_ON:
+                    ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel state : Joystick mode"));
+                    ui->LE_WHEEL_STATE->setStyleSheet("background-color: yellow");
+                    break;
+                case OMNI_VEL_ON:
+                    ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel state : ROS velocity mode"));
+                    ui->LE_WHEEL_STATE->setStyleSheet("background-color: yellow");
+                    break;
+                case OMNI_MOVING:
+                    ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel state : Moving"));
+                    ui->LE_WHEEL_STATE->setStyleSheet("background-color: yellow");
+                    break;
+                case OMNI_MOVE_DONE:
+                    ui->LE_WHEEL_STATE->setText(QString().sprintf("Wheel state : Move Done"));
+                    ui->LE_WHEEL_STATE->setStyleSheet("background-color: green");
+                    break;
+                }
     }else
     {
         ui->LE_CAN_STATE->setStyleSheet("QLineEdit{background-color:red}");

@@ -167,6 +167,25 @@ void RB5connect::RB5_init()
     cmdConfirmFlag = false;
 }
 
+void RB5connect::Suction(int mode)
+{
+    if(mode == 0)
+    {
+        QByteArray msg = "gripper_rtq_epick_reset(1)";
+        clientCMD->RBSendData(msg);
+    }else if(mode == 1)
+    {
+        QByteArray msg = "gripper_rtq_epick_suction(1)";
+        clientCMD->RBSendData(msg);
+
+    }else
+    {
+
+        QByteArray msg = "gripper_rtq_epick_release(1)";
+        clientCMD->RBSendData(msg);
+    }
+}
+
 void RB5connect::ProgramMode_Real()
 {
     QByteArray msg = "pgmode real";
