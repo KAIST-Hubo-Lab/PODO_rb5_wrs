@@ -171,17 +171,17 @@ void RB5connect::Suction(int mode)
 {
     if(mode == 0)
     {
-        QByteArray msg = "gripper_rtq_epick_reset(1)";
+        QByteArray msg = "gripper_rtq_epick_reset(0)";
         clientCMD->RBSendData(msg);
     }else if(mode == 1)
     {
-        QByteArray msg = "gripper_rtq_epick_suction(1)";
+        QByteArray msg = "gripper_rtq_epick_suction(0)";
         clientCMD->RBSendData(msg);
 
     }else
     {
 
-        QByteArray msg = "gripper_rtq_epick_release(1)";
+        QByteArray msg = "gripper_rtq_epick_release(0)";
         clientCMD->RBSendData(msg);
     }
 }

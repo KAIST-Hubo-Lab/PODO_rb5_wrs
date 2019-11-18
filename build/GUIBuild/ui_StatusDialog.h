@@ -15,11 +15,11 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QSpacerItem>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -96,24 +96,6 @@ public:
     QLineEdit *LE_A_OUT_0;
     QLineEdit *LE_A_OUT_2;
     QLineEdit *LE_A_OUT_3;
-    QWidget *gridLayoutWidget_8;
-    QGridLayout *gridLayout_7;
-    QLabel *label_71;
-    QLineEdit *LE_TA_IN_0;
-    QLabel *label_74;
-    QLineEdit *LE_TA_IN_1;
-    QLabel *label_80;
-    QWidget *gridLayoutWidget_9;
-    QGridLayout *gridLayout_9;
-    QLineEdit *LE_TD_IN_OFF_0;
-    QLabel *label_96;
-    QLabel *label_82;
-    QLineEdit *LE_TD_IN_ON_0;
-    QLabel *label_93;
-    QLineEdit *LE_TD_IN_OFF_1;
-    QLabel *label_95;
-    QLineEdit *LE_TD_IN_ON_1;
-    QLabel *label_99;
     QWidget *gridLayoutWidget_10;
     QGridLayout *gridLayout_10;
     QLineEdit *LE_TD_OUT_OFF_0;
@@ -138,22 +120,14 @@ public:
     QLabel *label_102;
     QLabel *label_103;
     QWidget *layoutWidget;
-    QVBoxLayout *verticalLayout;
-    QLineEdit *LE_ROBOT_STATUS_TEACHING;
-    QLineEdit *LE_ROBOT_STATUS_EXT_COLLISION;
-    QLineEdit *LE_ROBOT_STATUS_SELF_COLLISION;
-    QLineEdit *LE_ROBOT_STATUS_PAUSED;
-    QLineEdit *LE_ROBOT_STATUS_EMS;
-    QLineEdit *LE_ROBOT_STATUS_SOS;
-    QWidget *layoutWidget1;
-    QVBoxLayout *verticalLayout_2;
-    QLineEdit *LE_ROBOT_STATE_IDLE;
+    QHBoxLayout *horizontalLayout_2;
     QLineEdit *LE_ROBOT_STATE_MOVING;
-    QWidget *layoutWidget2;
-    QVBoxLayout *verticalLayout_3;
-    QLineEdit *LE_PG_MODE_REAL;
+    QLineEdit *LE_ROBOT_STATE_IDLE;
+    QWidget *layoutWidget1;
+    QHBoxLayout *horizontalLayout_3;
     QLineEdit *LE_PG_MODE_SIMULATION;
-    QWidget *layoutWidget3;
+    QLineEdit *LE_PG_MODE_REAL;
+    QWidget *layoutWidget2;
     QGridLayout *gridLayout_4;
     QLabel *label_40;
     QLabel *label_41;
@@ -208,7 +182,7 @@ public:
     QLabel *label_39;
     QLineEdit *LE_D_IN_ON_15;
     QLineEdit *LE_D_IN_OFF_15;
-    QWidget *layoutWidget4;
+    QWidget *layoutWidget3;
     QGridLayout *gridLayout_5;
     QLabel *label_62;
     QLabel *label_63;
@@ -263,15 +237,23 @@ public:
     QLabel *label_58;
     QLineEdit *LE_D_OUT_ON_15;
     QLineEdit *LE_D_OUT_OFF_15;
+    QWidget *widget;
+    QGridLayout *gridLayout_7;
+    QLineEdit *LE_ROBOT_STATUS_SOS;
+    QLineEdit *LE_ROBOT_STATUS_EMS;
+    QLineEdit *LE_ROBOT_STATUS_PAUSED;
+    QLineEdit *LE_ROBOT_STATUS_SELF_COLLISION;
+    QLineEdit *LE_ROBOT_STATUS_EXT_COLLISION;
+    QLineEdit *LE_ROBOT_STATUS_TEACHING;
 
     void setupUi(QDialog *StatusDialog)
     {
         if (StatusDialog->objectName().isEmpty())
             StatusDialog->setObjectName(QStringLiteral("StatusDialog"));
-        StatusDialog->resize(550, 600);
+        StatusDialog->resize(421, 660);
         gridLayoutWidget = new QWidget(StatusDialog);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(240, 30, 91, 161));
+        gridLayoutWidget->setGeometry(QRect(10, 240, 91, 161));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -380,7 +362,7 @@ public:
 
         gridLayoutWidget_2 = new QWidget(StatusDialog);
         gridLayoutWidget_2->setObjectName(QStringLiteral("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(340, 30, 91, 161));
+        gridLayoutWidget_2->setGeometry(QRect(110, 240, 91, 161));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
@@ -483,7 +465,7 @@ public:
 
         label_13 = new QLabel(StatusDialog);
         label_13->setObjectName(QStringLiteral("label_13"));
-        label_13->setGeometry(QRect(230, 10, 121, 16));
+        label_13->setGeometry(QRect(10, 210, 91, 20));
         QFont font;
         font.setBold(true);
         font.setWeight(75);
@@ -491,12 +473,12 @@ public:
         label_13->setAlignment(Qt::AlignCenter);
         label_14 = new QLabel(StatusDialog);
         label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setGeometry(QRect(330, 10, 121, 16));
+        label_14->setGeometry(QRect(110, 210, 91, 20));
         label_14->setFont(font);
         label_14->setAlignment(Qt::AlignCenter);
         gridLayoutWidget_3 = new QWidget(StatusDialog);
         gridLayoutWidget_3->setObjectName(QStringLiteral("gridLayoutWidget_3"));
-        gridLayoutWidget_3->setGeometry(QRect(440, 30, 91, 161));
+        gridLayoutWidget_3->setGeometry(QRect(210, 240, 91, 161));
         gridLayout_3 = new QGridLayout(gridLayoutWidget_3);
         gridLayout_3->setSpacing(0);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
@@ -599,12 +581,12 @@ public:
 
         label_27 = new QLabel(StatusDialog);
         label_27->setObjectName(QStringLiteral("label_27"));
-        label_27->setGeometry(QRect(420, 10, 121, 16));
+        label_27->setGeometry(QRect(210, 210, 91, 20));
         label_27->setFont(font);
         label_27->setAlignment(Qt::AlignCenter);
         label_29 = new QLabel(StatusDialog);
         label_29->setObjectName(QStringLiteral("label_29"));
-        label_29->setGeometry(QRect(20, 10, 81, 16));
+        label_29->setGeometry(QRect(20, 20, 71, 16));
         QFont font1;
         font1.setPointSize(10);
         font1.setBold(true);
@@ -613,12 +595,12 @@ public:
         label_29->setAlignment(Qt::AlignCenter);
         label_30 = new QLabel(StatusDialog);
         label_30->setObjectName(QStringLiteral("label_30"));
-        label_30->setGeometry(QRect(20, 100, 81, 16));
+        label_30->setGeometry(QRect(20, 90, 91, 20));
         label_30->setFont(font1);
         label_30->setAlignment(Qt::AlignCenter);
         gridLayoutWidget_6 = new QWidget(StatusDialog);
         gridLayoutWidget_6->setObjectName(QStringLiteral("gridLayoutWidget_6"));
-        gridLayoutWidget_6->setGeometry(QRect(20, 470, 231, 52));
+        gridLayoutWidget_6->setGeometry(QRect(10, 600, 201, 31));
         gridLayout_6 = new QGridLayout(gridLayoutWidget_6);
         gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
         gridLayout_6->setContentsMargins(0, 0, 0, 0);
@@ -676,7 +658,7 @@ public:
 
         gridLayoutWidget_7 = new QWidget(StatusDialog);
         gridLayoutWidget_7->setObjectName(QStringLiteral("gridLayoutWidget_7"));
-        gridLayoutWidget_7->setGeometry(QRect(260, 470, 231, 52));
+        gridLayoutWidget_7->setGeometry(QRect(220, 600, 191, 31));
         gridLayout_8 = new QGridLayout(gridLayoutWidget_7);
         gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
         gridLayout_8->setContentsMargins(0, 0, 0, 0);
@@ -732,133 +714,9 @@ public:
 
         gridLayout_8->addWidget(LE_A_OUT_3, 1, 4, 1, 1);
 
-        gridLayoutWidget_8 = new QWidget(StatusDialog);
-        gridLayoutWidget_8->setObjectName(QStringLiteral("gridLayoutWidget_8"));
-        gridLayoutWidget_8->setGeometry(QRect(420, 240, 101, 46));
-        gridLayout_7 = new QGridLayout(gridLayoutWidget_8);
-        gridLayout_7->setSpacing(0);
-        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
-        gridLayout_7->setContentsMargins(0, 0, 0, 0);
-        label_71 = new QLabel(gridLayoutWidget_8);
-        label_71->setObjectName(QStringLiteral("label_71"));
-        sizePolicy.setHeightForWidth(label_71->sizePolicy().hasHeightForWidth());
-        label_71->setSizePolicy(sizePolicy);
-        label_71->setMinimumSize(QSize(20, 0));
-        label_71->setAlignment(Qt::AlignCenter);
-
-        gridLayout_7->addWidget(label_71, 1, 0, 1, 1);
-
-        LE_TA_IN_0 = new QLineEdit(gridLayoutWidget_8);
-        LE_TA_IN_0->setObjectName(QStringLiteral("LE_TA_IN_0"));
-        sizePolicy1.setHeightForWidth(LE_TA_IN_0->sizePolicy().hasHeightForWidth());
-        LE_TA_IN_0->setSizePolicy(sizePolicy1);
-
-        gridLayout_7->addWidget(LE_TA_IN_0, 0, 1, 1, 1);
-
-        label_74 = new QLabel(gridLayoutWidget_8);
-        label_74->setObjectName(QStringLiteral("label_74"));
-        sizePolicy.setHeightForWidth(label_74->sizePolicy().hasHeightForWidth());
-        label_74->setSizePolicy(sizePolicy);
-        label_74->setMinimumSize(QSize(20, 0));
-        label_74->setAlignment(Qt::AlignCenter);
-
-        gridLayout_7->addWidget(label_74, 0, 0, 1, 1);
-
-        LE_TA_IN_1 = new QLineEdit(gridLayoutWidget_8);
-        LE_TA_IN_1->setObjectName(QStringLiteral("LE_TA_IN_1"));
-        sizePolicy1.setHeightForWidth(LE_TA_IN_1->sizePolicy().hasHeightForWidth());
-        LE_TA_IN_1->setSizePolicy(sizePolicy1);
-
-        gridLayout_7->addWidget(LE_TA_IN_1, 1, 1, 1, 1);
-
-        label_80 = new QLabel(StatusDialog);
-        label_80->setObjectName(QStringLiteral("label_80"));
-        label_80->setGeometry(QRect(430, 220, 121, 20));
-        label_80->setFont(font1);
-        label_80->setAlignment(Qt::AlignCenter);
-        gridLayoutWidget_9 = new QWidget(StatusDialog);
-        gridLayoutWidget_9->setObjectName(QStringLiteral("gridLayoutWidget_9"));
-        gridLayoutWidget_9->setGeometry(QRect(170, 240, 111, 41));
-        gridLayout_9 = new QGridLayout(gridLayoutWidget_9);
-        gridLayout_9->setSpacing(0);
-        gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
-        gridLayout_9->setContentsMargins(0, 0, 0, 0);
-        LE_TD_IN_OFF_0 = new QLineEdit(gridLayoutWidget_9);
-        LE_TD_IN_OFF_0->setObjectName(QStringLiteral("LE_TD_IN_OFF_0"));
-        sizePolicy1.setHeightForWidth(LE_TD_IN_OFF_0->sizePolicy().hasHeightForWidth());
-        LE_TD_IN_OFF_0->setSizePolicy(sizePolicy1);
-        LE_TD_IN_OFF_0->setMaximumSize(QSize(30, 20));
-
-        gridLayout_9->addWidget(LE_TD_IN_OFF_0, 1, 2, 1, 1);
-
-        label_96 = new QLabel(gridLayoutWidget_9);
-        label_96->setObjectName(QStringLiteral("label_96"));
-        label_96->setMinimumSize(QSize(40, 0));
-        label_96->setMaximumSize(QSize(16777215, 20));
-        label_96->setAlignment(Qt::AlignCenter);
-
-        gridLayout_9->addWidget(label_96, 0, 2, 1, 1);
-
-        label_82 = new QLabel(gridLayoutWidget_9);
-        label_82->setObjectName(QStringLiteral("label_82"));
-        sizePolicy.setHeightForWidth(label_82->sizePolicy().hasHeightForWidth());
-        label_82->setSizePolicy(sizePolicy);
-        label_82->setMinimumSize(QSize(20, 0));
-        label_82->setMaximumSize(QSize(16777215, 20));
-        label_82->setAlignment(Qt::AlignCenter);
-
-        gridLayout_9->addWidget(label_82, 2, 0, 1, 1);
-
-        LE_TD_IN_ON_0 = new QLineEdit(gridLayoutWidget_9);
-        LE_TD_IN_ON_0->setObjectName(QStringLiteral("LE_TD_IN_ON_0"));
-        sizePolicy1.setHeightForWidth(LE_TD_IN_ON_0->sizePolicy().hasHeightForWidth());
-        LE_TD_IN_ON_0->setSizePolicy(sizePolicy1);
-        LE_TD_IN_ON_0->setMaximumSize(QSize(30, 20));
-
-        gridLayout_9->addWidget(LE_TD_IN_ON_0, 1, 1, 1, 1);
-
-        label_93 = new QLabel(gridLayoutWidget_9);
-        label_93->setObjectName(QStringLiteral("label_93"));
-        sizePolicy.setHeightForWidth(label_93->sizePolicy().hasHeightForWidth());
-        label_93->setSizePolicy(sizePolicy);
-        label_93->setMinimumSize(QSize(20, 0));
-        label_93->setMaximumSize(QSize(16777215, 20));
-        label_93->setAlignment(Qt::AlignCenter);
-
-        gridLayout_9->addWidget(label_93, 1, 0, 1, 1);
-
-        LE_TD_IN_OFF_1 = new QLineEdit(gridLayoutWidget_9);
-        LE_TD_IN_OFF_1->setObjectName(QStringLiteral("LE_TD_IN_OFF_1"));
-        sizePolicy1.setHeightForWidth(LE_TD_IN_OFF_1->sizePolicy().hasHeightForWidth());
-        LE_TD_IN_OFF_1->setSizePolicy(sizePolicy1);
-        LE_TD_IN_OFF_1->setMaximumSize(QSize(30, 20));
-
-        gridLayout_9->addWidget(LE_TD_IN_OFF_1, 2, 2, 1, 1);
-
-        label_95 = new QLabel(gridLayoutWidget_9);
-        label_95->setObjectName(QStringLiteral("label_95"));
-        label_95->setMinimumSize(QSize(40, 0));
-        label_95->setMaximumSize(QSize(16777215, 20));
-        label_95->setAlignment(Qt::AlignCenter);
-
-        gridLayout_9->addWidget(label_95, 0, 1, 1, 1);
-
-        LE_TD_IN_ON_1 = new QLineEdit(gridLayoutWidget_9);
-        LE_TD_IN_ON_1->setObjectName(QStringLiteral("LE_TD_IN_ON_1"));
-        sizePolicy1.setHeightForWidth(LE_TD_IN_ON_1->sizePolicy().hasHeightForWidth());
-        LE_TD_IN_ON_1->setSizePolicy(sizePolicy1);
-        LE_TD_IN_ON_1->setMaximumSize(QSize(30, 20));
-
-        gridLayout_9->addWidget(LE_TD_IN_ON_1, 2, 1, 1, 1);
-
-        label_99 = new QLabel(StatusDialog);
-        label_99->setObjectName(QStringLiteral("label_99"));
-        label_99->setGeometry(QRect(170, 220, 131, 16));
-        label_99->setFont(font1);
-        label_99->setAlignment(Qt::AlignCenter);
         gridLayoutWidget_10 = new QWidget(StatusDialog);
         gridLayoutWidget_10->setObjectName(QStringLiteral("gridLayoutWidget_10"));
-        gridLayoutWidget_10->setGeometry(QRect(290, 240, 111, 41));
+        gridLayoutWidget_10->setGeometry(QRect(310, 250, 102, 56));
         gridLayout_10 = new QGridLayout(gridLayoutWidget_10);
         gridLayout_10->setSpacing(0);
         gridLayout_10->setObjectName(QStringLiteral("gridLayout_10"));
@@ -933,17 +791,17 @@ public:
 
         label_100 = new QLabel(StatusDialog);
         label_100->setObjectName(QStringLiteral("label_100"));
-        label_100->setGeometry(QRect(290, 220, 131, 16));
+        label_100->setGeometry(QRect(310, 210, 101, 31));
         label_100->setFont(font1);
         label_100->setAlignment(Qt::AlignCenter);
         label_101 = new QLabel(StatusDialog);
         label_101->setObjectName(QStringLiteral("label_101"));
-        label_101->setGeometry(QRect(20, 220, 131, 16));
+        label_101->setGeometry(QRect(310, 320, 101, 31));
         label_101->setFont(font1);
         label_101->setAlignment(Qt::AlignCenter);
         gridLayoutWidget_11 = new QWidget(StatusDialog);
         gridLayoutWidget_11->setObjectName(QStringLiteral("gridLayoutWidget_11"));
-        gridLayoutWidget_11->setGeometry(QRect(20, 240, 131, 41));
+        gridLayoutWidget_11->setGeometry(QRect(310, 360, 101, 41));
         gridLayout_11 = new QGridLayout(gridLayoutWidget_11);
         gridLayout_11->setSpacing(0);
         gridLayout_11->setObjectName(QStringLiteral("gridLayout_11"));
@@ -995,128 +853,79 @@ public:
 
         label_84 = new QLabel(StatusDialog);
         label_84->setObjectName(QStringLiteral("label_84"));
-        label_84->setGeometry(QRect(120, 10, 91, 16));
+        label_84->setGeometry(QRect(200, 20, 81, 16));
         label_84->setFont(font1);
         label_84->setAlignment(Qt::AlignCenter);
         label_102 = new QLabel(StatusDialog);
         label_102->setObjectName(QStringLiteral("label_102"));
-        label_102->setGeometry(QRect(90, 293, 131, 16));
+        label_102->setGeometry(QRect(40, 429, 131, 16));
         label_102->setFont(font1);
         label_102->setAlignment(Qt::AlignCenter);
         label_103 = new QLabel(StatusDialog);
         label_103->setObjectName(QStringLiteral("label_103"));
-        label_103->setGeometry(QRect(350, 293, 131, 16));
+        label_103->setGeometry(QRect(250, 429, 131, 16));
         label_103->setFont(font1);
         label_103->setAlignment(Qt::AlignCenter);
         layoutWidget = new QWidget(StatusDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(120, 30, 91, 161));
-        verticalLayout = new QVBoxLayout(layoutWidget);
-        verticalLayout->setSpacing(0);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        LE_ROBOT_STATUS_TEACHING = new QLineEdit(layoutWidget);
-        LE_ROBOT_STATUS_TEACHING->setObjectName(QStringLiteral("LE_ROBOT_STATUS_TEACHING"));
-        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_TEACHING->sizePolicy().hasHeightForWidth());
-        LE_ROBOT_STATUS_TEACHING->setSizePolicy(sizePolicy1);
-        LE_ROBOT_STATUS_TEACHING->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(LE_ROBOT_STATUS_TEACHING);
-
-        LE_ROBOT_STATUS_EXT_COLLISION = new QLineEdit(layoutWidget);
-        LE_ROBOT_STATUS_EXT_COLLISION->setObjectName(QStringLiteral("LE_ROBOT_STATUS_EXT_COLLISION"));
-        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_EXT_COLLISION->sizePolicy().hasHeightForWidth());
-        LE_ROBOT_STATUS_EXT_COLLISION->setSizePolicy(sizePolicy1);
-        LE_ROBOT_STATUS_EXT_COLLISION->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(LE_ROBOT_STATUS_EXT_COLLISION);
-
-        LE_ROBOT_STATUS_SELF_COLLISION = new QLineEdit(layoutWidget);
-        LE_ROBOT_STATUS_SELF_COLLISION->setObjectName(QStringLiteral("LE_ROBOT_STATUS_SELF_COLLISION"));
-        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_SELF_COLLISION->sizePolicy().hasHeightForWidth());
-        LE_ROBOT_STATUS_SELF_COLLISION->setSizePolicy(sizePolicy1);
-        LE_ROBOT_STATUS_SELF_COLLISION->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(LE_ROBOT_STATUS_SELF_COLLISION);
-
-        LE_ROBOT_STATUS_PAUSED = new QLineEdit(layoutWidget);
-        LE_ROBOT_STATUS_PAUSED->setObjectName(QStringLiteral("LE_ROBOT_STATUS_PAUSED"));
-        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_PAUSED->sizePolicy().hasHeightForWidth());
-        LE_ROBOT_STATUS_PAUSED->setSizePolicy(sizePolicy1);
-        LE_ROBOT_STATUS_PAUSED->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(LE_ROBOT_STATUS_PAUSED);
-
-        LE_ROBOT_STATUS_EMS = new QLineEdit(layoutWidget);
-        LE_ROBOT_STATUS_EMS->setObjectName(QStringLiteral("LE_ROBOT_STATUS_EMS"));
-        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_EMS->sizePolicy().hasHeightForWidth());
-        LE_ROBOT_STATUS_EMS->setSizePolicy(sizePolicy1);
-        LE_ROBOT_STATUS_EMS->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(LE_ROBOT_STATUS_EMS);
-
-        LE_ROBOT_STATUS_SOS = new QLineEdit(layoutWidget);
-        LE_ROBOT_STATUS_SOS->setObjectName(QStringLiteral("LE_ROBOT_STATUS_SOS"));
-        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_SOS->sizePolicy().hasHeightForWidth());
-        LE_ROBOT_STATUS_SOS->setSizePolicy(sizePolicy1);
-        LE_ROBOT_STATUS_SOS->setAlignment(Qt::AlignCenter);
-
-        verticalLayout->addWidget(LE_ROBOT_STATUS_SOS);
-
-        layoutWidget1 = new QWidget(StatusDialog);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(20, 121, 81, 71));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget1);
-        verticalLayout_2->setSpacing(0);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        LE_ROBOT_STATE_IDLE = new QLineEdit(layoutWidget1);
-        LE_ROBOT_STATE_IDLE->setObjectName(QStringLiteral("LE_ROBOT_STATE_IDLE"));
-        sizePolicy1.setHeightForWidth(LE_ROBOT_STATE_IDLE->sizePolicy().hasHeightForWidth());
-        LE_ROBOT_STATE_IDLE->setSizePolicy(sizePolicy1);
-        LE_ROBOT_STATE_IDLE->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_2->addWidget(LE_ROBOT_STATE_IDLE);
-
-        LE_ROBOT_STATE_MOVING = new QLineEdit(layoutWidget1);
+        layoutWidget->setGeometry(QRect(210, 40, 191, 41));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget);
+        horizontalLayout_2->setSpacing(0);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        LE_ROBOT_STATE_MOVING = new QLineEdit(layoutWidget);
         LE_ROBOT_STATE_MOVING->setObjectName(QStringLiteral("LE_ROBOT_STATE_MOVING"));
         sizePolicy1.setHeightForWidth(LE_ROBOT_STATE_MOVING->sizePolicy().hasHeightForWidth());
         LE_ROBOT_STATE_MOVING->setSizePolicy(sizePolicy1);
+        QFont font2;
+        font2.setPointSize(8);
+        LE_ROBOT_STATE_MOVING->setFont(font2);
         LE_ROBOT_STATE_MOVING->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_2->addWidget(LE_ROBOT_STATE_MOVING);
+        horizontalLayout_2->addWidget(LE_ROBOT_STATE_MOVING);
 
-        layoutWidget2 = new QWidget(StatusDialog);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(20, 30, 81, 71));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget2);
-        verticalLayout_3->setSpacing(0);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        LE_PG_MODE_REAL = new QLineEdit(layoutWidget2);
-        LE_PG_MODE_REAL->setObjectName(QStringLiteral("LE_PG_MODE_REAL"));
-        sizePolicy1.setHeightForWidth(LE_PG_MODE_REAL->sizePolicy().hasHeightForWidth());
-        LE_PG_MODE_REAL->setSizePolicy(sizePolicy1);
-        LE_PG_MODE_REAL->setAlignment(Qt::AlignCenter);
+        LE_ROBOT_STATE_IDLE = new QLineEdit(layoutWidget);
+        LE_ROBOT_STATE_IDLE->setObjectName(QStringLiteral("LE_ROBOT_STATE_IDLE"));
+        sizePolicy1.setHeightForWidth(LE_ROBOT_STATE_IDLE->sizePolicy().hasHeightForWidth());
+        LE_ROBOT_STATE_IDLE->setSizePolicy(sizePolicy1);
+        LE_ROBOT_STATE_IDLE->setFont(font2);
+        LE_ROBOT_STATE_IDLE->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_3->addWidget(LE_PG_MODE_REAL);
+        horizontalLayout_2->addWidget(LE_ROBOT_STATE_IDLE);
 
-        LE_PG_MODE_SIMULATION = new QLineEdit(layoutWidget2);
+        layoutWidget1 = new QWidget(StatusDialog);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(20, 40, 181, 41));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget1);
+        horizontalLayout_3->setSpacing(0);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        LE_PG_MODE_SIMULATION = new QLineEdit(layoutWidget1);
         LE_PG_MODE_SIMULATION->setObjectName(QStringLiteral("LE_PG_MODE_SIMULATION"));
         sizePolicy1.setHeightForWidth(LE_PG_MODE_SIMULATION->sizePolicy().hasHeightForWidth());
         LE_PG_MODE_SIMULATION->setSizePolicy(sizePolicy1);
+        LE_PG_MODE_SIMULATION->setFont(font2);
         LE_PG_MODE_SIMULATION->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_3->addWidget(LE_PG_MODE_SIMULATION);
+        horizontalLayout_3->addWidget(LE_PG_MODE_SIMULATION);
 
-        layoutWidget3 = new QWidget(StatusDialog);
-        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(20, 320, 231, 141));
-        gridLayout_4 = new QGridLayout(layoutWidget3);
+        LE_PG_MODE_REAL = new QLineEdit(layoutWidget1);
+        LE_PG_MODE_REAL->setObjectName(QStringLiteral("LE_PG_MODE_REAL"));
+        sizePolicy1.setHeightForWidth(LE_PG_MODE_REAL->sizePolicy().hasHeightForWidth());
+        LE_PG_MODE_REAL->setSizePolicy(sizePolicy1);
+        LE_PG_MODE_REAL->setFont(font2);
+        LE_PG_MODE_REAL->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_3->addWidget(LE_PG_MODE_REAL);
+
+        layoutWidget2 = new QWidget(StatusDialog);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(10, 459, 201, 131));
+        gridLayout_4 = new QGridLayout(layoutWidget2);
         gridLayout_4->setSpacing(0);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        label_40 = new QLabel(layoutWidget3);
+        label_40 = new QLabel(layoutWidget2);
         label_40->setObjectName(QStringLiteral("label_40"));
         label_40->setMinimumSize(QSize(40, 0));
         label_40->setMaximumSize(QSize(16777215, 20));
@@ -1124,7 +933,7 @@ public:
 
         gridLayout_4->addWidget(label_40, 0, 1, 1, 1);
 
-        label_41 = new QLabel(layoutWidget3);
+        label_41 = new QLabel(layoutWidget2);
         label_41->setObjectName(QStringLiteral("label_41"));
         label_41->setMinimumSize(QSize(40, 0));
         label_41->setMaximumSize(QSize(16777215, 20));
@@ -1132,7 +941,7 @@ public:
 
         gridLayout_4->addWidget(label_41, 0, 2, 1, 1);
 
-        label_42 = new QLabel(layoutWidget3);
+        label_42 = new QLabel(layoutWidget2);
         label_42->setObjectName(QStringLiteral("label_42"));
         label_42->setMinimumSize(QSize(40, 0));
         label_42->setMaximumSize(QSize(16777215, 20));
@@ -1140,7 +949,7 @@ public:
 
         gridLayout_4->addWidget(label_42, 0, 5, 1, 1);
 
-        label_43 = new QLabel(layoutWidget3);
+        label_43 = new QLabel(layoutWidget2);
         label_43->setObjectName(QStringLiteral("label_43"));
         label_43->setMinimumSize(QSize(40, 0));
         label_43->setMaximumSize(QSize(16777215, 20));
@@ -1148,7 +957,7 @@ public:
 
         gridLayout_4->addWidget(label_43, 0, 6, 1, 1);
 
-        label_23 = new QLabel(layoutWidget3);
+        label_23 = new QLabel(layoutWidget2);
         label_23->setObjectName(QStringLiteral("label_23"));
         label_23->setMinimumSize(QSize(40, 0));
         label_23->setMaximumSize(QSize(16777215, 20));
@@ -1156,19 +965,19 @@ public:
 
         gridLayout_4->addWidget(label_23, 1, 0, 1, 1);
 
-        LE_D_IN_ON_0 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_0 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_0->setObjectName(QStringLiteral("LE_D_IN_ON_0"));
         LE_D_IN_ON_0->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_0, 1, 1, 1, 1);
 
-        LE_D_IN_OFF_0 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_0 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_0->setObjectName(QStringLiteral("LE_D_IN_OFF_0"));
         LE_D_IN_OFF_0->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_0, 1, 2, 1, 1);
 
-        label_32 = new QLabel(layoutWidget3);
+        label_32 = new QLabel(layoutWidget2);
         label_32->setObjectName(QStringLiteral("label_32"));
         label_32->setMinimumSize(QSize(40, 0));
         label_32->setMaximumSize(QSize(16777215, 20));
@@ -1176,19 +985,19 @@ public:
 
         gridLayout_4->addWidget(label_32, 1, 4, 1, 1);
 
-        LE_D_IN_ON_8 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_8 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_8->setObjectName(QStringLiteral("LE_D_IN_ON_8"));
         LE_D_IN_ON_8->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_8, 1, 5, 1, 1);
 
-        LE_D_IN_OFF_8 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_8 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_8->setObjectName(QStringLiteral("LE_D_IN_OFF_8"));
         LE_D_IN_OFF_8->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_8, 1, 6, 1, 1);
 
-        label_24 = new QLabel(layoutWidget3);
+        label_24 = new QLabel(layoutWidget2);
         label_24->setObjectName(QStringLiteral("label_24"));
         label_24->setMinimumSize(QSize(40, 0));
         label_24->setMaximumSize(QSize(16777215, 20));
@@ -1196,13 +1005,13 @@ public:
 
         gridLayout_4->addWidget(label_24, 2, 0, 1, 1);
 
-        LE_D_IN_ON_1 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_1 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_1->setObjectName(QStringLiteral("LE_D_IN_ON_1"));
         LE_D_IN_ON_1->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_1, 2, 1, 1, 1);
 
-        LE_D_IN_OFF_1 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_1 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_1->setObjectName(QStringLiteral("LE_D_IN_OFF_1"));
         LE_D_IN_OFF_1->setMaximumSize(QSize(30, 20));
 
@@ -1212,7 +1021,7 @@ public:
 
         gridLayout_4->addItem(horizontalSpacer, 2, 3, 1, 1);
 
-        label_33 = new QLabel(layoutWidget3);
+        label_33 = new QLabel(layoutWidget2);
         label_33->setObjectName(QStringLiteral("label_33"));
         label_33->setMinimumSize(QSize(40, 0));
         label_33->setMaximumSize(QSize(16777215, 20));
@@ -1220,19 +1029,19 @@ public:
 
         gridLayout_4->addWidget(label_33, 2, 4, 1, 1);
 
-        LE_D_IN_ON_9 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_9 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_9->setObjectName(QStringLiteral("LE_D_IN_ON_9"));
         LE_D_IN_ON_9->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_9, 2, 5, 1, 1);
 
-        LE_D_IN_OFF_9 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_9 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_9->setObjectName(QStringLiteral("LE_D_IN_OFF_9"));
         LE_D_IN_OFF_9->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_9, 2, 6, 1, 1);
 
-        label_26 = new QLabel(layoutWidget3);
+        label_26 = new QLabel(layoutWidget2);
         label_26->setObjectName(QStringLiteral("label_26"));
         label_26->setMinimumSize(QSize(40, 0));
         label_26->setMaximumSize(QSize(16777215, 20));
@@ -1240,19 +1049,19 @@ public:
 
         gridLayout_4->addWidget(label_26, 3, 0, 1, 1);
 
-        LE_D_IN_ON_2 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_2 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_2->setObjectName(QStringLiteral("LE_D_IN_ON_2"));
         LE_D_IN_ON_2->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_2, 3, 1, 1, 1);
 
-        LE_D_IN_OFF_2 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_2 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_2->setObjectName(QStringLiteral("LE_D_IN_OFF_2"));
         LE_D_IN_OFF_2->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_2, 3, 2, 1, 1);
 
-        label_34 = new QLabel(layoutWidget3);
+        label_34 = new QLabel(layoutWidget2);
         label_34->setObjectName(QStringLiteral("label_34"));
         label_34->setMinimumSize(QSize(40, 0));
         label_34->setMaximumSize(QSize(16777215, 20));
@@ -1260,19 +1069,19 @@ public:
 
         gridLayout_4->addWidget(label_34, 3, 4, 1, 1);
 
-        LE_D_IN_ON_10 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_10 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_10->setObjectName(QStringLiteral("LE_D_IN_ON_10"));
         LE_D_IN_ON_10->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_10, 3, 5, 1, 1);
 
-        LE_D_IN_OFF_10 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_10 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_10->setObjectName(QStringLiteral("LE_D_IN_OFF_10"));
         LE_D_IN_OFF_10->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_10, 3, 6, 1, 1);
 
-        label_25 = new QLabel(layoutWidget3);
+        label_25 = new QLabel(layoutWidget2);
         label_25->setObjectName(QStringLiteral("label_25"));
         label_25->setMinimumSize(QSize(40, 0));
         label_25->setMaximumSize(QSize(16777215, 20));
@@ -1280,19 +1089,19 @@ public:
 
         gridLayout_4->addWidget(label_25, 4, 0, 1, 1);
 
-        LE_D_IN_ON_3 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_3 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_3->setObjectName(QStringLiteral("LE_D_IN_ON_3"));
         LE_D_IN_ON_3->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_3, 4, 1, 1, 1);
 
-        LE_D_IN_OFF_3 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_3 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_3->setObjectName(QStringLiteral("LE_D_IN_OFF_3"));
         LE_D_IN_OFF_3->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_3, 4, 2, 1, 1);
 
-        label_35 = new QLabel(layoutWidget3);
+        label_35 = new QLabel(layoutWidget2);
         label_35->setObjectName(QStringLiteral("label_35"));
         label_35->setMinimumSize(QSize(40, 0));
         label_35->setMaximumSize(QSize(16777215, 20));
@@ -1300,19 +1109,19 @@ public:
 
         gridLayout_4->addWidget(label_35, 4, 4, 1, 1);
 
-        LE_D_IN_ON_11 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_11 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_11->setObjectName(QStringLiteral("LE_D_IN_ON_11"));
         LE_D_IN_ON_11->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_11, 4, 5, 1, 1);
 
-        LE_D_IN_OFF_11 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_11 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_11->setObjectName(QStringLiteral("LE_D_IN_OFF_11"));
         LE_D_IN_OFF_11->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_11, 4, 6, 1, 1);
 
-        label_21 = new QLabel(layoutWidget3);
+        label_21 = new QLabel(layoutWidget2);
         label_21->setObjectName(QStringLiteral("label_21"));
         label_21->setMinimumSize(QSize(40, 0));
         label_21->setMaximumSize(QSize(16777215, 20));
@@ -1320,19 +1129,19 @@ public:
 
         gridLayout_4->addWidget(label_21, 5, 0, 1, 1);
 
-        LE_D_IN_ON_4 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_4 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_4->setObjectName(QStringLiteral("LE_D_IN_ON_4"));
         LE_D_IN_ON_4->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_4, 5, 1, 1, 1);
 
-        LE_D_IN_OFF_4 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_4 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_4->setObjectName(QStringLiteral("LE_D_IN_OFF_4"));
         LE_D_IN_OFF_4->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_4, 5, 2, 1, 1);
 
-        label_36 = new QLabel(layoutWidget3);
+        label_36 = new QLabel(layoutWidget2);
         label_36->setObjectName(QStringLiteral("label_36"));
         label_36->setMinimumSize(QSize(40, 0));
         label_36->setMaximumSize(QSize(16777215, 20));
@@ -1340,19 +1149,19 @@ public:
 
         gridLayout_4->addWidget(label_36, 5, 4, 1, 1);
 
-        LE_D_IN_ON_12 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_12 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_12->setObjectName(QStringLiteral("LE_D_IN_ON_12"));
         LE_D_IN_ON_12->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_12, 5, 5, 1, 1);
 
-        LE_D_IN_OFF_12 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_12 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_12->setObjectName(QStringLiteral("LE_D_IN_OFF_12"));
         LE_D_IN_OFF_12->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_12, 5, 6, 1, 1);
 
-        label_22 = new QLabel(layoutWidget3);
+        label_22 = new QLabel(layoutWidget2);
         label_22->setObjectName(QStringLiteral("label_22"));
         label_22->setMinimumSize(QSize(40, 0));
         label_22->setMaximumSize(QSize(16777215, 20));
@@ -1360,19 +1169,19 @@ public:
 
         gridLayout_4->addWidget(label_22, 6, 0, 1, 1);
 
-        LE_D_IN_ON_5 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_5 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_5->setObjectName(QStringLiteral("LE_D_IN_ON_5"));
         LE_D_IN_ON_5->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_5, 6, 1, 1, 1);
 
-        LE_D_IN_OFF_5 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_5 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_5->setObjectName(QStringLiteral("LE_D_IN_OFF_5"));
         LE_D_IN_OFF_5->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_5, 6, 2, 1, 1);
 
-        label_37 = new QLabel(layoutWidget3);
+        label_37 = new QLabel(layoutWidget2);
         label_37->setObjectName(QStringLiteral("label_37"));
         label_37->setMinimumSize(QSize(40, 0));
         label_37->setMaximumSize(QSize(16777215, 20));
@@ -1380,19 +1189,19 @@ public:
 
         gridLayout_4->addWidget(label_37, 6, 4, 1, 1);
 
-        LE_D_IN_ON_13 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_13 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_13->setObjectName(QStringLiteral("LE_D_IN_ON_13"));
         LE_D_IN_ON_13->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_13, 6, 5, 1, 1);
 
-        LE_D_IN_OFF_13 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_13 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_13->setObjectName(QStringLiteral("LE_D_IN_OFF_13"));
         LE_D_IN_OFF_13->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_13, 6, 6, 1, 1);
 
-        label_28 = new QLabel(layoutWidget3);
+        label_28 = new QLabel(layoutWidget2);
         label_28->setObjectName(QStringLiteral("label_28"));
         label_28->setMinimumSize(QSize(40, 0));
         label_28->setMaximumSize(QSize(16777215, 20));
@@ -1400,19 +1209,19 @@ public:
 
         gridLayout_4->addWidget(label_28, 7, 0, 1, 1);
 
-        LE_D_IN_ON_6 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_6 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_6->setObjectName(QStringLiteral("LE_D_IN_ON_6"));
         LE_D_IN_ON_6->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_6, 7, 1, 1, 1);
 
-        LE_D_IN_OFF_6 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_6 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_6->setObjectName(QStringLiteral("LE_D_IN_OFF_6"));
         LE_D_IN_OFF_6->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_6, 7, 2, 1, 1);
 
-        label_38 = new QLabel(layoutWidget3);
+        label_38 = new QLabel(layoutWidget2);
         label_38->setObjectName(QStringLiteral("label_38"));
         label_38->setMinimumSize(QSize(40, 0));
         label_38->setMaximumSize(QSize(16777215, 20));
@@ -1420,19 +1229,19 @@ public:
 
         gridLayout_4->addWidget(label_38, 7, 4, 1, 1);
 
-        LE_D_IN_ON_14 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_14 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_14->setObjectName(QStringLiteral("LE_D_IN_ON_14"));
         LE_D_IN_ON_14->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_14, 7, 5, 1, 1);
 
-        LE_D_IN_OFF_14 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_14 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_14->setObjectName(QStringLiteral("LE_D_IN_OFF_14"));
         LE_D_IN_OFF_14->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_14, 7, 6, 1, 1);
 
-        label_31 = new QLabel(layoutWidget3);
+        label_31 = new QLabel(layoutWidget2);
         label_31->setObjectName(QStringLiteral("label_31"));
         label_31->setMinimumSize(QSize(40, 0));
         label_31->setMaximumSize(QSize(16777215, 20));
@@ -1440,19 +1249,19 @@ public:
 
         gridLayout_4->addWidget(label_31, 8, 0, 1, 1);
 
-        LE_D_IN_ON_7 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_7 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_7->setObjectName(QStringLiteral("LE_D_IN_ON_7"));
         LE_D_IN_ON_7->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_7, 8, 1, 1, 1);
 
-        LE_D_IN_OFF_7 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_7 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_7->setObjectName(QStringLiteral("LE_D_IN_OFF_7"));
         LE_D_IN_OFF_7->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_7, 8, 2, 1, 1);
 
-        label_39 = new QLabel(layoutWidget3);
+        label_39 = new QLabel(layoutWidget2);
         label_39->setObjectName(QStringLiteral("label_39"));
         label_39->setMinimumSize(QSize(40, 0));
         label_39->setMaximumSize(QSize(16777215, 20));
@@ -1460,26 +1269,26 @@ public:
 
         gridLayout_4->addWidget(label_39, 8, 4, 1, 1);
 
-        LE_D_IN_ON_15 = new QLineEdit(layoutWidget3);
+        LE_D_IN_ON_15 = new QLineEdit(layoutWidget2);
         LE_D_IN_ON_15->setObjectName(QStringLiteral("LE_D_IN_ON_15"));
         LE_D_IN_ON_15->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_ON_15, 8, 5, 1, 1);
 
-        LE_D_IN_OFF_15 = new QLineEdit(layoutWidget3);
+        LE_D_IN_OFF_15 = new QLineEdit(layoutWidget2);
         LE_D_IN_OFF_15->setObjectName(QStringLiteral("LE_D_IN_OFF_15"));
         LE_D_IN_OFF_15->setMaximumSize(QSize(30, 20));
 
         gridLayout_4->addWidget(LE_D_IN_OFF_15, 8, 6, 1, 1);
 
-        layoutWidget4 = new QWidget(StatusDialog);
-        layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(260, 320, 231, 141));
-        gridLayout_5 = new QGridLayout(layoutWidget4);
+        layoutWidget3 = new QWidget(StatusDialog);
+        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(220, 459, 191, 131));
+        gridLayout_5 = new QGridLayout(layoutWidget3);
         gridLayout_5->setSpacing(0);
         gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
-        label_62 = new QLabel(layoutWidget4);
+        label_62 = new QLabel(layoutWidget3);
         label_62->setObjectName(QStringLiteral("label_62"));
         label_62->setMinimumSize(QSize(40, 0));
         label_62->setMaximumSize(QSize(16777215, 20));
@@ -1487,7 +1296,7 @@ public:
 
         gridLayout_5->addWidget(label_62, 0, 1, 1, 1);
 
-        label_63 = new QLabel(layoutWidget4);
+        label_63 = new QLabel(layoutWidget3);
         label_63->setObjectName(QStringLiteral("label_63"));
         label_63->setMinimumSize(QSize(40, 0));
         label_63->setMaximumSize(QSize(16777215, 20));
@@ -1495,7 +1304,7 @@ public:
 
         gridLayout_5->addWidget(label_63, 0, 2, 1, 1);
 
-        label_64 = new QLabel(layoutWidget4);
+        label_64 = new QLabel(layoutWidget3);
         label_64->setObjectName(QStringLiteral("label_64"));
         label_64->setMinimumSize(QSize(40, 0));
         label_64->setMaximumSize(QSize(16777215, 20));
@@ -1503,7 +1312,7 @@ public:
 
         gridLayout_5->addWidget(label_64, 0, 5, 1, 1);
 
-        label_65 = new QLabel(layoutWidget4);
+        label_65 = new QLabel(layoutWidget3);
         label_65->setObjectName(QStringLiteral("label_65"));
         label_65->setMinimumSize(QSize(40, 0));
         label_65->setMaximumSize(QSize(16777215, 20));
@@ -1511,7 +1320,7 @@ public:
 
         gridLayout_5->addWidget(label_65, 0, 6, 1, 1);
 
-        label_60 = new QLabel(layoutWidget4);
+        label_60 = new QLabel(layoutWidget3);
         label_60->setObjectName(QStringLiteral("label_60"));
         label_60->setMinimumSize(QSize(40, 0));
         label_60->setMaximumSize(QSize(16777215, 20));
@@ -1519,19 +1328,19 @@ public:
 
         gridLayout_5->addWidget(label_60, 1, 0, 1, 1);
 
-        LE_D_OUT_ON_0 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_0 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_0->setObjectName(QStringLiteral("LE_D_OUT_ON_0"));
         LE_D_OUT_ON_0->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_0, 1, 1, 1, 1);
 
-        LE_D_OUT_OFF_0 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_0 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_0->setObjectName(QStringLiteral("LE_D_OUT_OFF_0"));
         LE_D_OUT_OFF_0->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_0, 1, 2, 1, 1);
 
-        label_56 = new QLabel(layoutWidget4);
+        label_56 = new QLabel(layoutWidget3);
         label_56->setObjectName(QStringLiteral("label_56"));
         label_56->setMinimumSize(QSize(40, 0));
         label_56->setMaximumSize(QSize(16777215, 20));
@@ -1539,19 +1348,19 @@ public:
 
         gridLayout_5->addWidget(label_56, 1, 4, 1, 1);
 
-        LE_D_OUT_ON_8 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_8 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_8->setObjectName(QStringLiteral("LE_D_OUT_ON_8"));
         LE_D_OUT_ON_8->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_8, 1, 5, 1, 1);
 
-        LE_D_OUT_OFF_8 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_8 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_8->setObjectName(QStringLiteral("LE_D_OUT_OFF_8"));
         LE_D_OUT_OFF_8->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_8, 1, 6, 1, 1);
 
-        label_49 = new QLabel(layoutWidget4);
+        label_49 = new QLabel(layoutWidget3);
         label_49->setObjectName(QStringLiteral("label_49"));
         label_49->setMinimumSize(QSize(40, 0));
         label_49->setMaximumSize(QSize(16777215, 20));
@@ -1559,13 +1368,13 @@ public:
 
         gridLayout_5->addWidget(label_49, 2, 0, 1, 1);
 
-        LE_D_OUT_ON_1 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_1 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_1->setObjectName(QStringLiteral("LE_D_OUT_ON_1"));
         LE_D_OUT_ON_1->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_1, 2, 1, 1, 1);
 
-        LE_D_OUT_OFF_1 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_1 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_1->setObjectName(QStringLiteral("LE_D_OUT_OFF_1"));
         LE_D_OUT_OFF_1->setMaximumSize(QSize(30, 20));
 
@@ -1575,7 +1384,7 @@ public:
 
         gridLayout_5->addItem(horizontalSpacer_2, 2, 3, 1, 1);
 
-        label_54 = new QLabel(layoutWidget4);
+        label_54 = new QLabel(layoutWidget3);
         label_54->setObjectName(QStringLiteral("label_54"));
         label_54->setMinimumSize(QSize(40, 0));
         label_54->setMaximumSize(QSize(16777215, 20));
@@ -1583,19 +1392,19 @@ public:
 
         gridLayout_5->addWidget(label_54, 2, 4, 1, 1);
 
-        LE_D_OUT_ON_9 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_9 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_9->setObjectName(QStringLiteral("LE_D_OUT_ON_9"));
         LE_D_OUT_ON_9->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_9, 2, 5, 1, 1);
 
-        LE_D_OUT_OFF_9 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_9 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_9->setObjectName(QStringLiteral("LE_D_OUT_OFF_9"));
         LE_D_OUT_OFF_9->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_9, 2, 6, 1, 1);
 
-        label_53 = new QLabel(layoutWidget4);
+        label_53 = new QLabel(layoutWidget3);
         label_53->setObjectName(QStringLiteral("label_53"));
         label_53->setMinimumSize(QSize(40, 0));
         label_53->setMaximumSize(QSize(16777215, 20));
@@ -1603,19 +1412,19 @@ public:
 
         gridLayout_5->addWidget(label_53, 3, 0, 1, 1);
 
-        LE_D_OUT_ON_2 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_2 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_2->setObjectName(QStringLiteral("LE_D_OUT_ON_2"));
         LE_D_OUT_ON_2->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_2, 3, 1, 1, 1);
 
-        LE_D_OUT_OFF_2 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_2 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_2->setObjectName(QStringLiteral("LE_D_OUT_OFF_2"));
         LE_D_OUT_OFF_2->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_2, 3, 2, 1, 1);
 
-        label_57 = new QLabel(layoutWidget4);
+        label_57 = new QLabel(layoutWidget3);
         label_57->setObjectName(QStringLiteral("label_57"));
         label_57->setMinimumSize(QSize(40, 0));
         label_57->setMaximumSize(QSize(16777215, 20));
@@ -1623,19 +1432,19 @@ public:
 
         gridLayout_5->addWidget(label_57, 3, 4, 1, 1);
 
-        LE_D_OUT_ON_10 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_10 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_10->setObjectName(QStringLiteral("LE_D_OUT_ON_10"));
         LE_D_OUT_ON_10->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_10, 3, 5, 1, 1);
 
-        LE_D_OUT_OFF_10 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_10 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_10->setObjectName(QStringLiteral("LE_D_OUT_OFF_10"));
         LE_D_OUT_OFF_10->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_10, 3, 6, 1, 1);
 
-        label_46 = new QLabel(layoutWidget4);
+        label_46 = new QLabel(layoutWidget3);
         label_46->setObjectName(QStringLiteral("label_46"));
         label_46->setMinimumSize(QSize(40, 0));
         label_46->setMaximumSize(QSize(16777215, 20));
@@ -1643,19 +1452,19 @@ public:
 
         gridLayout_5->addWidget(label_46, 4, 0, 1, 1);
 
-        LE_D_OUT_ON_3 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_3 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_3->setObjectName(QStringLiteral("LE_D_OUT_ON_3"));
         LE_D_OUT_ON_3->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_3, 4, 1, 1, 1);
 
-        LE_D_OUT_OFF_3 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_3 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_3->setObjectName(QStringLiteral("LE_D_OUT_OFF_3"));
         LE_D_OUT_OFF_3->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_3, 4, 2, 1, 1);
 
-        label_59 = new QLabel(layoutWidget4);
+        label_59 = new QLabel(layoutWidget3);
         label_59->setObjectName(QStringLiteral("label_59"));
         label_59->setMinimumSize(QSize(40, 0));
         label_59->setMaximumSize(QSize(16777215, 20));
@@ -1663,19 +1472,19 @@ public:
 
         gridLayout_5->addWidget(label_59, 4, 4, 1, 1);
 
-        LE_D_OUT_ON_11 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_11 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_11->setObjectName(QStringLiteral("LE_D_OUT_ON_11"));
         LE_D_OUT_ON_11->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_11, 4, 5, 1, 1);
 
-        LE_D_OUT_OFF_11 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_11 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_11->setObjectName(QStringLiteral("LE_D_OUT_OFF_11"));
         LE_D_OUT_OFF_11->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_11, 4, 6, 1, 1);
 
-        label_52 = new QLabel(layoutWidget4);
+        label_52 = new QLabel(layoutWidget3);
         label_52->setObjectName(QStringLiteral("label_52"));
         label_52->setMinimumSize(QSize(40, 0));
         label_52->setMaximumSize(QSize(16777215, 20));
@@ -1683,19 +1492,19 @@ public:
 
         gridLayout_5->addWidget(label_52, 5, 0, 1, 1);
 
-        LE_D_OUT_ON_4 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_4 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_4->setObjectName(QStringLiteral("LE_D_OUT_ON_4"));
         LE_D_OUT_ON_4->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_4, 5, 1, 1, 1);
 
-        LE_D_OUT_OFF_4 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_4 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_4->setObjectName(QStringLiteral("LE_D_OUT_OFF_4"));
         LE_D_OUT_OFF_4->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_4, 5, 2, 1, 1);
 
-        label_47 = new QLabel(layoutWidget4);
+        label_47 = new QLabel(layoutWidget3);
         label_47->setObjectName(QStringLiteral("label_47"));
         label_47->setMinimumSize(QSize(40, 0));
         label_47->setMaximumSize(QSize(16777215, 20));
@@ -1703,19 +1512,19 @@ public:
 
         gridLayout_5->addWidget(label_47, 5, 4, 1, 1);
 
-        LE_D_OUT_ON_12 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_12 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_12->setObjectName(QStringLiteral("LE_D_OUT_ON_12"));
         LE_D_OUT_ON_12->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_12, 5, 5, 1, 1);
 
-        LE_D_OUT_OFF_12 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_12 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_12->setObjectName(QStringLiteral("LE_D_OUT_OFF_12"));
         LE_D_OUT_OFF_12->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_12, 5, 6, 1, 1);
 
-        label_55 = new QLabel(layoutWidget4);
+        label_55 = new QLabel(layoutWidget3);
         label_55->setObjectName(QStringLiteral("label_55"));
         label_55->setMinimumSize(QSize(40, 0));
         label_55->setMaximumSize(QSize(16777215, 20));
@@ -1723,19 +1532,19 @@ public:
 
         gridLayout_5->addWidget(label_55, 6, 0, 1, 1);
 
-        LE_D_OUT_ON_5 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_5 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_5->setObjectName(QStringLiteral("LE_D_OUT_ON_5"));
         LE_D_OUT_ON_5->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_5, 6, 1, 1, 1);
 
-        LE_D_OUT_OFF_5 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_5 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_5->setObjectName(QStringLiteral("LE_D_OUT_OFF_5"));
         LE_D_OUT_OFF_5->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_5, 6, 2, 1, 1);
 
-        label_50 = new QLabel(layoutWidget4);
+        label_50 = new QLabel(layoutWidget3);
         label_50->setObjectName(QStringLiteral("label_50"));
         label_50->setMinimumSize(QSize(40, 0));
         label_50->setMaximumSize(QSize(16777215, 20));
@@ -1743,19 +1552,19 @@ public:
 
         gridLayout_5->addWidget(label_50, 6, 4, 1, 1);
 
-        LE_D_OUT_ON_13 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_13 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_13->setObjectName(QStringLiteral("LE_D_OUT_ON_13"));
         LE_D_OUT_ON_13->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_13, 6, 5, 1, 1);
 
-        LE_D_OUT_OFF_13 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_13 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_13->setObjectName(QStringLiteral("LE_D_OUT_OFF_13"));
         LE_D_OUT_OFF_13->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_13, 6, 6, 1, 1);
 
-        label_48 = new QLabel(layoutWidget4);
+        label_48 = new QLabel(layoutWidget3);
         label_48->setObjectName(QStringLiteral("label_48"));
         label_48->setMinimumSize(QSize(40, 0));
         label_48->setMaximumSize(QSize(16777215, 20));
@@ -1763,19 +1572,19 @@ public:
 
         gridLayout_5->addWidget(label_48, 7, 0, 1, 1);
 
-        LE_D_OUT_ON_6 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_6 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_6->setObjectName(QStringLiteral("LE_D_OUT_ON_6"));
         LE_D_OUT_ON_6->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_6, 7, 1, 1, 1);
 
-        LE_D_OUT_OFF_6 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_6 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_6->setObjectName(QStringLiteral("LE_D_OUT_OFF_6"));
         LE_D_OUT_OFF_6->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_6, 7, 2, 1, 1);
 
-        label_51 = new QLabel(layoutWidget4);
+        label_51 = new QLabel(layoutWidget3);
         label_51->setObjectName(QStringLiteral("label_51"));
         label_51->setMinimumSize(QSize(40, 0));
         label_51->setMaximumSize(QSize(16777215, 20));
@@ -1783,19 +1592,19 @@ public:
 
         gridLayout_5->addWidget(label_51, 7, 4, 1, 1);
 
-        LE_D_OUT_ON_14 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_14 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_14->setObjectName(QStringLiteral("LE_D_OUT_ON_14"));
         LE_D_OUT_ON_14->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_14, 7, 5, 1, 1);
 
-        LE_D_OUT_OFF_14 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_14 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_14->setObjectName(QStringLiteral("LE_D_OUT_OFF_14"));
         LE_D_OUT_OFF_14->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_14, 7, 6, 1, 1);
 
-        label_61 = new QLabel(layoutWidget4);
+        label_61 = new QLabel(layoutWidget3);
         label_61->setObjectName(QStringLiteral("label_61"));
         label_61->setMinimumSize(QSize(40, 0));
         label_61->setMaximumSize(QSize(16777215, 20));
@@ -1803,19 +1612,19 @@ public:
 
         gridLayout_5->addWidget(label_61, 8, 0, 1, 1);
 
-        LE_D_OUT_ON_7 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_7 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_7->setObjectName(QStringLiteral("LE_D_OUT_ON_7"));
         LE_D_OUT_ON_7->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_7, 8, 1, 1, 1);
 
-        LE_D_OUT_OFF_7 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_7 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_7->setObjectName(QStringLiteral("LE_D_OUT_OFF_7"));
         LE_D_OUT_OFF_7->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_7, 8, 2, 1, 1);
 
-        label_58 = new QLabel(layoutWidget4);
+        label_58 = new QLabel(layoutWidget3);
         label_58->setObjectName(QStringLiteral("label_58"));
         label_58->setMinimumSize(QSize(40, 0));
         label_58->setMaximumSize(QSize(16777215, 20));
@@ -1823,17 +1632,78 @@ public:
 
         gridLayout_5->addWidget(label_58, 8, 4, 1, 1);
 
-        LE_D_OUT_ON_15 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_ON_15 = new QLineEdit(layoutWidget3);
         LE_D_OUT_ON_15->setObjectName(QStringLiteral("LE_D_OUT_ON_15"));
         LE_D_OUT_ON_15->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_ON_15, 8, 5, 1, 1);
 
-        LE_D_OUT_OFF_15 = new QLineEdit(layoutWidget4);
+        LE_D_OUT_OFF_15 = new QLineEdit(layoutWidget3);
         LE_D_OUT_OFF_15->setObjectName(QStringLiteral("LE_D_OUT_OFF_15"));
         LE_D_OUT_OFF_15->setMaximumSize(QSize(30, 20));
 
         gridLayout_5->addWidget(LE_D_OUT_OFF_15, 8, 6, 1, 1);
+
+        widget = new QWidget(StatusDialog);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(20, 111, 389, 71));
+        gridLayout_7 = new QGridLayout(widget);
+        gridLayout_7->setSpacing(0);
+        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
+        gridLayout_7->setContentsMargins(0, 0, 0, 0);
+        LE_ROBOT_STATUS_SOS = new QLineEdit(widget);
+        LE_ROBOT_STATUS_SOS->setObjectName(QStringLiteral("LE_ROBOT_STATUS_SOS"));
+        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_SOS->sizePolicy().hasHeightForWidth());
+        LE_ROBOT_STATUS_SOS->setSizePolicy(sizePolicy1);
+        LE_ROBOT_STATUS_SOS->setFont(font2);
+        LE_ROBOT_STATUS_SOS->setAlignment(Qt::AlignCenter);
+
+        gridLayout_7->addWidget(LE_ROBOT_STATUS_SOS, 0, 0, 1, 1);
+
+        LE_ROBOT_STATUS_EMS = new QLineEdit(widget);
+        LE_ROBOT_STATUS_EMS->setObjectName(QStringLiteral("LE_ROBOT_STATUS_EMS"));
+        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_EMS->sizePolicy().hasHeightForWidth());
+        LE_ROBOT_STATUS_EMS->setSizePolicy(sizePolicy1);
+        LE_ROBOT_STATUS_EMS->setFont(font2);
+        LE_ROBOT_STATUS_EMS->setAlignment(Qt::AlignCenter);
+
+        gridLayout_7->addWidget(LE_ROBOT_STATUS_EMS, 0, 1, 1, 1);
+
+        LE_ROBOT_STATUS_PAUSED = new QLineEdit(widget);
+        LE_ROBOT_STATUS_PAUSED->setObjectName(QStringLiteral("LE_ROBOT_STATUS_PAUSED"));
+        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_PAUSED->sizePolicy().hasHeightForWidth());
+        LE_ROBOT_STATUS_PAUSED->setSizePolicy(sizePolicy1);
+        LE_ROBOT_STATUS_PAUSED->setFont(font2);
+        LE_ROBOT_STATUS_PAUSED->setAlignment(Qt::AlignCenter);
+
+        gridLayout_7->addWidget(LE_ROBOT_STATUS_PAUSED, 0, 2, 1, 1);
+
+        LE_ROBOT_STATUS_SELF_COLLISION = new QLineEdit(widget);
+        LE_ROBOT_STATUS_SELF_COLLISION->setObjectName(QStringLiteral("LE_ROBOT_STATUS_SELF_COLLISION"));
+        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_SELF_COLLISION->sizePolicy().hasHeightForWidth());
+        LE_ROBOT_STATUS_SELF_COLLISION->setSizePolicy(sizePolicy1);
+        LE_ROBOT_STATUS_SELF_COLLISION->setFont(font2);
+        LE_ROBOT_STATUS_SELF_COLLISION->setAlignment(Qt::AlignCenter);
+
+        gridLayout_7->addWidget(LE_ROBOT_STATUS_SELF_COLLISION, 1, 0, 1, 1);
+
+        LE_ROBOT_STATUS_EXT_COLLISION = new QLineEdit(widget);
+        LE_ROBOT_STATUS_EXT_COLLISION->setObjectName(QStringLiteral("LE_ROBOT_STATUS_EXT_COLLISION"));
+        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_EXT_COLLISION->sizePolicy().hasHeightForWidth());
+        LE_ROBOT_STATUS_EXT_COLLISION->setSizePolicy(sizePolicy1);
+        LE_ROBOT_STATUS_EXT_COLLISION->setFont(font2);
+        LE_ROBOT_STATUS_EXT_COLLISION->setAlignment(Qt::AlignCenter);
+
+        gridLayout_7->addWidget(LE_ROBOT_STATUS_EXT_COLLISION, 1, 1, 1, 1);
+
+        LE_ROBOT_STATUS_TEACHING = new QLineEdit(widget);
+        LE_ROBOT_STATUS_TEACHING->setObjectName(QStringLiteral("LE_ROBOT_STATUS_TEACHING"));
+        sizePolicy1.setHeightForWidth(LE_ROBOT_STATUS_TEACHING->sizePolicy().hasHeightForWidth());
+        LE_ROBOT_STATUS_TEACHING->setSizePolicy(sizePolicy1);
+        LE_ROBOT_STATUS_TEACHING->setFont(font2);
+        LE_ROBOT_STATUS_TEACHING->setAlignment(Qt::AlignCenter);
+
+        gridLayout_7->addWidget(LE_ROBOT_STATUS_TEACHING, 1, 2, 1, 1);
 
 
         retranslateUi(StatusDialog);
@@ -1875,36 +1745,24 @@ public:
         label_76->setText(QApplication::translate("StatusDialog", "A1", 0));
         label_77->setText(QApplication::translate("StatusDialog", "A3", 0));
         label_78->setText(QApplication::translate("StatusDialog", "A0", 0));
-        label_71->setText(QApplication::translate("StatusDialog", "A1", 0));
-        label_74->setText(QApplication::translate("StatusDialog", "A0", 0));
-        label_80->setText(QApplication::translate("StatusDialog", "tool analog in", 0));
-        label_96->setText(QApplication::translate("StatusDialog", "off", 0));
-        label_82->setText(QApplication::translate("StatusDialog", "D1", 0));
-        label_93->setText(QApplication::translate("StatusDialog", "D0", 0));
-        label_95->setText(QApplication::translate("StatusDialog", "on", 0));
-        label_99->setText(QApplication::translate("StatusDialog", "tool digital in", 0));
         label_97->setText(QApplication::translate("StatusDialog", "off", 0));
         label_83->setText(QApplication::translate("StatusDialog", "D1", 0));
         label_94->setText(QApplication::translate("StatusDialog", "D0", 0));
         label_98->setText(QApplication::translate("StatusDialog", "on", 0));
-        label_100->setText(QApplication::translate("StatusDialog", "tool digital out", 0));
-        label_101->setText(QApplication::translate("StatusDialog", "tool out voltage", 0));
+        label_100->setText(QApplication::translate("StatusDialog", "tool\n"
+"digital out", 0));
+        label_101->setText(QApplication::translate("StatusDialog", "tool\n"
+"out voltage", 0));
         label_72->setText(QApplication::translate("StatusDialog", "0V", 0));
         label_73->setText(QApplication::translate("StatusDialog", "12V", 0));
         label_81->setText(QApplication::translate("StatusDialog", "24V", 0));
         label_84->setText(QApplication::translate("StatusDialog", "status", 0));
         label_102->setText(QApplication::translate("StatusDialog", "D/A Input", 0));
         label_103->setText(QApplication::translate("StatusDialog", "D/A Output", 0));
-        LE_ROBOT_STATUS_TEACHING->setText(QApplication::translate("StatusDialog", "teaching", 0));
-        LE_ROBOT_STATUS_EXT_COLLISION->setText(QApplication::translate("StatusDialog", "ext. collision", 0));
-        LE_ROBOT_STATUS_SELF_COLLISION->setText(QApplication::translate("StatusDialog", "self collision", 0));
-        LE_ROBOT_STATUS_PAUSED->setText(QApplication::translate("StatusDialog", "paused", 0));
-        LE_ROBOT_STATUS_EMS->setText(QApplication::translate("StatusDialog", "ems", 0));
-        LE_ROBOT_STATUS_SOS->setText(QApplication::translate("StatusDialog", "sos", 0));
-        LE_ROBOT_STATE_IDLE->setText(QApplication::translate("StatusDialog", "Idle", 0));
         LE_ROBOT_STATE_MOVING->setText(QApplication::translate("StatusDialog", "Moving", 0));
-        LE_PG_MODE_REAL->setText(QApplication::translate("StatusDialog", "Real", 0));
+        LE_ROBOT_STATE_IDLE->setText(QApplication::translate("StatusDialog", "Idle", 0));
         LE_PG_MODE_SIMULATION->setText(QApplication::translate("StatusDialog", "Simulation", 0));
+        LE_PG_MODE_REAL->setText(QApplication::translate("StatusDialog", "Real", 0));
         label_40->setText(QApplication::translate("StatusDialog", "on", 0));
         label_41->setText(QApplication::translate("StatusDialog", "off", 0));
         label_42->setText(QApplication::translate("StatusDialog", "on", 0));
@@ -1945,6 +1803,12 @@ public:
         label_51->setText(QApplication::translate("StatusDialog", "D14", 0));
         label_61->setText(QApplication::translate("StatusDialog", "D7", 0));
         label_58->setText(QApplication::translate("StatusDialog", "D15", 0));
+        LE_ROBOT_STATUS_SOS->setText(QApplication::translate("StatusDialog", "sos", 0));
+        LE_ROBOT_STATUS_EMS->setText(QApplication::translate("StatusDialog", "ems", 0));
+        LE_ROBOT_STATUS_PAUSED->setText(QApplication::translate("StatusDialog", "paused", 0));
+        LE_ROBOT_STATUS_SELF_COLLISION->setText(QApplication::translate("StatusDialog", "self collision", 0));
+        LE_ROBOT_STATUS_EXT_COLLISION->setText(QApplication::translate("StatusDialog", "ext. collision", 0));
+        LE_ROBOT_STATUS_TEACHING->setText(QApplication::translate("StatusDialog", "teaching", 0));
     } // retranslateUi
 
 };

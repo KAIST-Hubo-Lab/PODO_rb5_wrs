@@ -249,29 +249,29 @@ void StatusDialog::onUpdate(){
     }
 
 
-    if(stat->sdata.tfb_digital_in[0] == 0){
-        ui->LE_TD_IN_ON_0->setStyleSheet("QLineEdit{background-color:white}");
-        ui->LE_TD_IN_OFF_0->setStyleSheet("QLineEdit{background-color:green}");
-    }else if(stat->sdata.tfb_digital_in[0] == 1){
-        ui->LE_TD_IN_ON_0->setStyleSheet("QLineEdit{background-color:green}");
-        ui->LE_TD_IN_OFF_0->setStyleSheet("QLineEdit{background-color:white}");
-    }else{
-        ui->LE_TD_IN_ON_0->setStyleSheet("QLineEdit{background-color:white}");
-        ui->LE_TD_IN_OFF_0->setStyleSheet("QLineEdit{background-color:white}");
-    }
-    if(stat->sdata.tfb_digital_in[1] == 0){
-        ui->LE_TD_IN_ON_1->setStyleSheet("QLineEdit{background-color:white}");
-        ui->LE_TD_IN_OFF_1->setStyleSheet("QLineEdit{background-color:green}");
-    }else if(stat->sdata.tfb_digital_in[1] == 1){
-        ui->LE_TD_IN_ON_1->setStyleSheet("QLineEdit{background-color:green}");
-        ui->LE_TD_IN_OFF_1->setStyleSheet("QLineEdit{background-color:white}");
-    }else{
-        ui->LE_TD_IN_ON_1->setStyleSheet("QLineEdit{background-color:white}");
-        ui->LE_TD_IN_OFF_1->setStyleSheet("QLineEdit{background-color:white}");
-    }
+//    if(stat->sdata.tfb_digital_in[0] == 0){
+//        ui->LE_TD_IN_ON_0->setStyleSheet("QLineEdit{background-color:white}");
+//        ui->LE_TD_IN_OFF_0->setStyleSheet("QLineEdit{background-color:green}");
+//    }else if(stat->sdata.tfb_digital_in[0] == 1){
+//        ui->LE_TD_IN_ON_0->setStyleSheet("QLineEdit{background-color:green}");
+//        ui->LE_TD_IN_OFF_0->setStyleSheet("QLineEdit{background-color:white}");
+//    }else{
+//        ui->LE_TD_IN_ON_0->setStyleSheet("QLineEdit{background-color:white}");
+//        ui->LE_TD_IN_OFF_0->setStyleSheet("QLineEdit{background-color:white}");
+//    }
+//    if(stat->sdata.tfb_digital_in[1] == 0){
+//        ui->LE_TD_IN_ON_1->setStyleSheet("QLineEdit{background-color:white}");
+//        ui->LE_TD_IN_OFF_1->setStyleSheet("QLineEdit{background-color:green}");
+//    }else if(stat->sdata.tfb_digital_in[1] == 1){
+//        ui->LE_TD_IN_ON_1->setStyleSheet("QLineEdit{background-color:green}");
+//        ui->LE_TD_IN_OFF_1->setStyleSheet("QLineEdit{background-color:white}");
+//    }else{
+//        ui->LE_TD_IN_ON_1->setStyleSheet("QLineEdit{background-color:white}");
+//        ui->LE_TD_IN_OFF_1->setStyleSheet("QLineEdit{background-color:white}");
+//    }
 
 
-    ui->LE_TA_IN_0->setText(QString().sprintf("%.3f", stat->sdata.tfb_analog_in[0]));
-    ui->LE_TA_IN_1->setText(QString().sprintf("%.3f", stat->sdata.tfb_analog_in[1]));
+//    ui->LE_TA_IN_0->setText(QString().sprintf("%.3f", stat->sdata.tfb_analog_in[0]));
+//    ui->LE_TA_IN_1->setText(QString().sprintf("%.3f", stat->sdata.tfb_analog_in[1]));
 
 }

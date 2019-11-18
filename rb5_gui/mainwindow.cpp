@@ -7,15 +7,14 @@
 #include <signal.h>
 #include <QThread>
 #include <QByteArray>
+#include <QToolBar>
+#include <QAction>
 //temporary
 #include <QDebug>
 #include <QHostInfo>
 
 const int MAX_DISTANCE = 835;
 const int MIN_DISTANCE = 200;
-
-#define HIGH    0
-#define LOW     1
 
 // THINGS I NEED ---------------------------------------
 // joint data for ROS topics
@@ -42,16 +41,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->LE_DAEMON_PATH->setText(settings.value("daemon", "").toString());
     createActions();
 
-    statusDialog = new StatusDialog(ui->FRAME_STATUS);
-    statusDialog->setWindowFlags(Qt::Widget);
-    ui->FRAME_STATUS->setFixedSize(statusDialog->size());
-    statusDialog->move(0,0);
-    statusDialog->SetStatus(&(RB5->systemStat));
+    expHandler = new ExpandDialogHandler(this);
 
-    canDialog = new CANDialog(ui->FRAME_STATUS_2);
-    canDialog->setWindowFlags(Qt::Widget);
-    ui->FRAME_STATUS_2->setFixedSize(canDialog->size());
-    canDialog->move(0,0);
+    frameCAN = new QFrame(this);
+    frameStatus = new QFrame(this);
+    statusDialog = new StatusDialog(frameStatus);
+    canDialog = new CANDialog(frameCAN);
+
+    expHandler->registerDialog(statusDialog, frameStatus);
+    expHandler->registerDialog(canDialog, frameCAN);
+
+    statusDialog->SetStatus(&(RB5->systemStat));
 
     ui->textCmdPort->setStyleSheet("QLineEdit{background-color:red}");
     ui->textDataPort->setStyleSheet("QLineEdit{background-color:red}");
@@ -60,6 +60,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(&systemTimer, SIGNAL(timeout()), this, SLOT(onSystemCheck()));
     connect(&systemTimer, SIGNAL(timeout()), this, SLOT(RB5toROS()));
+
+    connect(ui->actionCAN, SIGNAL(toggled(bool)), this, SLOT(ActionCAN_Toggled()));
+    connect(ui->actionMANUAL, SIGNAL(toggled(bool)), this, SLOT(ActionMANUAL_Toggled()));
+    connect(ui->actionSTATUS, SIGNAL(toggled(bool)), this, SLOT(ActionSTATUS_Toggled()));
 
     connect(RB5, SIGNAL(RB5_CMD_Connected()), this, SLOT(onCmdConnected()));
     connect(RB5, SIGNAL(RB5_CMD_Disconnected()), this, SLOT(onCmdDisconnected()));
@@ -76,14 +80,15 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete CAN;
-    kill(Daemon_processID, SIGKILL);
+    if(CANenable)
+    {
+        delete CAN;
+        kill(Daemon_processID, SIGKILL);
+    }
     delete RB5;
     delete ROS;
     systemTimer.stop();
 }
-
-
 
 void MainWindow::RB5toROS()
 {
@@ -167,36 +172,6 @@ void MainWindow::onSystemCheck()
             break;
         }
     }
-
-
-
-//    if(resultFlag == true &&(ROS->result.rb5_result == ACCEPT||ROS->result.wheel_result == ACCEPT))
-//    {
-//        switch(ROScommand.type)
-//        {
-//        case 'W':
-//            if(ROScommand.d0 == 0 && ROScommand.d1 == 1)//goalmode
-//            {
-//                if(CAN->sharedSEN->WHEEL_STATE == OMNI_MOVE_DONE)
-//                {
-//                    printf("state = %d\n",CAN->sharedSEN->WHEEL_STATE);
-//                    FILE_LOG(logSUCCESS) << "Goal mode move done";
-//                    ROS->sendWHEELRESULT(DONE);
-//                    CAN->sharedSEN->WHEEL_STATE = OMNI_BREAK;
-//                }
-//                if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK && Count > 300)
-//                {
-//                    Count = 0;
-//                    printf("RB5 = %d, WHEEL = %d\n",ROS->result.rb5_result,ROS->result.wheel_result);
-//                    FILE_LOG(logERROR) << "Time out : Wheel move";
-//                    ROS->sendWHEELRESULT(ERROR_STOP);
-//                }
-//            }
-//            break;
-//        default:
-//            ROS->sendRB5RESULT(DONE);
-//        }
-//    }
 
     // sendResult to ROS
     if(resultFlag == true &&(ROS->result.rb5_result == ACCEPT||ROS->result.wheel_result == ACCEPT))
@@ -599,75 +574,117 @@ void MainWindow::setCommand(command _cmd)//fromROS
     }
     case 'W':
     {//wheel
-        //if(CAN->sharedSEN->CAN_Enabled && CAN->sharedSEN->REF_Enabled)
+        if(CANenable)
         {
-            if(ROScommand.d0 == 0 && ROScommand.d1 == 1)
+            if(CAN->sharedSEN->CAN_Enabled && CAN->sharedSEN->REF_Enabled)
             {
-                if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK)
+                if(ROScommand.d0 == 0 && ROScommand.d1 == 1)
+                {
+                    if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK)
+                    {
+                        ROS->sendWHEELRESULT(ACCEPT);
+                        CAN->WheelMovewithGoalPos(ROScommand.wheel[0],ROScommand.wheel[1],ROScommand.wheel[2]);
+                        FILE_LOG(logSUCCESS) << "Wheel move Goal mode";
+                    }else
+                    {
+                        FILE_LOG(logERROR) << "Wheel is already moving..disregard command";
+                        ROS->sendWHEELRESULT(STATE_ERROR);
+                    }
+                }else if(ROScommand.d0 == 1 && ROScommand.d1 == 0)
+                {
+                    if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK)
+                    {
+                        ROS->sendWHEELRESULT(ACCEPT);
+                        FILE_LOG(logSUCCESS) << "Wheel move Velocity mode Start";
+                        CAN->WheelMoveStart();
+                    }else
+                    {
+                        FILE_LOG(logERROR) << "Wheel is already moving..disregard command";
+                        ROS->sendWHEELRESULT(STATE_ERROR);
+                    }
+                }else if(ROScommand.d0 == 1 && ROScommand.d1 == 1)
                 {
                     ROS->sendWHEELRESULT(ACCEPT);
-                    CAN->WheelMovewithGoalPos(ROScommand.wheel[0],ROScommand.wheel[1],ROScommand.wheel[2]);
-                    FILE_LOG(logSUCCESS) << "Wheel move Goal mode";
+                    FILE_LOG(logSUCCESS) << "Wheel move Velocity mode Stop";
+                    CAN->WheelMoveStop();
+                    ROS->sendWHEELRESULT(DONE);
                 }else
                 {
-                    FILE_LOG(logERROR) << "Wheel is already moving..disregard command";
-                    ROS->sendWHEELRESULT(STATE_ERROR);
+                    ROS->sendWHEELRESULT(INPUT_ERROR);
                 }
-            }else if(ROScommand.d0 == 1 && ROScommand.d1 == 0)
-            {
-                if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK)
-                {
-                    ROS->sendWHEELRESULT(ACCEPT);
-                    FILE_LOG(logSUCCESS) << "Wheel move Velocity mode Start";
-                    CAN->WheelMoveStart();
-                }else
-                {
-                    FILE_LOG(logERROR) << "Wheel is already moving..disregard command";
-                    ROS->sendWHEELRESULT(STATE_ERROR);
-                }
-            }else if(ROScommand.d0 == 1 && ROScommand.d1 == 1)
-            {
-                ROS->sendWHEELRESULT(ACCEPT);
-                FILE_LOG(logSUCCESS) << "Wheel move Velocity mode Stop";
-                CAN->WheelMoveStop();
-                ROS->sendWHEELRESULT(DONE);
             }else
             {
-                ROS->sendWHEELRESULT(INPUT_ERROR);
+                FILE_LOG(logERROR) << "CAN device not set. disregard command";
+                ROS->sendWHEELRESULT(STATE_ERROR);
             }
-        }/*else
-        {
-            FILE_LOG(logERROR) << "CAN device not set. disregard command";
-            ROS->sendWHEELRESULT(STATE_ERROR);
-        }*/
-        break;
+            break;
+        }
     }
     case 'N':
     {//navigation
-        if(CAN->sharedSEN->WHEEL_STATE == OMNI_VEL_ON)
+        if(CANenable)
         {
-            CAN->VelModeInputPush(ROScommand.wheel[0],ROScommand.wheel[1],ROScommand.wheel[2]);
-        }else
-        {
-            FILE_LOG(logERROR) << "It's not velocity mode. Disregard command";
-            ROS->sendWHEELRESULT(STATE_ERROR);
+            if(CAN->sharedSEN->WHEEL_STATE == OMNI_VEL_ON)
+            {
+                CAN->VelModeInputPush(ROScommand.wheel[0],ROScommand.wheel[1],ROScommand.wheel[2]);
+            }else
+            {
+                FILE_LOG(logERROR) << "It's not velocity mode. Disregard command";
+                ROS->sendWHEELRESULT(STATE_ERROR);
+            }
+            break;
         }
-        break;
     }
     default:
         break;
     }
-    printf("RB5 = %d, WHEEL = %d\n",ROS->result.rb5_result,ROS->result.wheel_result);
-
 }
+
+
+void MainWindow::ActionSTATUS_Toggled()
+{
+    printf("status toggled\n");
+    if(expHandler->isVisible(statusDialog))
+    {
+        expHandler->hideDialog(statusDialog);
+    }else
+    {
+        expHandler->showDialog(statusDialog);
+    }
+}
+
+void MainWindow::ActionCAN_Toggled()
+{
+    printf("can toggled\n");
+    if(expHandler->isVisible(canDialog))
+    {
+        expHandler->hideDialog(canDialog);
+    }else
+    {
+        expHandler->showDialog(canDialog);
+    }
+}
+
+void MainWindow::ActionMANUAL_Toggled()
+{
+    printf("manual toggled\n");
+    ManualDialog dialogMANUAL;
+    dialogMANUAL.setModal(true);
+    dialogMANUAL.SetStatus(RB5);
+    dialogMANUAL.exec();
+}
+
 
 // ------------------------------------------------
 
 void MainWindow::on_BTN_INITIALIZE_clicked()
 {
-    RB5->RB5_init();
-    ui->LE_INIT_STATUS->setText(QString().sprintf("Initialize start..."));
-    initFlag = true;
+    if(RB5->systemStat.sdata.init_state_info != INIT_STAT_INFO_INIT_DONE)
+    {
+        RB5->RB5_init();
+        ui->LE_INIT_STATUS->setText(QString().sprintf("Initialize start..."));
+        initFlag = true;
+    }
 }
 
 void MainWindow::on_BTN_CHANGE_DAEMON_clicked()
@@ -720,6 +737,7 @@ void MainWindow::on_BTN_START_DAEMON_clicked()
     }else
     {
         FILE_LOG(logSUCCESS) << "SharedMemory Connected!";
+        CANenable = true;
     }
     canDialog->CAN_connect(CAN);
 
@@ -741,6 +759,7 @@ void MainWindow::on_BTN_STOP_DAEMON_clicked()
     usleep(100000);
     ui->BTN_START_DAEMON->setEnabled(true);
     startDaemonAction->setEnabled(true);
+    CANenable = false;
     delete CAN;
 }
 
@@ -808,18 +827,13 @@ int  MainWindow::checkTCPInput()
 
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    RB5->Suction(0);
-}
-
-void MainWindow::on_pushButton_2_clicked()
-{
-    RB5->Suction(1);
-}
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    RB5->Suction(2);
+    //RB5->Suction(2);
+    ManualDialog dialogMANUAL;
+    dialogMANUAL.setModal(true);
+    dialogMANUAL.SetStatus(RB5);
+    dialogMANUAL.exec();
 
 }

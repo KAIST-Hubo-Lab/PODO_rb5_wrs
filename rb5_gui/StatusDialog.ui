@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>600</height>
+    <width>421</width>
+    <height>660</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>30</y>
+     <x>10</x>
+     <y>240</y>
      <width>91</width>
      <height>161</height>
     </rect>
@@ -223,8 +223,8 @@
   <widget class="QWidget" name="gridLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>30</y>
+     <x>110</x>
+     <y>240</y>
      <width>91</width>
      <height>161</height>
     </rect>
@@ -430,10 +430,10 @@
   <widget class="QLabel" name="label_13">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>10</y>
-     <width>121</width>
-     <height>16</height>
+     <x>10</x>
+     <y>210</y>
+     <width>91</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
@@ -452,10 +452,10 @@
   <widget class="QLabel" name="label_14">
    <property name="geometry">
     <rect>
-     <x>330</x>
-     <y>10</y>
-     <width>121</width>
-     <height>16</height>
+     <x>110</x>
+     <y>210</y>
+     <width>91</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
@@ -474,8 +474,8 @@
   <widget class="QWidget" name="gridLayoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>440</x>
-     <y>30</y>
+     <x>210</x>
+     <y>240</y>
      <width>91</width>
      <height>161</height>
     </rect>
@@ -681,10 +681,10 @@
   <widget class="QLabel" name="label_27">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>10</y>
-     <width>121</width>
-     <height>16</height>
+     <x>210</x>
+     <y>210</y>
+     <width>91</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
@@ -704,8 +704,8 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>10</y>
-     <width>81</width>
+     <y>20</y>
+     <width>71</width>
      <height>16</height>
     </rect>
    </property>
@@ -727,9 +727,9 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>100</y>
-     <width>81</width>
-     <height>16</height>
+     <y>90</y>
+     <width>91</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="font">
@@ -749,10 +749,10 @@
   <widget class="QWidget" name="gridLayoutWidget_6">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>470</y>
-     <width>231</width>
-     <height>52</height>
+     <x>10</x>
+     <y>600</y>
+     <width>201</width>
+     <height>31</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_6">
@@ -853,10 +853,10 @@
   <widget class="QWidget" name="gridLayoutWidget_7">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>470</y>
-     <width>231</width>
-     <height>52</height>
+     <x>220</x>
+     <y>600</y>
+     <width>191</width>
+     <height>31</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_8">
@@ -954,317 +954,13 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="gridLayoutWidget_8">
-   <property name="geometry">
-    <rect>
-     <x>420</x>
-     <y>240</y>
-     <width>101</width>
-     <height>46</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_7">
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_71">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>20</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>A1</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLineEdit" name="LE_TA_IN_0">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_74">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>20</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>A0</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="LE_TA_IN_1">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="label_80">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>220</y>
-     <width>121</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>tool analog in</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QWidget" name="gridLayoutWidget_9">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>240</y>
-     <width>111</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_9">
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <item row="1" column="2">
-     <widget class="QLineEdit" name="LE_TD_IN_OFF_0">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>30</width>
-        <height>20</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QLabel" name="label_96">
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>20</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>off</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_82">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>20</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>20</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>D1</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="LE_TD_IN_ON_0">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>30</width>
-        <height>20</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_93">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>20</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>20</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>D0</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QLineEdit" name="LE_TD_IN_OFF_1">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>30</width>
-        <height>20</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="label_95">
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>20</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>on</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="LE_TD_IN_ON_1">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>30</width>
-        <height>20</height>
-       </size>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="label_99">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>220</y>
-     <width>131</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>tool digital in</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QWidget" name="gridLayoutWidget_10">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>240</y>
-     <width>111</width>
-     <height>41</height>
+     <x>310</x>
+     <y>250</y>
+     <width>102</width>
+     <height>56</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_10">
@@ -1440,10 +1136,10 @@
   <widget class="QLabel" name="label_100">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>220</y>
-     <width>131</width>
-     <height>16</height>
+     <x>310</x>
+     <y>210</y>
+     <width>101</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -1454,7 +1150,8 @@
     </font>
    </property>
    <property name="text">
-    <string>tool digital out</string>
+    <string>tool
+digital out</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1463,10 +1160,10 @@
   <widget class="QLabel" name="label_101">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>220</y>
-     <width>131</width>
-     <height>16</height>
+     <x>310</x>
+     <y>320</y>
+     <width>101</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
@@ -1477,7 +1174,8 @@
     </font>
    </property>
    <property name="text">
-    <string>tool out voltage</string>
+    <string>tool
+out voltage</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1486,9 +1184,9 @@
   <widget class="QWidget" name="gridLayoutWidget_11">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>240</y>
-     <width>131</width>
+     <x>310</x>
+     <y>360</y>
+     <width>101</width>
      <height>41</height>
     </rect>
    </property>
@@ -1597,9 +1295,9 @@
   <widget class="QLabel" name="label_84">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>10</y>
-     <width>91</width>
+     <x>200</x>
+     <y>20</y>
+     <width>81</width>
      <height>16</height>
     </rect>
    </property>
@@ -1620,8 +1318,8 @@
   <widget class="QLabel" name="label_102">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>293</y>
+     <x>40</x>
+     <y>429</y>
      <width>131</width>
      <height>16</height>
     </rect>
@@ -1643,8 +1341,8 @@
   <widget class="QLabel" name="label_103">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>293</y>
+     <x>250</x>
+     <y>429</y>
      <width>131</width>
      <height>16</height>
     </rect>
@@ -1666,143 +1364,16 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>30</y>
-     <width>91</width>
-     <height>161</height>
+     <x>210</x>
+     <y>40</y>
+     <width>191</width>
+     <height>41</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
     <property name="spacing">
      <number>0</number>
     </property>
-    <item>
-     <widget class="QLineEdit" name="LE_ROBOT_STATUS_TEACHING">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>teaching</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="LE_ROBOT_STATUS_EXT_COLLISION">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>ext. collision</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="LE_ROBOT_STATUS_SELF_COLLISION">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>self collision</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="LE_ROBOT_STATUS_PAUSED">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>paused</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="LE_ROBOT_STATUS_EMS">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>ems</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="LE_ROBOT_STATUS_SOS">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>sos</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>121</y>
-     <width>81</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <property name="spacing">
-     <number>0</number>
-    </property>
-    <item>
-     <widget class="QLineEdit" name="LE_ROBOT_STATE_IDLE">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>Idle</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
     <item>
      <widget class="QLineEdit" name="LE_ROBOT_STATE_MOVING">
       <property name="sizePolicy">
@@ -1810,6 +1381,11 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Moving</string>
@@ -1819,37 +1395,42 @@
       </property>
      </widget>
     </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>30</y>
-     <width>81</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
-    <property name="spacing">
-     <number>0</number>
-    </property>
     <item>
-     <widget class="QLineEdit" name="LE_PG_MODE_REAL">
+     <widget class="QLineEdit" name="LE_ROBOT_STATE_IDLE">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
       <property name="text">
-       <string>Real</string>
+       <string>Idle</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QLineEdit" name="LE_PG_MODE_SIMULATION">
       <property name="sizePolicy">
@@ -1857,6 +1438,11 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Simulation</string>
@@ -1866,15 +1452,36 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QLineEdit" name="LE_PG_MODE_REAL">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Real</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>320</y>
-     <width>231</width>
-     <height>141</height>
+     <x>10</x>
+     <y>459</y>
+     <width>201</width>
+     <height>131</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_4">
@@ -2674,10 +2281,10 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>320</y>
-     <width>231</width>
-     <height>141</height>
+     <x>220</x>
+     <y>459</y>
+     <width>191</width>
+     <height>131</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_5">
@@ -3463,6 +3070,147 @@
         <width>30</width>
         <height>20</height>
        </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>111</y>
+     <width>389</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_7">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QLineEdit" name="LE_ROBOT_STATUS_SOS">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>sos</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="LE_ROBOT_STATUS_EMS">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>ems</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLineEdit" name="LE_ROBOT_STATUS_PAUSED">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>paused</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="LE_ROBOT_STATUS_SELF_COLLISION">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>self collision</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="LE_ROBOT_STATUS_EXT_COLLISION">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>ext. collision</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="LE_ROBOT_STATUS_TEACHING">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>teaching</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>

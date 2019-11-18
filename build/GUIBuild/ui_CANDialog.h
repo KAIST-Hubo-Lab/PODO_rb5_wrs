@@ -65,12 +65,12 @@ public:
     QPushButton *BTN_MOVE_JOINT;
     QFrame *line_2;
     QFrame *line_4;
-    QWidget *widget;
+    QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout_15;
     QPushButton *BTN_SAVE_RESET;
     QPushButton *pushButton_4;
     QLineEdit *LE_CAN_STATE;
-    QWidget *layoutWidget3;
+    QWidget *layoutWidget4;
     QGridLayout *gridLayout;
     QLabel *label;
     QLabel *label_2;
@@ -86,7 +86,7 @@ public:
     QLabel *label_6;
     QLineEdit *LE_BLW_REF;
     QLineEdit *LE_BLW_ENC;
-    QWidget *layoutWidget4;
+    QWidget *layoutWidget5;
     QHBoxLayout *horizontalLayout_6;
     QPushButton *BTN_REF_ON;
     QPushButton *BTN_ENC_ON;
@@ -94,7 +94,7 @@ public:
     QPushButton *BTN_JOY_START;
     QPushButton *BTN_JOY_ON;
     QPushButton *BTN_JOY_MOVE;
-    QWidget *layoutWidget5;
+    QWidget *layoutWidget6;
     QGridLayout *gridLayout_4;
     QLabel *label_13;
     QLabel *label_14;
@@ -102,7 +102,7 @@ public:
     QLineEdit *LE_JOY_LUD;
     QLineEdit *LE_JOY_LRL;
     QLineEdit *LE_JOY_RRL;
-    QWidget *layoutWidget6;
+    QWidget *layoutWidget7;
     QHBoxLayout *horizontalLayout_8;
     QGridLayout *gridLayout_3;
     QLabel *label_9;
@@ -121,13 +121,13 @@ public:
     {
         if (CANDialog->objectName().isEmpty())
             CANDialog->setObjectName(QStringLiteral("CANDialog"));
-        CANDialog->resize(750, 450);
+        CANDialog->resize(511, 660);
         TW_0 = new QTableWidget(CANDialog);
         TW_0->setObjectName(QStringLiteral("TW_0"));
         TW_0->setGeometry(QRect(20, 50, 241, 181));
         groupBox = new QGroupBox(CANDialog);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(270, 10, 221, 401));
+        groupBox->setGeometry(QRect(20, 240, 241, 401));
         groupBox->setStyleSheet(QLatin1String("QGroupBox {\n"
 "    border: 1px solid gray;\n"
 "    border-radius: 5px;\n"
@@ -143,7 +143,7 @@ public:
 ""));
         layoutWidget = new QWidget(groupBox);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 160, 173, 181));
+        layoutWidget->setGeometry(QRect(30, 160, 181, 181));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
@@ -255,7 +255,7 @@ public:
 
         layoutWidget1 = new QWidget(groupBox);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 20, 201, 41));
+        layoutWidget1->setGeometry(QRect(20, 20, 201, 41));
         horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -277,7 +277,7 @@ public:
 
         layoutWidget2 = new QWidget(groupBox);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(10, 80, 201, 54));
+        layoutWidget2->setGeometry(QRect(20, 80, 201, 54));
         horizontalLayout_7 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_7->setSpacing(0);
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
@@ -326,28 +326,28 @@ public:
 
         line_2 = new QFrame(groupBox);
         line_2->setObjectName(QStringLiteral("line_2"));
-        line_2->setGeometry(QRect(10, 140, 201, 20));
+        line_2->setGeometry(QRect(20, 140, 201, 20));
         line_2->setFrameShape(QFrame::HLine);
         line_2->setFrameShadow(QFrame::Sunken);
         line_4 = new QFrame(groupBox);
         line_4->setObjectName(QStringLiteral("line_4"));
-        line_4->setGeometry(QRect(10, 60, 201, 20));
+        line_4->setGeometry(QRect(20, 60, 201, 20));
         line_4->setFrameShape(QFrame::HLine);
         line_4->setFrameShadow(QFrame::Sunken);
-        widget = new QWidget(groupBox);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(10, 350, 201, 41));
-        horizontalLayout_15 = new QHBoxLayout(widget);
+        layoutWidget3 = new QWidget(groupBox);
+        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(20, 350, 201, 41));
+        horizontalLayout_15 = new QHBoxLayout(layoutWidget3);
         horizontalLayout_15->setObjectName(QStringLiteral("horizontalLayout_15"));
         horizontalLayout_15->setContentsMargins(0, 0, 0, 0);
-        BTN_SAVE_RESET = new QPushButton(widget);
+        BTN_SAVE_RESET = new QPushButton(layoutWidget3);
         BTN_SAVE_RESET->setObjectName(QStringLiteral("BTN_SAVE_RESET"));
         sizePolicy1.setHeightForWidth(BTN_SAVE_RESET->sizePolicy().hasHeightForWidth());
         BTN_SAVE_RESET->setSizePolicy(sizePolicy1);
 
         horizontalLayout_15->addWidget(BTN_SAVE_RESET);
 
-        pushButton_4 = new QPushButton(widget);
+        pushButton_4 = new QPushButton(layoutWidget3);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         sizePolicy1.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
         pushButton_4->setSizePolicy(sizePolicy1);
@@ -358,108 +358,108 @@ public:
         LE_CAN_STATE->setObjectName(QStringLiteral("LE_CAN_STATE"));
         LE_CAN_STATE->setGeometry(QRect(20, 20, 241, 22));
         LE_CAN_STATE->setAlignment(Qt::AlignCenter);
-        layoutWidget3 = new QWidget(CANDialog);
-        layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(40, 280, 201, 128));
-        gridLayout = new QGridLayout(layoutWidget3);
+        layoutWidget4 = new QWidget(CANDialog);
+        layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
+        layoutWidget4->setGeometry(QRect(290, 70, 201, 128));
+        gridLayout = new QGridLayout(layoutWidget4);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(layoutWidget3);
+        label = new QLabel(layoutWidget4);
         label->setObjectName(QStringLiteral("label"));
         label->setFont(font1);
         label->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label, 0, 1, 1, 1);
 
-        label_2 = new QLabel(layoutWidget3);
+        label_2 = new QLabel(layoutWidget4);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setFont(font1);
         label_2->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_2, 0, 2, 1, 1);
 
-        label_3 = new QLabel(layoutWidget3);
+        label_3 = new QLabel(layoutWidget4);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setFont(font1);
         label_3->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_3, 1, 0, 1, 1);
 
-        LE_FLW_REF = new QLineEdit(layoutWidget3);
+        LE_FLW_REF = new QLineEdit(layoutWidget4);
         LE_FLW_REF->setObjectName(QStringLiteral("LE_FLW_REF"));
 
         gridLayout->addWidget(LE_FLW_REF, 1, 1, 1, 1);
 
-        LE_FLW_ENC = new QLineEdit(layoutWidget3);
+        LE_FLW_ENC = new QLineEdit(layoutWidget4);
         LE_FLW_ENC->setObjectName(QStringLiteral("LE_FLW_ENC"));
 
         gridLayout->addWidget(LE_FLW_ENC, 1, 2, 1, 1);
 
-        label_4 = new QLabel(layoutWidget3);
+        label_4 = new QLabel(layoutWidget4);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setFont(font1);
         label_4->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_4, 2, 0, 1, 1);
 
-        LE_FRW_REF = new QLineEdit(layoutWidget3);
+        LE_FRW_REF = new QLineEdit(layoutWidget4);
         LE_FRW_REF->setObjectName(QStringLiteral("LE_FRW_REF"));
 
         gridLayout->addWidget(LE_FRW_REF, 2, 1, 1, 1);
 
-        LE_FRW_ENC = new QLineEdit(layoutWidget3);
+        LE_FRW_ENC = new QLineEdit(layoutWidget4);
         LE_FRW_ENC->setObjectName(QStringLiteral("LE_FRW_ENC"));
 
         gridLayout->addWidget(LE_FRW_ENC, 2, 2, 1, 1);
 
-        label_5 = new QLabel(layoutWidget3);
+        label_5 = new QLabel(layoutWidget4);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setFont(font1);
         label_5->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_5, 3, 0, 1, 1);
 
-        LE_BRW_REF = new QLineEdit(layoutWidget3);
+        LE_BRW_REF = new QLineEdit(layoutWidget4);
         LE_BRW_REF->setObjectName(QStringLiteral("LE_BRW_REF"));
 
         gridLayout->addWidget(LE_BRW_REF, 3, 1, 1, 1);
 
-        LE_BRW_ENC = new QLineEdit(layoutWidget3);
+        LE_BRW_ENC = new QLineEdit(layoutWidget4);
         LE_BRW_ENC->setObjectName(QStringLiteral("LE_BRW_ENC"));
 
         gridLayout->addWidget(LE_BRW_ENC, 3, 2, 1, 1);
 
-        label_6 = new QLabel(layoutWidget3);
+        label_6 = new QLabel(layoutWidget4);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setFont(font1);
         label_6->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_6, 4, 0, 1, 1);
 
-        LE_BLW_REF = new QLineEdit(layoutWidget3);
+        LE_BLW_REF = new QLineEdit(layoutWidget4);
         LE_BLW_REF->setObjectName(QStringLiteral("LE_BLW_REF"));
 
         gridLayout->addWidget(LE_BLW_REF, 4, 1, 1, 1);
 
-        LE_BLW_ENC = new QLineEdit(layoutWidget3);
+        LE_BLW_ENC = new QLineEdit(layoutWidget4);
         LE_BLW_ENC->setObjectName(QStringLiteral("LE_BLW_ENC"));
 
         gridLayout->addWidget(LE_BLW_ENC, 4, 2, 1, 1);
 
-        layoutWidget4 = new QWidget(CANDialog);
-        layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(80, 240, 161, 38));
-        horizontalLayout_6 = new QHBoxLayout(layoutWidget4);
+        layoutWidget5 = new QWidget(CANDialog);
+        layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
+        layoutWidget5->setGeometry(QRect(330, 30, 161, 38));
+        horizontalLayout_6 = new QHBoxLayout(layoutWidget5);
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         horizontalLayout_6->setContentsMargins(0, 0, 0, 0);
-        BTN_REF_ON = new QPushButton(layoutWidget4);
+        BTN_REF_ON = new QPushButton(layoutWidget5);
         BTN_REF_ON->setObjectName(QStringLiteral("BTN_REF_ON"));
         sizePolicy2.setHeightForWidth(BTN_REF_ON->sizePolicy().hasHeightForWidth());
         BTN_REF_ON->setSizePolicy(sizePolicy2);
 
         horizontalLayout_6->addWidget(BTN_REF_ON);
 
-        BTN_ENC_ON = new QPushButton(layoutWidget4);
+        BTN_ENC_ON = new QPushButton(layoutWidget5);
         BTN_ENC_ON->setObjectName(QStringLiteral("BTN_ENC_ON"));
         sizePolicy2.setHeightForWidth(BTN_ENC_ON->sizePolicy().hasHeightForWidth());
         BTN_ENC_ON->setSizePolicy(sizePolicy2);
@@ -468,7 +468,7 @@ public:
 
         groupBox_2 = new QGroupBox(CANDialog);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(510, 10, 221, 401));
+        groupBox_2->setGeometry(QRect(280, 240, 221, 401));
         groupBox_2->setStyleSheet(QLatin1String("QGroupBox {\n"
 "    border: 1px solid gray;\n"
 "    border-radius: 5px;\n"
@@ -484,72 +484,72 @@ public:
 ""));
         BTN_JOY_START = new QPushButton(groupBox_2);
         BTN_JOY_START->setObjectName(QStringLiteral("BTN_JOY_START"));
-        BTN_JOY_START->setGeometry(QRect(110, 200, 101, 51));
+        BTN_JOY_START->setGeometry(QRect(110, 210, 101, 51));
         BTN_JOY_ON = new QPushButton(groupBox_2);
         BTN_JOY_ON->setObjectName(QStringLiteral("BTN_JOY_ON"));
-        BTN_JOY_ON->setGeometry(QRect(10, 200, 91, 51));
+        BTN_JOY_ON->setGeometry(QRect(10, 210, 91, 51));
         BTN_JOY_MOVE = new QPushButton(groupBox_2);
         BTN_JOY_MOVE->setObjectName(QStringLiteral("BTN_JOY_MOVE"));
-        BTN_JOY_MOVE->setGeometry(QRect(10, 260, 201, 51));
-        layoutWidget5 = new QWidget(groupBox_2);
-        layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
-        layoutWidget5->setGeometry(QRect(10, 320, 201, 44));
-        gridLayout_4 = new QGridLayout(layoutWidget5);
+        BTN_JOY_MOVE->setGeometry(QRect(10, 270, 201, 51));
+        layoutWidget6 = new QWidget(groupBox_2);
+        layoutWidget6->setObjectName(QStringLiteral("layoutWidget6"));
+        layoutWidget6->setGeometry(QRect(10, 330, 201, 44));
+        gridLayout_4 = new QGridLayout(layoutWidget6);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
-        label_13 = new QLabel(layoutWidget5);
+        label_13 = new QLabel(layoutWidget6);
         label_13->setObjectName(QStringLiteral("label_13"));
         label_13->setFont(font1);
         label_13->setAlignment(Qt::AlignCenter);
 
         gridLayout_4->addWidget(label_13, 0, 0, 1, 1);
 
-        label_14 = new QLabel(layoutWidget5);
+        label_14 = new QLabel(layoutWidget6);
         label_14->setObjectName(QStringLiteral("label_14"));
         label_14->setFont(font1);
         label_14->setAlignment(Qt::AlignCenter);
 
         gridLayout_4->addWidget(label_14, 0, 1, 1, 1);
 
-        label_15 = new QLabel(layoutWidget5);
+        label_15 = new QLabel(layoutWidget6);
         label_15->setObjectName(QStringLiteral("label_15"));
         label_15->setFont(font1);
         label_15->setAlignment(Qt::AlignCenter);
 
         gridLayout_4->addWidget(label_15, 0, 2, 1, 1);
 
-        LE_JOY_LUD = new QLineEdit(layoutWidget5);
+        LE_JOY_LUD = new QLineEdit(layoutWidget6);
         LE_JOY_LUD->setObjectName(QStringLiteral("LE_JOY_LUD"));
 
         gridLayout_4->addWidget(LE_JOY_LUD, 1, 0, 1, 1);
 
-        LE_JOY_LRL = new QLineEdit(layoutWidget5);
+        LE_JOY_LRL = new QLineEdit(layoutWidget6);
         LE_JOY_LRL->setObjectName(QStringLiteral("LE_JOY_LRL"));
 
         gridLayout_4->addWidget(LE_JOY_LRL, 1, 1, 1, 1);
 
-        LE_JOY_RRL = new QLineEdit(layoutWidget5);
+        LE_JOY_RRL = new QLineEdit(layoutWidget6);
         LE_JOY_RRL->setObjectName(QStringLiteral("LE_JOY_RRL"));
 
         gridLayout_4->addWidget(LE_JOY_RRL, 1, 2, 1, 1);
 
-        layoutWidget6 = new QWidget(groupBox_2);
-        layoutWidget6->setObjectName(QStringLiteral("layoutWidget6"));
-        layoutWidget6->setGeometry(QRect(10, 60, 201, 110));
-        horizontalLayout_8 = new QHBoxLayout(layoutWidget6);
+        layoutWidget7 = new QWidget(groupBox_2);
+        layoutWidget7->setObjectName(QStringLiteral("layoutWidget7"));
+        layoutWidget7->setGeometry(QRect(10, 60, 201, 110));
+        horizontalLayout_8 = new QHBoxLayout(layoutWidget7);
         horizontalLayout_8->setSpacing(0);
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
         horizontalLayout_8->setContentsMargins(0, 0, 0, 0);
         gridLayout_3 = new QGridLayout();
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        label_9 = new QLabel(layoutWidget6);
+        label_9 = new QLabel(layoutWidget7);
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setFont(font1);
         label_9->setAlignment(Qt::AlignCenter);
 
         gridLayout_3->addWidget(label_9, 0, 0, 1, 1);
 
-        LE_WHEEL_X = new QLineEdit(layoutWidget6);
+        LE_WHEEL_X = new QLineEdit(layoutWidget7);
         LE_WHEEL_X->setObjectName(QStringLiteral("LE_WHEEL_X"));
         QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy3.setHorizontalStretch(0);
@@ -559,42 +559,42 @@ public:
 
         gridLayout_3->addWidget(LE_WHEEL_X, 0, 1, 1, 1);
 
-        label_10 = new QLabel(layoutWidget6);
+        label_10 = new QLabel(layoutWidget7);
         label_10->setObjectName(QStringLiteral("label_10"));
         label_10->setFont(font1);
         label_10->setAlignment(Qt::AlignCenter);
 
         gridLayout_3->addWidget(label_10, 1, 0, 1, 1);
 
-        LE_WHEEL_Y = new QLineEdit(layoutWidget6);
+        LE_WHEEL_Y = new QLineEdit(layoutWidget7);
         LE_WHEEL_Y->setObjectName(QStringLiteral("LE_WHEEL_Y"));
         sizePolicy3.setHeightForWidth(LE_WHEEL_Y->sizePolicy().hasHeightForWidth());
         LE_WHEEL_Y->setSizePolicy(sizePolicy3);
 
         gridLayout_3->addWidget(LE_WHEEL_Y, 1, 1, 1, 1);
 
-        label_11 = new QLabel(layoutWidget6);
+        label_11 = new QLabel(layoutWidget7);
         label_11->setObjectName(QStringLiteral("label_11"));
         label_11->setFont(font1);
         label_11->setAlignment(Qt::AlignCenter);
 
         gridLayout_3->addWidget(label_11, 2, 0, 1, 1);
 
-        LE_WHEEL_R = new QLineEdit(layoutWidget6);
+        LE_WHEEL_R = new QLineEdit(layoutWidget7);
         LE_WHEEL_R->setObjectName(QStringLiteral("LE_WHEEL_R"));
         sizePolicy3.setHeightForWidth(LE_WHEEL_R->sizePolicy().hasHeightForWidth());
         LE_WHEEL_R->setSizePolicy(sizePolicy3);
 
         gridLayout_3->addWidget(LE_WHEEL_R, 2, 1, 1, 1);
 
-        label_12 = new QLabel(layoutWidget6);
+        label_12 = new QLabel(layoutWidget7);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setFont(font1);
         label_12->setAlignment(Qt::AlignCenter);
 
         gridLayout_3->addWidget(label_12, 3, 0, 1, 1);
 
-        LE_WHEEL_T = new QLineEdit(layoutWidget6);
+        LE_WHEEL_T = new QLineEdit(layoutWidget7);
         LE_WHEEL_T->setObjectName(QStringLiteral("LE_WHEEL_T"));
         sizePolicy3.setHeightForWidth(LE_WHEEL_T->sizePolicy().hasHeightForWidth());
         LE_WHEEL_T->setSizePolicy(sizePolicy3);
@@ -604,7 +604,7 @@ public:
 
         horizontalLayout_8->addLayout(gridLayout_3);
 
-        pushButton = new QPushButton(layoutWidget6);
+        pushButton = new QPushButton(layoutWidget7);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         sizePolicy1.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy1);
@@ -614,7 +614,7 @@ public:
 
         line = new QFrame(groupBox_2);
         line->setObjectName(QStringLiteral("line"));
-        line->setGeometry(QRect(20, 170, 191, 20));
+        line->setGeometry(QRect(20, 180, 191, 20));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
         LE_WHEEL_STATE = new QLineEdit(groupBox_2);

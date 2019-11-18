@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
@@ -22,7 +21,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -32,6 +30,10 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionCAN;
+    QAction *actionMANUAL;
+    QAction *actionSTATUS;
+    QAction *actionDUMMY;
     QWidget *centralWidget;
     QGroupBox *GB_NETWORK;
     QWidget *layoutWidget;
@@ -62,7 +64,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_4;
     QLineEdit *LE_IP_2;
-    QWidget *layoutWidget5;
+    QWidget *widget;
     QVBoxLayout *verticalLayout_3;
     QGridLayout *gridLayout;
     QLabel *label_6;
@@ -70,40 +72,72 @@ public:
     QLineEdit *textRSTPort;
     QLabel *label_7;
     QPushButton *BTN_CONNECT_ROS;
-    QFrame *FRAME_STATUS;
-    QFrame *FRAME_STATUS_2;
     QGroupBox *GB_NETWORK_3;
     QLineEdit *LE_DAEMON_PATH;
     QLabel *label_5;
     QPushButton *BTN_CHANGE_DAEMON;
     QLineEdit *LE_DAEMON_PID;
-    QWidget *layoutWidget6;
+    QWidget *layoutWidget5;
     QHBoxLayout *horizontalLayout_4;
     QPushButton *BTN_START_DAEMON;
     QPushButton *BTN_STOP_DAEMON;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QToolBar *mainToolBar;
-    QStatusBar *statusBar;
+    QToolBar *toolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1341, 670);
+        MainWindow->resize(370, 660);
+        QPalette palette;
+        QBrush brush(QColor(231, 228, 224, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush);
+        QBrush brush1(QColor(255, 255, 255, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        MainWindow->setPalette(palette);
+        actionCAN = new QAction(MainWindow);
+        actionCAN->setObjectName(QStringLiteral("actionCAN"));
+        actionCAN->setCheckable(true);
+        QIcon icon;
+        icon.addFile(QStringLiteral("../share/Icon/icon_can.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionCAN->setIcon(icon);
+        actionMANUAL = new QAction(MainWindow);
+        actionMANUAL->setObjectName(QStringLiteral("actionMANUAL"));
+        actionMANUAL->setCheckable(true);
+        QIcon icon1;
+        icon1.addFile(QStringLiteral("../share/Icon/icon_manual.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionMANUAL->setIcon(icon1);
+        actionSTATUS = new QAction(MainWindow);
+        actionSTATUS->setObjectName(QStringLiteral("actionSTATUS"));
+        actionSTATUS->setCheckable(true);
+        QIcon icon2;
+        icon2.addFile(QStringLiteral("../share/Icon/icon_status.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionSTATUS->setIcon(icon2);
+        actionDUMMY = new QAction(MainWindow);
+        actionDUMMY->setObjectName(QStringLiteral("actionDUMMY"));
+        QIcon icon3;
+        icon3.addFile(QStringLiteral("../share/Icon/icon_dummy.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionDUMMY->setIcon(icon3);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         GB_NETWORK = new QGroupBox(centralWidget);
         GB_NETWORK->setObjectName(QStringLiteral("GB_NETWORK"));
-        GB_NETWORK->setGeometry(QRect(10, 10, 351, 161));
+        GB_NETWORK->setGeometry(QRect(10, 10, 241, 271));
         QFont font;
         font.setPointSize(10);
         GB_NETWORK->setFont(font);
         GB_NETWORK->setLayoutDirection(Qt::LeftToRight);
         layoutWidget = new QWidget(GB_NETWORK);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 30, 151, 25));
+        layoutWidget->setGeometry(QRect(20, 30, 201, 25));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -123,7 +157,7 @@ public:
 
         layoutWidget1 = new QWidget(GB_NETWORK);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 60, 82, 91));
+        layoutWidget1->setGeometry(QRect(40, 60, 71, 91));
         verticalLayout = new QVBoxLayout(layoutWidget1);
         verticalLayout->setSpacing(0);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -160,7 +194,7 @@ public:
 
         layoutWidget2 = new QWidget(GB_NETWORK);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(90, 60, 82, 91));
+        layoutWidget2->setGeometry(QRect(130, 60, 71, 91));
         verticalLayout_2 = new QVBoxLayout(layoutWidget2);
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -200,7 +234,7 @@ public:
 
         layoutWidget3 = new QWidget(GB_NETWORK);
         layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(180, 30, 161, 121));
+        layoutWidget3->setGeometry(QRect(20, 160, 201, 100));
         verticalLayout_4 = new QVBoxLayout(layoutWidget3);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -260,11 +294,11 @@ public:
 
         GB_NETWORK_2 = new QGroupBox(centralWidget);
         GB_NETWORK_2->setObjectName(QStringLiteral("GB_NETWORK_2"));
-        GB_NETWORK_2->setGeometry(QRect(370, 10, 171, 161));
+        GB_NETWORK_2->setGeometry(QRect(10, 300, 241, 161));
         GB_NETWORK_2->setFont(font);
         layoutWidget4 = new QWidget(GB_NETWORK_2);
         layoutWidget4->setObjectName(QStringLiteral("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(10, 30, 151, 25));
+        layoutWidget4->setGeometry(QRect(19, 29, 201, 25));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget4);
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -282,11 +316,11 @@ public:
 
         horizontalLayout_2->addWidget(LE_IP_2);
 
-        layoutWidget5 = new QWidget(GB_NETWORK_2);
-        layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
-        layoutWidget5->setGeometry(QRect(11, 61, 151, 93));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget5);
-        verticalLayout_3->setSpacing(0);
+        widget = new QWidget(GB_NETWORK_2);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(50, 60, 141, 87));
+        verticalLayout_3 = new QVBoxLayout(widget);
+        verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -295,14 +329,14 @@ public:
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setHorizontalSpacing(6);
         gridLayout->setVerticalSpacing(0);
-        label_6 = new QLabel(layoutWidget5);
+        label_6 = new QLabel(widget);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setFont(font1);
         label_6->setAlignment(Qt::AlignCenter);
 
         gridLayout->addWidget(label_6, 0, 0, 1, 1);
 
-        textROSPort = new QLineEdit(layoutWidget5);
+        textROSPort = new QLineEdit(widget);
         textROSPort->setObjectName(QStringLiteral("textROSPort"));
         textROSPort->setEnabled(true);
         textROSPort->setMaximumSize(QSize(100, 16777215));
@@ -310,7 +344,7 @@ public:
 
         gridLayout->addWidget(textROSPort, 1, 0, 1, 1);
 
-        textRSTPort = new QLineEdit(layoutWidget5);
+        textRSTPort = new QLineEdit(widget);
         textRSTPort->setObjectName(QStringLiteral("textRSTPort"));
         textRSTPort->setEnabled(true);
         textRSTPort->setMaximumSize(QSize(100, 16777215));
@@ -318,7 +352,7 @@ public:
 
         gridLayout->addWidget(textRSTPort, 1, 1, 1, 1);
 
-        label_7 = new QLabel(layoutWidget5);
+        label_7 = new QLabel(widget);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setFont(font1);
         label_7->setAlignment(Qt::AlignCenter);
@@ -328,7 +362,7 @@ public:
 
         verticalLayout_3->addLayout(gridLayout);
 
-        BTN_CONNECT_ROS = new QPushButton(layoutWidget5);
+        BTN_CONNECT_ROS = new QPushButton(widget);
         BTN_CONNECT_ROS->setObjectName(QStringLiteral("BTN_CONNECT_ROS"));
         sizePolicy1.setHeightForWidth(BTN_CONNECT_ROS->sizePolicy().hasHeightForWidth());
         BTN_CONNECT_ROS->setSizePolicy(sizePolicy1);
@@ -336,46 +370,36 @@ public:
 
         verticalLayout_3->addWidget(BTN_CONNECT_ROS);
 
-        FRAME_STATUS = new QFrame(centralWidget);
-        FRAME_STATUS->setObjectName(QStringLiteral("FRAME_STATUS"));
-        FRAME_STATUS->setGeometry(QRect(840, 30, 550, 600));
-        FRAME_STATUS->setFrameShape(QFrame::StyledPanel);
-        FRAME_STATUS->setFrameShadow(QFrame::Raised);
-        FRAME_STATUS_2 = new QFrame(centralWidget);
-        FRAME_STATUS_2->setObjectName(QStringLiteral("FRAME_STATUS_2"));
-        FRAME_STATUS_2->setGeometry(QRect(10, 180, 750, 450));
-        FRAME_STATUS_2->setFrameShape(QFrame::StyledPanel);
-        FRAME_STATUS_2->setFrameShadow(QFrame::Raised);
         GB_NETWORK_3 = new QGroupBox(centralWidget);
         GB_NETWORK_3->setObjectName(QStringLiteral("GB_NETWORK_3"));
-        GB_NETWORK_3->setGeometry(QRect(550, 10, 211, 161));
+        GB_NETWORK_3->setGeometry(QRect(10, 480, 241, 161));
         GB_NETWORK_3->setFont(font);
         LE_DAEMON_PATH = new QLineEdit(GB_NETWORK_3);
         LE_DAEMON_PATH->setObjectName(QStringLiteral("LE_DAEMON_PATH"));
-        LE_DAEMON_PATH->setGeometry(QRect(10, 50, 141, 21));
+        LE_DAEMON_PATH->setGeometry(QRect(10, 50, 171, 21));
         label_5 = new QLabel(GB_NETWORK_3);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(10, 30, 101, 23));
         BTN_CHANGE_DAEMON = new QPushButton(GB_NETWORK_3);
         BTN_CHANGE_DAEMON->setObjectName(QStringLiteral("BTN_CHANGE_DAEMON"));
-        BTN_CHANGE_DAEMON->setGeometry(QRect(150, 40, 51, 31));
+        BTN_CHANGE_DAEMON->setGeometry(QRect(180, 40, 51, 31));
         QFont font3;
         font3.setPointSize(8);
         BTN_CHANGE_DAEMON->setFont(font3);
         LE_DAEMON_PID = new QLineEdit(GB_NETWORK_3);
         LE_DAEMON_PID->setObjectName(QStringLiteral("LE_DAEMON_PID"));
         LE_DAEMON_PID->setEnabled(false);
-        LE_DAEMON_PID->setGeometry(QRect(150, 70, 51, 21));
+        LE_DAEMON_PID->setGeometry(QRect(180, 70, 51, 21));
         LE_DAEMON_PID->setReadOnly(true);
-        layoutWidget6 = new QWidget(GB_NETWORK_3);
-        layoutWidget6->setObjectName(QStringLiteral("layoutWidget6"));
-        layoutWidget6->setGeometry(QRect(10, 100, 191, 51));
-        horizontalLayout_4 = new QHBoxLayout(layoutWidget6);
+        layoutWidget5 = new QWidget(GB_NETWORK_3);
+        layoutWidget5->setObjectName(QStringLiteral("layoutWidget5"));
+        layoutWidget5->setGeometry(QRect(20, 100, 201, 41));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget5);
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        BTN_START_DAEMON = new QPushButton(layoutWidget6);
+        BTN_START_DAEMON = new QPushButton(layoutWidget5);
         BTN_START_DAEMON->setObjectName(QStringLiteral("BTN_START_DAEMON"));
         sizePolicy.setHeightForWidth(BTN_START_DAEMON->sizePolicy().hasHeightForWidth());
         BTN_START_DAEMON->setSizePolicy(sizePolicy);
@@ -383,7 +407,7 @@ public:
 
         horizontalLayout_4->addWidget(BTN_START_DAEMON);
 
-        BTN_STOP_DAEMON = new QPushButton(layoutWidget6);
+        BTN_STOP_DAEMON = new QPushButton(layoutWidget5);
         BTN_STOP_DAEMON->setObjectName(QStringLiteral("BTN_STOP_DAEMON"));
         sizePolicy.setHeightForWidth(BTN_STOP_DAEMON->sizePolicy().hasHeightForWidth());
         BTN_STOP_DAEMON->setSizePolicy(sizePolicy);
@@ -391,22 +415,105 @@ public:
 
         horizontalLayout_4->addWidget(BTN_STOP_DAEMON);
 
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(770, 70, 51, 51));
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(770, 140, 51, 51));
-        pushButton_3 = new QPushButton(centralWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(770, 200, 51, 51));
         MainWindow->setCentralWidget(centralWidget);
-        mainToolBar = new QToolBar(MainWindow);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
-        statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        MainWindow->setStatusBar(statusBar);
+        toolBar = new QToolBar(MainWindow);
+        toolBar->setObjectName(QStringLiteral("toolBar"));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(toolBar->sizePolicy().hasHeightForWidth());
+        toolBar->setSizePolicy(sizePolicy2);
+        QPalette palette1;
+        QBrush brush2(QColor(0, 0, 0, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::WindowText, brush2);
+        QBrush brush3(QColor(77, 77, 77, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::Button, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::Light, brush1);
+        QBrush brush4(QColor(212, 212, 159, 255));
+        brush4.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::Midlight, brush4);
+        QBrush brush5(QColor(19, 85, 74, 255));
+        brush5.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::Dark, brush5);
+        QBrush brush6(QColor(113, 113, 84, 255));
+        brush6.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::Mid, brush6);
+        palette1.setBrush(QPalette::Active, QPalette::Text, brush2);
+        palette1.setBrush(QPalette::Active, QPalette::BrightText, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::ButtonText, brush2);
+        QBrush brush7(QColor(67, 255, 89, 255));
+        brush7.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::Base, brush7);
+        palette1.setBrush(QPalette::Active, QPalette::Window, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::Shadow, brush2);
+        QBrush brush8(QColor(212, 212, 191, 255));
+        brush8.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::AlternateBase, brush8);
+        QBrush brush9(QColor(131, 255, 235, 255));
+        brush9.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::ToolTipBase, brush9);
+        palette1.setBrush(QPalette::Active, QPalette::ToolTipText, brush2);
+        palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush2);
+        palette1.setBrush(QPalette::Inactive, QPalette::Button, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::Light, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Midlight, brush4);
+        palette1.setBrush(QPalette::Inactive, QPalette::Dark, brush5);
+        palette1.setBrush(QPalette::Inactive, QPalette::Mid, brush6);
+        palette1.setBrush(QPalette::Inactive, QPalette::Text, brush2);
+        palette1.setBrush(QPalette::Inactive, QPalette::BrightText, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::ButtonText, brush2);
+        palette1.setBrush(QPalette::Inactive, QPalette::Base, brush7);
+        palette1.setBrush(QPalette::Inactive, QPalette::Window, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::Shadow, brush2);
+        palette1.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush8);
+        palette1.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush9);
+        palette1.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush2);
+        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush5);
+        palette1.setBrush(QPalette::Disabled, QPalette::Button, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::Light, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Midlight, brush4);
+        palette1.setBrush(QPalette::Disabled, QPalette::Dark, brush5);
+        palette1.setBrush(QPalette::Disabled, QPalette::Mid, brush6);
+        palette1.setBrush(QPalette::Disabled, QPalette::Text, brush5);
+        palette1.setBrush(QPalette::Disabled, QPalette::BrightText, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush5);
+        palette1.setBrush(QPalette::Disabled, QPalette::Base, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::Window, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::Shadow, brush2);
+        QBrush brush10(QColor(170, 170, 127, 255));
+        brush10.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush10);
+        palette1.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush9);
+        palette1.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush2);
+        toolBar->setPalette(palette1);
+        toolBar->setLayoutDirection(Qt::LeftToRight);
+        toolBar->setIconSize(QSize(100, 100));
+        MainWindow->addToolBar(Qt::LeftToolBarArea, toolBar);
+        QWidget::setTabOrder(BTN_CONNECT_ROS, BTN_CONNECT_COM);
+        QWidget::setTabOrder(BTN_CONNECT_COM, textDataPort);
+        QWidget::setTabOrder(textDataPort, LE_IP);
+        QWidget::setTabOrder(LE_IP, BTN_CONNECT_DATA);
+        QWidget::setTabOrder(BTN_CONNECT_DATA, LE_INIT_POWER);
+        QWidget::setTabOrder(LE_INIT_POWER, LE_INIT_DEVICE);
+        QWidget::setTabOrder(LE_INIT_DEVICE, LE_INIT_SYSTEM);
+        QWidget::setTabOrder(LE_INIT_SYSTEM, LE_INIT_ROBOT);
+        QWidget::setTabOrder(LE_INIT_ROBOT, BTN_INITIALIZE);
+        QWidget::setTabOrder(BTN_INITIALIZE, LE_IP_2);
+        QWidget::setTabOrder(LE_IP_2, textROSPort);
+        QWidget::setTabOrder(textROSPort, textRSTPort);
+        QWidget::setTabOrder(textRSTPort, textCmdPort);
+        QWidget::setTabOrder(textCmdPort, LE_DAEMON_PATH);
+        QWidget::setTabOrder(LE_DAEMON_PATH, BTN_CHANGE_DAEMON);
+        QWidget::setTabOrder(BTN_CHANGE_DAEMON, LE_DAEMON_PID);
+        QWidget::setTabOrder(LE_DAEMON_PID, BTN_START_DAEMON);
+        QWidget::setTabOrder(BTN_START_DAEMON, BTN_STOP_DAEMON);
+
+        toolBar->addAction(actionSTATUS);
+        toolBar->addAction(actionMANUAL);
+        toolBar->addAction(actionDUMMY);
+        toolBar->addAction(actionCAN);
 
         retranslateUi(MainWindow);
 
@@ -416,6 +523,19 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        actionCAN->setText(QApplication::translate("MainWindow", "CAN", 0));
+#ifndef QT_NO_TOOLTIP
+        actionCAN->setToolTip(QApplication::translate("MainWindow", "CAN dialog", 0));
+#endif // QT_NO_TOOLTIP
+        actionMANUAL->setText(QApplication::translate("MainWindow", "MANUAL", 0));
+#ifndef QT_NO_TOOLTIP
+        actionMANUAL->setToolTip(QApplication::translate("MainWindow", "manual dialog", 0));
+#endif // QT_NO_TOOLTIP
+        actionSTATUS->setText(QApplication::translate("MainWindow", "STATUS", 0));
+#ifndef QT_NO_TOOLTIP
+        actionSTATUS->setToolTip(QApplication::translate("MainWindow", "STATUS dialog", 0));
+#endif // QT_NO_TOOLTIP
+        actionDUMMY->setText(QApplication::translate("MainWindow", "DUMMY", 0));
         GB_NETWORK->setTitle(QApplication::translate("MainWindow", "RB5 Connection", 0));
         label->setText(QApplication::translate("MainWindow", "RB5 IP", 0));
         LE_IP->setText(QApplication::translate("MainWindow", "127.0.0.1", 0));
@@ -443,9 +563,7 @@ public:
 "Daemon", 0));
         BTN_STOP_DAEMON->setText(QApplication::translate("MainWindow", "Stop\n"
 "Daemon", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "reset", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "suction", 0));
-        pushButton_3->setText(QApplication::translate("MainWindow", "release", 0));
+        toolBar->setWindowTitle(QApplication::translate("MainWindow", "toolBar", 0));
     } // retranslateUi
 
 };

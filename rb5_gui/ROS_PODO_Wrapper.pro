@@ -36,7 +36,8 @@ SOURCES += \
     LAN/RB5connect.cpp \
     LAN/ROSconnect.cpp \
     StatusDialog.cpp \
-    CANDialog.cpp
+    CANDialog.cpp \
+    ManualDialog.cpp
 
 
 HEADERS += \
@@ -51,13 +52,19 @@ HEADERS += \
     DataStructure/rb5data.h \
     DataStructure/rosdata.h \
     StatusDialog.h \
-    CANDialog.h
+    CANDialog.h \
+    ManualDialog.h
 
 
 FORMS += \
         mainwindow.ui \
     StatusDialog.ui \
-    CANDialog.ui
+    CANDialog.ui \
+    ManualDialog.ui
+
+RESOURCES += \
+        1.png \
+        2.png
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -69,3 +76,5 @@ CONFIG(debug, debug|release) {
 } else {
     DESTDIR = $$PWD/../build
 }
+
+DISTFILES +=
