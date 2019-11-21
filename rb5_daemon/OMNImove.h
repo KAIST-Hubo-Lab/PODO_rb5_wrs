@@ -57,7 +57,8 @@ typedef struct _WHEEL_PARAMETER{
     double alpha4 =  132.07*D2R;
 
     double WheelRm = 0.125/2;
-    double RobotRm = 0.85467/2;
+//    double RobotRm = 0.85467/2;
+    double RobotRm = 0.81536/2;
 }WHEEL_PARAMETER;
 
 typedef struct _OMNI_PARAMETER{

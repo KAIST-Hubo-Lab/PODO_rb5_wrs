@@ -191,30 +191,32 @@ void MainWindow::onSystemCheck()
             }
             break;
         }
-        case 'R':
+        case 'M':
         {
-            if(RB5->systemStat.sdata.program_mode == 0)
+            if(ROScommand.data == 0)//Simulation
             {
-                FILE_LOG(logSUCCESS) << "Program mode : Real mode";
-                ROS->sendRB5RESULT(DONE);//done
-            }else if(Count > 300)
+                if(RB5->systemStat.sdata.program_mode == 1)
+                {
+                    FILE_LOG(logSUCCESS) << "Program mode : Simulation mode";
+                    ROS->sendRB5RESULT(DONE);//done
+                }else if(Count > 300)
+                {
+                    FILE_LOG(logERROR) << "Time Out : Simulation mode";
+                    ROS->sendRB5RESULT(ERROR_STOP);
+                    Count = 0;
+                }
+
+            }else if(ROScommand.data == 1)//Real
             {
-                FILE_LOG(logERROR) << "Time Out : Real mode";
-                ROS->sendRB5RESULT(ERROR_STOP);
-            }
-            break;
-        }
-        case 'S':
-        {
-            if(RB5->systemStat.sdata.program_mode == 1)
-            {
-                FILE_LOG(logSUCCESS) << "Program mode : Simulation mode";
-                ROS->sendRB5RESULT(DONE);//done
-            }else if(Count > 300)
-            {
-                FILE_LOG(logERROR) << "Time Out : Simulation mode";
-                ROS->sendRB5RESULT(ERROR_STOP);
-                Count = 0;
+                if(RB5->systemStat.sdata.program_mode == 0)
+                {
+                    FILE_LOG(logSUCCESS) << "Program mode : Real mode";
+                    ROS->sendRB5RESULT(DONE);//done
+                }else if(Count > 300)
+                {
+                    FILE_LOG(logERROR) << "Time Out : Real mode";
+                    ROS->sendRB5RESULT(ERROR_STOP);
+                }
             }
             break;
         }
@@ -420,18 +422,38 @@ void MainWindow::setCommand(command _cmd)//fromROS
         }
         break;
     }
-    case 'R':
+    case 'M':
     {
-        printf("Setting Realmode\n");
-        ROS->sendRB5RESULT(ACCEPT);
-        RB5->ProgramMode_Real();
+        if(ROScommand.data == 0)//Simulation
+        {
+            printf("Setting Simulationmode\n");
+            ROS->sendRB5RESULT(ACCEPT);
+            RB5->ProgramMode_Simulation();
+        }else if(ROScommand.data == 1)//Real
+        {
+            printf("Setting Realmode\n");
+            ROS->sendRB5RESULT(ACCEPT);
+            RB5->ProgramMode_Real();
+        }
         break;
     }
     case 'S':
-    {
-        printf("Setting Simulationmode\n");
+    {//Suction
         ROS->sendRB5RESULT(ACCEPT);
-        RB5->ProgramMode_Simulation();
+        if(ROScommand.data == 0)        //reset
+        {
+            RB5->Suction(0);
+//            usleep(1000*1000);
+        }else if(ROScommand.data == 1)  //suction
+        {
+            RB5->Suction(1);
+//            usleep(3000*1000);
+        }else if(ROScommand.data == 2)  //release
+        {
+            RB5->Suction(2);
+//            usleep(1000*1000);
+        }
+        ROS->sendRB5RESULT(DONE);
         break;
     }
     case 'J':
@@ -683,8 +705,8 @@ void MainWindow::on_BTN_INITIALIZE_clicked()
     {
         RB5->RB5_init();
         ui->LE_INIT_STATUS->setText(QString().sprintf("Initialize start..."));
-        initFlag = true;
     }
+    initFlag = true;
 }
 
 void MainWindow::on_BTN_CHANGE_DAEMON_clicked()
@@ -801,6 +823,7 @@ int  MainWindow::checkJointInput()
 
 int  MainWindow::checkTCPInput()
 {
+    printf("input : %f, %f, %f, %f, %f, %f, %f, %f\n",ROScommand.coordinate[0],ROScommand.coordinate[1],ROScommand.coordinate[2],ROScommand.coordinate[3],ROScommand.coordinate[4],ROScommand.coordinate[5], ROScommand.spd, ROScommand.acc);
     if(ROScommand.spd < 0 || ROScommand.spd > 1)
         return -1;
 
@@ -820,6 +843,7 @@ int  MainWindow::checkTCPInput()
 
     distance = qSqrt(coordinate0*coordinate0 + coordinate1*coordinate1 + coordinate2*coordinate2); //add up the distance of the tcp from the robot
 
+    printf("distance : %f\n",distance);
     if(distance > MAX_DISTANCE || distance < MIN_DISTANCE)
         return -1;
 

@@ -173,16 +173,18 @@ void RB5connect::Suction(int mode)
     {
         QByteArray msg = "gripper_rtq_epick_reset(0)";
         clientCMD->RBSendData(msg);
+        printf("suction reset\n");
     }else if(mode == 1)
     {
         QByteArray msg = "gripper_rtq_epick_suction(0)";
         clientCMD->RBSendData(msg);
+        printf("suction\n");
 
     }else
     {
-
         QByteArray msg = "gripper_rtq_epick_release(0)";
         clientCMD->RBSendData(msg);
+        printf("suction release\n");
     }
 }
 
@@ -236,9 +238,9 @@ void RB5connect::MoveTCP(float coordinate[6], float spd, float acc)
     QByteArray msg = text.toStdString().c_str();
     clientCMD->RBSendData(msg);
 
+    systemStat.sdata.robot_state = MOVING; //run
     cmdConfirmFlag = false;
     moveSendFlag = true;
-    systemStat.sdata.robot_state = MOVING; //run
 }
 
 void RB5connect::MoveCircle_ThreePoint(int type, float x1, float y1, float z1, float rx1, float ry1, float rz1, float x2, float y2, float z2, float rx2, float ry2, float rz2, float spd, float acc)
