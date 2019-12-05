@@ -365,8 +365,8 @@ void OMNIMOVE::SetOMNIpara(int _mode)
     {
         FILE_LOG(logWARNING) << "Set OMNIpara MOVE_NORMAL";
 //        fix = TimeFix;
-        OMNIinfo.Vms = 0.35;
-        OMNIinfo.Trajm = 0.3;
+        OMNIinfo.Vms = 0.2;
+        OMNIinfo.Trajm = 0.1;
         OMNIinfo.TrajT = 1.0;
         break;
     }

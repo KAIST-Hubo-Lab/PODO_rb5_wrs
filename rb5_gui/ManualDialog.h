@@ -56,6 +56,8 @@ private slots:
 
     void on_BTN_GET_TCP_clicked();
 
+    void on_BTN_GO_HOME_clicked();
+
 private:
     Ui::ManualDialog *ui;
     RB5connect *RB5;

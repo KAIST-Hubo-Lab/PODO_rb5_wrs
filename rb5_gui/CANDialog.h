@@ -20,6 +20,7 @@ public:
 
     CANconnect  *CAN;
     QTimer displayTimer;
+    int     FLAG_Wheelmove;
 
     void CAN_connect(CANconnect *can);
     void CAN_disconnect();

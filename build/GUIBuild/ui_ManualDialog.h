@@ -63,6 +63,7 @@ public:
     QPushButton *BTN_MOTION_PAUSE;
     QPushButton *BTN_GET_JOINT;
     QPushButton *BTN_GET_TCP;
+    QPushButton *BTN_GO_HOME;
     QGroupBox *groupBox_3;
     QPushButton *BTN_CHANGE_SPEED;
     QSlider *SB_SPEED;
@@ -242,6 +243,9 @@ public:
         BTN_GET_TCP = new QPushButton(groupBox_2);
         BTN_GET_TCP->setObjectName(QStringLiteral("BTN_GET_TCP"));
         BTN_GET_TCP->setGeometry(QRect(220, 110, 61, 41));
+        BTN_GO_HOME = new QPushButton(groupBox_2);
+        BTN_GO_HOME->setObjectName(QStringLiteral("BTN_GO_HOME"));
+        BTN_GO_HOME->setGeometry(QRect(410, 230, 61, 21));
         groupBox_3 = new QGroupBox(ManualDialog);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
         groupBox_3->setGeometry(QRect(20, 290, 151, 161));
@@ -337,6 +341,7 @@ public:
 "Cur Joint", 0));
         BTN_GET_TCP->setText(QApplication::translate("ManualDialog", "Get\n"
 "Cur TCP", 0));
+        BTN_GO_HOME->setText(QApplication::translate("ManualDialog", "GoHome", 0));
         groupBox_3->setTitle(QApplication::translate("ManualDialog", "Setting", 0));
         BTN_CHANGE_SPEED->setText(QApplication::translate("ManualDialog", "change\n"
 "speed", 0));

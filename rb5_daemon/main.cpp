@@ -1280,9 +1280,9 @@ void THREAD_JOYSTICK()
 
         float Kspeed = 0.1;
 
-        Move_X = (float)sharedCMD->vel_x;
-        Move_Y = (float)sharedCMD->vel_y;
-        Move_R = (float)sharedCMD->vel_r;
+        Move_X = (float)sharedCMD->vel_x*Kspeed;
+        Move_Y = (float)sharedCMD->vel_y*Kspeed;
+        Move_R = (float)sharedCMD->vel_r*Kspeed;
 
         doubles vwheel(4);
         vwheel = OMNI.Omni_CalVel_Wheel(Move_X, Move_Y, Move_R);

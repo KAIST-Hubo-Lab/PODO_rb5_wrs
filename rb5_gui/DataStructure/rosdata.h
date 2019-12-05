@@ -7,7 +7,8 @@ enum {
     DONE,
     STATE_ERROR,
     INPUT_ERROR,
-    ERROR_STOP
+    ERROR_STOP,
+    EXT_COLLISION
 };
 
 
@@ -33,12 +34,18 @@ struct Update{
     float   tool_reference;         //reference voltage of tool flalnge board [0, 12, 24]
 };
 
+
+
 struct Result
 {
     int     rb5_result = BREAK;
     int     wheel_result = BREAK;
 };
-
+struct RB5toROS
+{
+    Update message;
+    Result result;
+};
 struct command
 {
     char type;

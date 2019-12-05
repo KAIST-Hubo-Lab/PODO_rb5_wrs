@@ -387,6 +387,19 @@ Cur Joint</string>
 Cur TCP</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="BTN_GO_HOME">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>230</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>GoHome</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_3">
    <property name="geometry">

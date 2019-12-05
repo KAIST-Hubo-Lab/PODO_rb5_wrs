@@ -171,25 +171,29 @@ void RB5connect::Suction(int mode)
 {
     if(mode == 0)
     {
-        QByteArray msg = "gripper_rtq_epick_reset(0)";
+        QByteArray msg = "gripper_rtq_epick_reset(1)";
         clientCMD->RBSendData(msg);
-        printf("suction reset\n");
+//        usleep(500*1000);
+//        printf("suction reset\n");
     }else if(mode == 1)
     {
-        QByteArray msg = "gripper_rtq_epick_suction(0)";
+        QByteArray msg = "gripper_rtq_epick_suction(1)";
         clientCMD->RBSendData(msg);
-        printf("suction\n");
+//        usleep(500*1000);
+//        printf("suction\n");
 
     }else
     {
-        QByteArray msg = "gripper_rtq_epick_release(0)";
+        QByteArray msg = "gripper_rtq_epick_release(1)";
         clientCMD->RBSendData(msg);
-        printf("suction release\n");
+//        usleep(500*1000);
+//        printf("suction release\n");
     }
 }
 
 void RB5connect::ProgramMode_Real()
 {
+    printf("Real mode\n");
     QByteArray msg = "pgmode real";
     clientCMD->RBSendData(msg);
     cmdConfirmFlag = false;
@@ -213,7 +217,7 @@ void RB5connect::MoveJoint(float joint1, float joint2, float joint3, float joint
 
     moveSendFlag = true;
     cmdConfirmFlag = false;
-    systemStat.sdata.robot_state = MOVING; //run
+//    systemStat.sdata.robot_state = MOVING; //run
 }
 
 void RB5connect::MoveJoint(float coordinate[6],float spd, float acc)
@@ -234,7 +238,7 @@ void RB5connect::MoveTCP(float coordinate[6], float spd, float acc)
 {
     QString text;
     text.sprintf("movetcp %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f", spd, acc, coordinate[0], coordinate[1], coordinate[2], coordinate[3], coordinate[4], coordinate[5]);
-    printf("movetcp %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f", spd, acc, coordinate[0], coordinate[1], coordinate[2], coordinate[3], coordinate[4], coordinate[5]);
+    printf("movetcp %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f\n", spd, acc, coordinate[0], coordinate[1], coordinate[2], coordinate[3], coordinate[4], coordinate[5]);
     QByteArray msg = text.toStdString().c_str();
     clientCMD->RBSendData(msg);
 
@@ -409,6 +413,7 @@ void RB5connect::ToolOut(int volt, int d0, int d1)
 
 void RB5connect::BaseSpeedChange(float spd)
 {
+    printf("kk\n");
     QString text;
     if(spd > 1.0)
         spd = 1.0;
@@ -432,6 +437,7 @@ void RB5connect::MotionPause()
 
 void RB5connect::MotionHalt()
 {
+    printf("Halt\n");
     QByteArray msg = "task stop";
     clientCMD->RBSendData(msg);
 

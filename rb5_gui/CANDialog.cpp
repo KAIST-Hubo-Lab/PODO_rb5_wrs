@@ -36,7 +36,7 @@ CANDialog::CANDialog(QWidget *parent) :
     ui->LE_WHEEL_STATE->setStyleSheet("background-color: red");
 
     ui->BTN_REF_ON->setEnabled(false);
-
+    FLAG_Wheelmove = false;
     connect(&displayTimer, SIGNAL(timeout()), this, SLOT(UpdateSettings()));
     displayTimer.start(10);
 }
@@ -481,6 +481,7 @@ void CANDialog::on_pushButton_clicked()
         CAN->sharedCMD->omni_ym = vy;
         CAN->sharedCMD->omni_yawdeg = vr;
         CAN->sharedCMD->omni_sec = t;
+        FLAG_Wheelmove = true;
 
         CAN->sharedCMD->COMMAND.USER_COMMAND = OMNIWHEEL_MOVE_TO_GOAL;
 

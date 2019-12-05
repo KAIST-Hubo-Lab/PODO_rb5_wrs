@@ -34,7 +34,7 @@ typedef struct _USER_INPUT_PARAMETER{
     double Time_OmniTrajectory_sec = 1.0;
 
     /* OmniWheel profile */
-    double Vmax_ms = 0.55;//0.57;//1.85;
+    double Vmax_ms = 0.3;//0.57;//1.85;
     double Vmax_rads = 30.0*D2R;
 
     double Distance_TrajM_m = 0.98;

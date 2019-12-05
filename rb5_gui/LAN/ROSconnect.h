@@ -21,14 +21,24 @@ public:
     void Disconnect();
     ROSServer    *serverROS;
     RSTServer    *serverRST;
-    Update message;
+//    Update message;
     command data;
     Result result;
+    RB5toROS rb5toros;
 
     QTimer *sendTimer;
 
-    void sendRB5RESULT(int rb5result);
-    void sendWHEELRESULT(int wheelresult);
+//    void setRB5RESULT(int rb5result)
+//    {
+//        rb5toros.result.rb5_result = rb5result;
+//    }
+//    void setWHEELRESULT(int wheelresult)
+//    {
+//        rb5toros.result.wheel_result = wheelresult;
+//    }
+
+    void sendRB5RESULT(int rst);
+    void sendWHEELRESULT(int rst);
     void RESULTreset();
 
 signals:

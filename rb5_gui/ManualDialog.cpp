@@ -94,6 +94,7 @@ void ManualDialog::on_BTN_MOTION_PAUSE_clicked()
 
 void ManualDialog::on_BTN_MOTION_HALT_clicked()
 {
+    printf("Manual Dialog : Motion Halt\n");
     RB5->MotionHalt();
 }
 
@@ -141,6 +142,7 @@ void ManualDialog::on_BTN_GRIPPER_CLOSE_clicked()
 
 void ManualDialog::on_pushButton_clicked()
 {
+    printf("real button cliecked\n");
     RB5->ProgramMode_Real();
 }
 
@@ -167,4 +169,23 @@ void ManualDialog::on_BTN_GET_TCP_clicked()
     ui->LE_COORDINATE4->setText(QString().sprintf("%.2f",RB5->systemStat.sdata.tcp_pos[3]));
     ui->LE_COORDINATE5->setText(QString().sprintf("%.2f",RB5->systemStat.sdata.tcp_pos[4]));
     ui->LE_COORDINATE6->setText(QString().sprintf("%.2f",RB5->systemStat.sdata.tcp_pos[5]));
+}
+
+void ManualDialog::on_BTN_GO_HOME_clicked()
+{
+    float coordinate[6] = {0.,};
+
+    coordinate[0] = -77.185;
+    coordinate[1] = -77.396;
+    coordinate[2] = 134.561;
+    coordinate[3] = -55.864;
+    coordinate[4] = 67.807;
+    coordinate[5] = 0.243;
+
+    float spd,acc = 0.;
+
+    spd = ui->LE_SPEED->text().toFloat();
+    acc = ui->LE_ACC->text().toFloat();
+
+    RB5->MoveJoint(coordinate, spd, acc);
 }

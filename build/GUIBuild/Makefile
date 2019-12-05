@@ -960,6 +960,10 @@ moc_mainwindow.cpp: /opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QMainWindow \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qsystemtrayicon.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QFileDialog \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QToolBar \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qtoolbar.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
 		../../rb5_gui/mainwindow.h \
 		/opt/Qt5.7.0/5.7/gcc_64/bin/moc
 	/opt/Qt5.7.0/5.7/gcc_64/bin/moc $(DEFINES) -I/opt/Qt5.7.0/5.7/gcc_64/mkspecs/linux-g++ -I/home/rainbow/Desktop/GitHub_RB5/rb5_wrs/rb5_gui -I/home/rainbow/Desktop/GitHub_RB5/cobot_podo/arch -I/opt/Qt5.7.0/5.7/gcc_64/include -I/opt/Qt5.7.0/5.7/gcc_64/include/QtOpenGL -I/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets -I/opt/Qt5.7.0/5.7/gcc_64/include/QtGui -I/opt/Qt5.7.0/5.7/gcc_64/include/QtNetwork -I/opt/Qt5.7.0/5.7/gcc_64/include/QtSql -I/opt/Qt5.7.0/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../../rb5_gui/mainwindow.h -o moc_mainwindow.cpp
@@ -2001,6 +2005,10 @@ main.o: ../../rb5_gui/main.cpp ../../rb5_gui/mainwindow.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qsystemtrayicon.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QFileDialog \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QToolBar \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qtoolbar.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qaction.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QApplication \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qapplication.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
@@ -2321,10 +2329,12 @@ mainwindow.o: ../../rb5_gui/mainwindow.cpp ../../rb5_gui/mainwindow.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qsystemtrayicon.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QFileDialog \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
-		ui_mainwindow.h \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QAction \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QToolBar \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qtoolbar.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qaction.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
+		ui_mainwindow.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QAction \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QApplication \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qapplication.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
@@ -2332,7 +2342,6 @@ mainwindow.o: ../../rb5_gui/mainwindow.cpp ../../rb5_gui/mainwindow.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtGui/qinputmethod.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QButtonGroup \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QFrame \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGridLayout \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayout.h \
@@ -2348,10 +2357,6 @@ mainwindow.o: ../../rb5_gui/mainwindow.cpp ../../rb5_gui/mainwindow.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QPushButton \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QStatusBar \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qstatusbar.h \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QToolBar \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qtoolbar.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QWidget \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QScrollBar \
@@ -2883,6 +2888,7 @@ StatusDialog.o: ../../rb5_gui/StatusDialog.cpp ../../rb5_gui/StatusDialog.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayout.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QHeaderView \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qheaderview.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
@@ -2903,7 +2909,6 @@ StatusDialog.o: ../../rb5_gui/StatusDialog.cpp ../../rb5_gui/StatusDialog.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QLabel \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlabel.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QSpacerItem \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o StatusDialog.o ../../rb5_gui/StatusDialog.cpp
 
@@ -3212,14 +3217,15 @@ ManualDialog.o: ../../rb5_gui/ManualDialog.cpp ../../rb5_gui/ManualDialog.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtGui/qinputmethod.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QButtonGroup \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGridLayout \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QGroupBox \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgroupbox.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qframe.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QHeaderView \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qheaderview.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
@@ -3250,6 +3256,7 @@ ManualDialog.o: ../../rb5_gui/ManualDialog.cpp ../../rb5_gui/ManualDialog.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QRadioButton \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/qradiobutton.h \
+		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QSlider \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
 		/opt/Qt5.7.0/5.7/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ManualDialog.o ../../rb5_gui/ManualDialog.cpp

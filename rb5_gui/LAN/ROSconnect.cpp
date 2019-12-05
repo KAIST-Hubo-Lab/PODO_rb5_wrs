@@ -74,37 +74,37 @@ void ROSconnect::readCMD(char *_data)
 
 void ROSconnect::sendSTATUS()
 {
-    char *buf = new char[sizeof(Update)];
-    memcpy(buf, &message, sizeof(Update));
-    serverROS->RBSendData(buf, sizeof(Update));
+    char *buf = new char[sizeof(RB5toROS)];
+    memcpy(buf, &rb5toros, sizeof(RB5toROS));
+    serverROS->RBSendData(buf, sizeof(RB5toROS));
     delete [] buf;
 }
 
-void ROSconnect::sendRB5RESULT(int rb5result)
+void ROSconnect::sendRB5RESULT(int rst)
 {
-    result.rb5_result = rb5result;
+    result.rb5_result = rst;
     printf("RB5RESULT set : %d,%d\n",result.rb5_result,result.wheel_result);
     char *buf = new char[sizeof(Result)];
     memcpy(buf, &result, sizeof(Result));
     serverRST->RBSendData(buf, sizeof(Result));
     delete [] buf;
 }
-
-void ROSconnect::sendWHEELRESULT(int wheelresult)
+void ROSconnect::sendWHEELRESULT(int rst)
 {
-    result.wheel_result = wheelresult;
-    printf("WHEELRESULT set : %d,%d\n",result.rb5_result,result.wheel_result);
+    result.wheel_result = rst;
+    printf("RB5RESULT set : %d,%d\n",rb5toros.result.rb5_result,rb5toros.result.wheel_result);
     char *buf = new char[sizeof(Result)];
     memcpy(buf, &result, sizeof(Result));
     serverRST->RBSendData(buf, sizeof(Result));
     delete [] buf;
 }
 
+
 void ROSconnect::RESULTreset()
 {
-    result.rb5_result = BREAK;
-    result.wheel_result = BREAK;
-    printf("result reset");
+    rb5toros.result.rb5_result = BREAK;
+    rb5toros.result.wheel_result = BREAK;
+    printf("result reset\n");
 }
 
 ROSServer::ROSServer()

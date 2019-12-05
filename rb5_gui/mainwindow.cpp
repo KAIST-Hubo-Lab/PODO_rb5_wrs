@@ -92,28 +92,29 @@ MainWindow::~MainWindow()
 
 void MainWindow::RB5toROS()
 {
-    ROS->message.robot_state =  RB5->systemStat.sdata.robot_state;
-    ROS->message.power_state =  RB5->systemStat.sdata.power_state;
-    ROS->message.program_mode = RB5->systemStat.sdata.program_mode;
+    ROS->rb5toros.message.robot_state =  RB5->systemStat.sdata.robot_state;
+    ROS->rb5toros.message.power_state =  RB5->systemStat.sdata.power_state;
+    ROS->rb5toros.message.program_mode = RB5->systemStat.sdata.program_mode;
 
-    ROS->message.collision_detect = RB5->systemStat.sdata.collision_detect_onoff;
-    ROS->message.freedrive_mode = RB5->systemStat.sdata.is_freedrive_mode;
+    ROS->rb5toros.message.collision_detect = RB5->systemStat.sdata.op_stat_collision_occur;
+    ROS->rb5toros.message.freedrive_mode = RB5->systemStat.sdata.is_freedrive_mode;
 
-    ROS->message.speed = RB5->systemStat.sdata.default_speed;
+    ROS->rb5toros.message.speed = RB5->systemStat.sdata.default_speed;
 
     for(int i = 0; i < 6; i++)
     {
-        ROS->message.joint_angles[i] = RB5->systemStat.sdata.jnt_ang[i];
-        ROS->message.joint_references[i] = RB5->systemStat.sdata.jnt_ref[i];
-        ROS->message.joint_current[i] = RB5->systemStat.sdata.cur[i];
-        ROS->message.joint_temperature[i] = RB5->systemStat.sdata.temperature_mc[i];
-        ROS->message.joint_information[i] = RB5->systemStat.sdata.jnt_info[i];
+        ROS->rb5toros.message.joint_angles[i] = RB5->systemStat.sdata.jnt_ang[i];
+        ROS->rb5toros.message.joint_references[i] = RB5->systemStat.sdata.jnt_ref[i];
+        ROS->rb5toros.message.joint_current[i] = RB5->systemStat.sdata.cur[i];
+        ROS->rb5toros.message.joint_temperature[i] = RB5->systemStat.sdata.temperature_mc[i];
+        ROS->rb5toros.message.joint_information[i] = RB5->systemStat.sdata.jnt_info[i];
 
-        ROS->message.tcp_reference[i] = RB5->systemStat.sdata.tcp_ref[i];
-        ROS->message.tcp_position[i] = RB5->systemStat.sdata.tcp_pos[i];
+        ROS->rb5toros.message.tcp_reference[i] = RB5->systemStat.sdata.tcp_ref[i];
+        ROS->rb5toros.message.tcp_position[i] = RB5->systemStat.sdata.tcp_pos[i];
     }
 
-    ROS->message.tool_reference = RB5->systemStat.sdata.tfb_voltage_out;
+    ROS->rb5toros.message.tool_reference = RB5->systemStat.sdata.tfb_voltage_out;
+
 }
 
 void MainWindow::onSystemCheck()
@@ -174,7 +175,7 @@ void MainWindow::onSystemCheck()
     }
 
     // sendResult to ROS
-    if(resultFlag == true &&(ROS->result.rb5_result == ACCEPT||ROS->result.wheel_result == ACCEPT))
+    if(resultFlag == true && (ROS->result.rb5_result == ACCEPT||ROS->result.wheel_result == ACCEPT))
     {
         switch(ROScommand.type)
         {
@@ -224,6 +225,16 @@ void MainWindow::onSystemCheck()
         case 'T':
         case 'B':
         {
+            if(RB5->systemStat.sdata.op_stat_collision_occur == 1)
+            {
+                FILE_LOG(logERROR) << "Collision!";
+                ROS->sendRB5RESULT(EXT_COLLISION);
+            }else if(RB5->systemStat.sdata.robot_state == PAUSED)
+            {
+                FILE_LOG(logERROR) << "Something wrong, Motion paused!";
+                ROS->sendRB5RESULT(ERROR_STOP);
+            }
+
             if(RB5->systemStat.sdata.robot_state == MOVING)
                 break;
             else if(RB5->systemStat.sdata.robot_state == IDLE)
@@ -231,14 +242,10 @@ void MainWindow::onSystemCheck()
                 if(Count > 3)
                 {
                     Count = 0;
-                    //FILE_LOG(logSUCCESS) << "Move Done";
-                    //printf("RB5 = %d, WHEEL = %d\n",ROS->result.rb5_result,ROS->result.wheel_result);
+                    FILE_LOG(logSUCCESS) << "Move Done";
+                    printf("RB5 = %d, WHEEL = %d\n",ROS->rb5toros.result.rb5_result,ROS->rb5toros.result.wheel_result);
                     ROS->sendRB5RESULT(DONE);
                 }
-            }else if(RB5->systemStat.sdata.robot_state == PAUSED)
-            {
-                FILE_LOG(logERROR) << "Something wrong, Motion paused!";
-                ROS->sendRB5RESULT(ERROR_STOP);
             }
             break;
         }
@@ -277,28 +284,38 @@ void MainWindow::onSystemCheck()
                     FILE_LOG(logSUCCESS) << "Goal mode move done";
                     ROS->sendWHEELRESULT(DONE);
                     CAN->sharedSEN->WHEEL_STATE = OMNI_BREAK;
-                }
-                if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK && Count > 300)
+                }else if(CAN->sharedSEN->WHEEL_STATE == OMNI_BREAK && Count > 1000)
                 {
                     Count = 0;
-                    printf("RB5 = %d, WHEEL = %d\n",ROS->result.rb5_result,ROS->result.wheel_result);
+                    printf("RB5 = %d, WHEEL = %d\n",ROS->rb5toros.result.rb5_result,ROS->rb5toros.result.wheel_result);
                     FILE_LOG(logERROR) << "Time out : Wheel move";
                     ROS->sendWHEELRESULT(ERROR_STOP);
                 }
             }
 
-//            if(CAN->sharedSEN->WHEEL_STATE != OMNI_BREAK)
-//            {
-//                if(CAN->sharedSEN->CAN_Enabled == false || CAN->sharedSEN->REF_Enabled == false)
-//                {
-//                    FILE_LOG(logERROR) << "CAN disconnected";
-//                    ROS->sendWHEELRESULT(ERROR_STOP);
-//                }
-//            }
+            if(CAN->sharedSEN->WHEEL_STATE != OMNI_BREAK)
+            {
+                if(CAN->sharedSEN->CAN_Enabled == false || CAN->sharedSEN->REF_Enabled == false)
+                {
+                    FILE_LOG(logERROR) << "CAN disconnected";
+                    ROS->sendWHEELRESULT(ERROR_STOP);
+                }
+            }
             break;
         }
         }
         Count++;
+    }
+
+    if(canDialog->FLAG_Wheelmove == true)
+    {
+        if(CAN->sharedSEN->WHEEL_STATE == OMNI_MOVE_DONE)
+        {
+            printf("state = %d\n",CAN->sharedSEN->WHEEL_STATE);
+            FILE_LOG(logSUCCESS) << "Goal mode move done";
+            CAN->sharedSEN->WHEEL_STATE = OMNI_BREAK;
+            canDialog->FLAG_Wheelmove = false;
+        }
     }
 }
 
@@ -469,6 +486,7 @@ void MainWindow::setCommand(command _cmd)//fromROS
                     RB5->MoveJoint(_cmd.coordinate, _cmd.spd, _cmd.acc);
                 }else
                 {
+                    printf("robot_state = %d\n",RB5->systemStat.sdata.robot_state);
                     FILE_LOG(logERROR) << "RB5 is moving. disregard command";
                     ROS->sendRB5RESULT(STATE_ERROR);
                 }
@@ -572,9 +590,9 @@ void MainWindow::setCommand(command _cmd)//fromROS
     }
     case 'H':
     {
+        FILE_LOG(logSUCCESS) << "MotionHalt";
         ROS->sendRB5RESULT(ACCEPT);
         RB5->MotionHalt();
-        FILE_LOG(logSUCCESS) << "MotionHalt";
         ROS->sendRB5RESULT(DONE);
         break;
     }
@@ -698,7 +716,6 @@ void MainWindow::ActionMANUAL_Toggled()
 
 
 // ------------------------------------------------
-
 void MainWindow::on_BTN_INITIALIZE_clicked()
 {
     if(RB5->systemStat.sdata.init_state_info != INIT_STAT_INFO_INIT_DONE)
@@ -844,8 +861,8 @@ int  MainWindow::checkTCPInput()
     distance = qSqrt(coordinate0*coordinate0 + coordinate1*coordinate1 + coordinate2*coordinate2); //add up the distance of the tcp from the robot
 
     printf("distance : %f\n",distance);
-    if(distance > MAX_DISTANCE || distance < MIN_DISTANCE)
-        return -1;
+//    if(distance > MAX_DISTANCE || distance < MIN_DISTANCE)
+//        return -1;
 
     return 1;
 

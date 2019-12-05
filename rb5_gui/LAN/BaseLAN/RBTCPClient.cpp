@@ -34,6 +34,7 @@ void RBTCPClient::RBConnect(QString _ip, quint16 _port){
 
 void RBTCPClient::RBDisconnect(void){    
     RBClientSocket->close();
+    printf("Disconnect\n");
 }
 
 void RBTCPClient::RBSendData(QByteArray &data)
