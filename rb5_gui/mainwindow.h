@@ -26,6 +26,7 @@ class MainWindow;
 class ExpandDialogHandler;
 extern qint64  Daemon_processID;
 
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -40,9 +41,15 @@ public:
     ROSconnect      *ROS;   //Connect to ROS (send Status, receive Command)
 
     QTimer systemTimer;     //update data on display (onSystemCheck)
+    QTimer pirTimer;
+    int             FLAG_pir = false;
+    int             FLAG_pir_detected = false;
+    int             FLAG_suction = false;
+    void save_rb5();
 
 public slots:
     void onSystemCheck();
+    void pirCheck();
 
     void onCmdConnected();
     void onCmdDisconnected();
@@ -76,6 +83,10 @@ private slots:
     void on_showNormal();
 
     void on_pushButton_3_clicked();
+
+    void on_BTN_SAVE_START_clicked();
+
+    void on_BTN_SAVE_clicked();
 
 private:
     Ui::MainWindow *ui;

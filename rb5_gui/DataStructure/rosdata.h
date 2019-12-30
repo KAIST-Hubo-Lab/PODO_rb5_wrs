@@ -32,6 +32,9 @@ struct Update{
     float   tcp_position[6];
 
     float   tool_reference;         //reference voltage of tool flalnge board [0, 12, 24]
+
+    float   ft_sensor[6];           //mx,my,fz,fx,fy,mz
+    float   pir_detected[4];        //pir sensor (digital in)
 };
 
 

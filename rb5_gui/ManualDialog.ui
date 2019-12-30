@@ -587,6 +587,19 @@ speed</string>
     </property>
    </widget>
   </widget>
+  <widget class="QPushButton" name="BTN_BLEND_TEST">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>460</y>
+     <width>80</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>blend test</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

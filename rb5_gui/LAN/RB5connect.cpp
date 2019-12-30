@@ -148,6 +148,11 @@ void RB5connect::DATAread()
             clientDATA->dataReceived.remove(0,1);
         }
     }
+
+    pir_detected[0] = systemStat.sdata.digital_in[12];
+    pir_detected[1] = systemStat.sdata.digital_in[13];
+    pir_detected[2] = systemStat.sdata.digital_in[14];
+    pir_detected[3] = systemStat.sdata.digital_in[15];
 }
 
 
@@ -303,6 +308,18 @@ void RB5connect::MoveJointBlend_AddPoint(float joint1, float joint2, float joint
 {
     QString text;
     text.sprintf("blend_jnt add_pt %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f", spd, acc, joint1, joint2, joint3, joint4, joint5, joint6);
+
+    QByteArray msg = text.toStdString().c_str();
+    clientCMD->RBSendData(msg);
+
+    cmdConfirmFlag = false;
+    systemStat.sdata.robot_state = MOVING; //run
+}
+
+void RB5connect::MoveJointBlend_AddPoint(float coordinate[6], float spd, float acc)
+{
+    QString text;
+    text.sprintf("blend_jnt add_pt %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f", spd, acc, coordinate[0], coordinate[1], coordinate[2], coordinate[3], coordinate[4], coordinate[5]);
 
     QByteArray msg = text.toStdString().c_str();
     clientCMD->RBSendData(msg);

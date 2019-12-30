@@ -189,3 +189,28 @@ void ManualDialog::on_BTN_GO_HOME_clicked()
 
     RB5->MoveJoint(coordinate, spd, acc);
 }
+
+void ManualDialog::on_BTN_BLEND_TEST_clicked()
+{
+//    RB5->MoveTCPBlend_Clear();
+//    RB5->MoveTCPBlend_AddPoint(70, 616, 138, 269, 91, -0.8, -66.95, 0.3, 0.1);
+//    RB5->MoveTCPBlend_AddPoint(70, 506.78, -377.3, 269.03, 90.81, -0.8, -116.25, 0.3, 0.1);
+//    RB5->MoveTCPBlend_AddPoint(70, -217.96, -593.03, 269.02, 90.81, -0.8, 170.25, 0.3, 0.1);
+//    RB5->MoveTCPBlend_MovePoint(1);
+    RB5->MoveJointBlend_Clear();
+    RB5->MoveJointBlend_AddPoint(-88.156, -87.028, 136.609, -139.610, 89.991, 7.380, 0.5, 0.3);
+    RB5->MoveJointBlend_AddPoint(-88.165, -62.120, 103.007, -131.506, 89.965, 7.380, 0.7, 0.5);
+    RB5->MoveJointBlend_AddPoint(-88.156, -87.028, 136.609, -139.610, 89.991, 7.380, 0.5, 0.3);
+    RB5->MoveJointBlend_AddPoint(-88.165, -62.120, 103.007, -131.506, 89.965, 7.380, 0.7, 0.5);
+    RB5->MoveJointBlend_AddPoint(-88.156, -87.028, 136.609, -139.610, 89.991, 7.380, 0.5, 0.3);
+    RB5->MoveJointBlend_AddPoint(-88.165, -62.120, 103.007, -131.506, 89.965, 7.380, 0.7, 0.5);
+    RB5->MoveJointBlend_AddPoint(-88.156, -87.028, 136.609, -139.610, 89.991, 7.380, 0.5, 0.3);
+    RB5->MoveJointBlend_AddPoint(-88.165, -62.120, 103.007, -131.506, 89.965, 7.380, 0.7, 0.5);
+    RB5->MoveJointBlend_AddPoint(-88.156, -87.028, 136.609, -139.610, 89.991, 7.380, 0.5, 0.3);
+    RB5->MoveJointBlend_AddPoint(-88.165, -62.120, 103.007, -131.506, 89.965, 7.380, 0.7, 0.5);
+    RB5->MoveJointBlend_AddPoint(-88.156, -87.028, 136.609, -139.610, 89.991, 7.380, 0.5, 0.3);
+    RB5->MoveJointBlend_AddPoint(-88.165, -62.120, 103.007, -131.506, 89.965, 7.380, 0.7, 0.5);
+    RB5->MoveJointBlend_AddPoint(-88.156, -87.028, 136.609, -139.610, 89.991, 7.380, 0.5, 0.3);
+    RB5->MoveJointBlend_AddPoint(-88.165, -62.120, 103.007, -131.506, 89.965, 7.380, 0.7, 0.5);
+    RB5->MoveJointBlend_MovePoint();
+}

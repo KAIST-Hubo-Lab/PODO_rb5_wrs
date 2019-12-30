@@ -21,7 +21,7 @@ public:
     void Disconnect();
     ROSServer    *serverROS;
     RSTServer    *serverRST;
-//    Update message;
+    Update message;
     command data;
     Result result;
     RB5toROS rb5toros;

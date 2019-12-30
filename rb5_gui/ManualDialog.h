@@ -56,7 +56,9 @@ private slots:
 
     void on_BTN_GET_TCP_clicked();
 
-    void on_BTN_GO_HOME_clicked();
+    void on_BTN_GO_HOME_clicked();/* Debug data */
+
+    void on_BTN_BLEND_TEST_clicked();
 
 private:
     Ui::ManualDialog *ui;

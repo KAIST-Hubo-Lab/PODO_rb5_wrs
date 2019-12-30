@@ -40,6 +40,8 @@ public:
     int moveSendFlag;
     int initFlag;
 
+    int pir_detected[4];
+
     void CMDconnect(QString _addr, int _port);
     void DATAconnect(QString _addr, int _port);
     void CMDdisconnect();
@@ -54,6 +56,7 @@ public:
     void MoveCircle_Axis(int type, float cx, float cy, float cz, float ax, float ay, float az, float rot_angle, float spd, float acc);
     void MoveJointBlend_Clear();
     void MoveJointBlend_AddPoint(float joint1, float joint2, float joint3, float joint4, float joint5, float joint6, float spd = -1, float acc = -1);
+    void MoveJointBlend_AddPoint(float coordinate[6], float spd, float acc);
     void MoveJointBlend_MovePoint();
     void MoveTCPBlend_Clear();
     void MoveTCPBlend_AddPoint(float radius, float x, float y, float z, float rx, float ry, float rz, float spd = -1, float acc = -1);
